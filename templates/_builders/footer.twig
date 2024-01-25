@@ -1,0 +1,10 @@
+{% set implemented = [
+    "footer_simple_centered",
+    "footer_4_col_with_newsletter_below",
+] %}
+
+{% for block in blocks %}
+	{% if block.type.handle in implemented %}
+		{% include "_components/" ~ block.type with { "block": block } %}
+	{% endif %}
+{% endfor %}

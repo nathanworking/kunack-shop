@@ -1,0 +1,78 @@
+field: 87d02ee3-cd56-40a7-95bf-29a706064f6c # Buttons
+fieldLayouts:
+  2a2f1850-d5ab-4400-bf31-d719b0ad5ee1:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 03c81418-fff9-4dfc-b63a-f973f0abbce5 # Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3d21d29e-f69f-4e07-9b49-7c85cd9ee77e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 6b3d544d-666f-4b83-b41c-c1a5e2e51a77 # URL
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 27909717-614f-4aac-9a92-0835548da6d9
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: f39f6e82-282b-4b6c-b65c-be28883b20d7
+        userCondition: null
+fields:
+  03c81418-fff9-4dfc-b63a-f973f0abbce5: # Text
+    columnSuffix: dswijadb
+    contentColumnType: text
+    fieldGroup: null
+    handle: contentButtonText
+    instructions: null
+    name: Text
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  6b3d544d-666f-4b83-b41c-c1a5e2e51a77: # URL
+    columnSuffix: htkhddpo
+    contentColumnType: text
+    fieldGroup: null
+    handle: contentUrl
+    instructions: null
+    name: URL
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: external
+name: 'External Link'
+sortOrder: 2

@@ -1,0 +1,25 @@
+<div class="overflow-hidden bg-primary-dark relative"  x-data="{ shown: false }" x-intersect.threshold.80="shown = true">
+     <div class="mx-auto max-w-7xl">
+          <div class="relative py-24 sm:py-32 lg:px-8 lg:py-40 lg:w-1/2">
+               <div class="md:pr-16 lg:pr-24 lg:pl-0 xl:pr-32 lg:ml-auto lg:mr-auto">
+                    <h2 class="text_base font-semibold leading-7 text-accent" x-show="shown" x-transition x-transition.delay.10.duration.600>{{ block.content_subtitle_plain }}</h2>
+                    <p class="mt-2 text_3xl font-bold tracking-tight text-primary-light sm:type_3xl" x-show="shown" x-transition x-transition.delay.20.duration.600>{{ block.content_title_plain }}</p>
+                    <p class="mt-6 text_base leading-7 text-secondary-light" x-show="shown" x-transition x-transition.delay.30.duration.600>{{ block.content_body_plain }}</p>
+                    <div class="mt-8">
+                         {% include "_components/_shortcuts/neo_button_double.twig" %}
+                    </div>
+               </div>
+          </div>
+          <div class="lg:w-1/2 lg:h-full lg:absolute bottom-0 right-0">
+               {% if block.image_max_one|length %}
+                    {% for image in block.image_max_one.all() %}
+                         {% set photoDisplay = image.hero_optimization %}
+                         <picture x-show="shown" x-transition x-transition.delay.40.duration.600 class="w-full h-full object-cover">
+                              <source srcset="{{ photoDisplay.srcsetWidthWebP(768) }}" sizes="100vw" type="image/webp"/>
+                              <img src="{{ photoDisplay.placeholderImage(768) }}" srcset="{{ photoDisplay.srcsetWidth(768) }}" sizes="100vw" class="w-full h-full object-cover" {% for width,height in photoDisplay.variantHeights %} width="{{width}}" height="{{height}}" {% endfor %}/>
+                         </picture>
+                    {% endfor %}
+               {% endif %}
+          </div>
+     </div>
+</div>

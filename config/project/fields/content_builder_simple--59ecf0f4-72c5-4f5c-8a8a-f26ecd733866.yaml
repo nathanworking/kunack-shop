@@ -1,0 +1,22 @@
+columnSuffix: pzuhayai
+contentColumnType: text
+fieldGroup: 8e54d255-9214-4889-8d34-f3ae16facab1 # Reusable Fields
+handle: content_builder_simple
+instructions: null
+name: 'Content Builder Simple'
+searchable: false
+settings:
+  availableTransforms: ''
+  availableVolumes: '*'
+  ckeConfig: 26e25045-b1ad-4612-bf9a-61b48495489f # Simple
+  columnType: text
+  defaultTransform: null
+  enableSourceEditingForNonAdmins: false
+  purifierConfig: null
+  purifyHtml: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  showWordCount: true
+translationKeyFormat: null
+translationMethod: none
+type: craft\ckeditor\Field

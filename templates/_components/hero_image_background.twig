@@ -1,0 +1,52 @@
+<div class="bg-primary-dark"  x-data="{ shown: false }" x-intersect.threshold.80="shown = true">
+     <div class="relative isolate overflow-hidden pt-14">
+
+          {% if block.image_max_one|length %}
+               {% for image in block.image_max_one.all() %}
+                    {% set photoDisplay = image.hero_optimization %}
+                    <picture>
+                         <source srcset="{{ photoDisplay.srcsetWidthWebP(992) }}" sizes="100vw" type="image/webp"/>
+                         <img src="{{ photoDisplay.placeholderImage(992) }}" srcset="{{ photoDisplay.srcsetWidth(992) }}" sizes="100vw" class="absolute inset-0 -z-10 h-full w-full object-cover" {% for width,height in photoDisplay.variantHeights %} width="{{width}}" height="{{height}}" {% endfor %}/>
+                    </picture>
+               {% endfor %}
+          {% endif %}
+
+          <div class="absolute inset-0 bg-gradient-to-r from-accent to-transparent -z-1"></div>
+
+          <div class="mx-auto max-w-2xl lg:max-w-7xl px-6 lg:px-8 py-32 sm:py-48 lg:py-56 ">
+
+               <div class="lg:w-1/2">
+                    <div class="hidden sm:mb-8 sm:flex" x-show="shown" x-transition x-transition.delay.10.duration.600>
+                         {% for button in block.subtitle_box_pill.all() %}
+                                   {% if button.contentButtonText|length %}
+                                   <div class="relative rounded-full px-3 py-1 type_xs leading-6 text-primary-light ring-1 ring-primary-light/10 hover:ring-primary-light/20">
+                                   {{ button.contentLinkPrefix }}
+                                        <a
+                                             {% if button.type == "internal" %}
+                                                  href="{{ button.contentPage.one().url }}"
+                                             {% endif %}
+                                             {% if button.type == "external" %}
+                                                  href="{{ button.contentUrl }}"
+                                             {% endif %}
+                                             class="font-semibold text-primary-dark">
+                                             <span class="absolute inset-0" aria-hidden="true"></span>
+                                             {{ button.contentButtonText }}
+                                             <span aria-hidden="true">&rarr;</span>
+                                        </a>
+                                   </div>
+                              {% endif %}
+                         {% endfor %}
+                    </div>
+
+                    <h1 class="type_4xl font-bold tracking-tight text-primary-light" x-show="shown" x-transition x-transition.delay.20.duration.600>{{ block.content_title_plain }}</h1>
+                    <p class="mt-6 type_lg leading-8 text-secondary-light" x-show="shown" x-transition x-transition.delay.30.duration.600>{{ block.content_body_plain }}</p>
+                    <div class="mt-10 flex items-center gap-x-6" x-show="shown" x-transition x-transition.delay.40.duration.600>
+                         {% include "_components/_shortcuts/neo_button_double.twig" %}
+                    </div>
+
+               </div>
+          </div>
+
+     </div>
+
+</div>

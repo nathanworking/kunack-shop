@@ -1,0 +1,19 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: f1eb585f-5636-4ac4-84ee-0d7bbe197b4f # Content Builders
+handle: builder_footer
+instructions: null
+name: Footer
+searchable: false
+settings:
+  maxBlocks: 10
+  maxLevels: null
+  maxTopBlocks: 1
+  minBlocks: null
+  minLevels: null
+  minTopBlocks: null
+  propagationKeyFormat: null
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: benf\neo\Field

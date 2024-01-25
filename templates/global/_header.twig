@@ -1,0 +1,3 @@
+{% set entry = craft.entries.slug('globals'|literal).one() %}
+
+{% include "_builders/header.twig" with { "blocks": entry.builder_header.all() } %}

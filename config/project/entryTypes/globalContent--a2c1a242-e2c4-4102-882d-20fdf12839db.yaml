@@ -1,0 +1,79 @@
+fieldLayouts:
+  a856faa4-6964-4b5b-9689-1a623e83f0d1:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 92f573e7-ccb2-4b76-8890-e53d5685a413
+            userCondition: null
+            warning: null
+            width: 100
+        name: Misc.
+        uid: b14cba5a-bd84-43a5-a626-8593742b0b16
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: aa9e223a-cbf7-4aed-b628-c4b1a95c2321 # Header
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 470dc556-fd22-425a-90b1-c677dbdaa746
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Header & Navigation'
+        uid: ae4192b4-1e37-4e72-abb6-7eb89f65f601
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 10b88df9-f053-420f-b8d5-5c61232d585f # Footer
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b825d767-1f72-4d7c-8f24-5037f4442384
+            userCondition: null
+            warning: null
+            width: 100
+        name: Footer
+        uid: c6003905-d384-428e-b92b-1c1db4ae8c5f
+        userCondition: null
+handle: globalContent
+hasTitleField: false
+name: Globals
+section: cacf9851-daaf-4115-bd89-35d61982362a # Globals
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

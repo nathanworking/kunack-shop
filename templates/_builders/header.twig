@@ -1,0 +1,16 @@
+{# 
+
+     [ ] navigation_centered -> chaos styles with sticky and show on scroll-up
+     
+ #}
+
+
+{% set implemented = [
+    "navigation_centered",
+] %}
+
+{% for block in blocks %}
+	{% if block.type.handle in implemented %}
+		{% include "_components/" ~ block.type with { "block": block } %}
+	{% endif %}
+{% endfor %}

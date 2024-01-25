@@ -1,0 +1,46 @@
+
+<div class="overflow-hidden dynamic_bg py-24 sm:py-32">
+     <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+               <div class="lg:pr-8 lg:pt-4">
+                    <div class="lg:max-w-lg">
+                         <div class="ani_title_default_container"> 
+                              <h2 class="ani_default_element_title type_base font-semibold leading-7 text-accent" x-show="shown" x-transition x-transition.delay.10.duration.600>{{ block.content_subtitle_plain }}</h2>
+                              <p class="ani_default_element_title mt-2 type_xl font-bold tracking-tight text-primary-dark sm:text-4xl" x-show="shown" x-transition x-transition.delay.20.duration.600>{{ block.content_title_plain }}</p>
+                              <p class="ani_default_element_title mt-6 type_lg leading-8 text-secondary-dark" x-show="shown" x-transition x-transition.delay.40.duration.600>{{ block.content_body_plain }}</p>
+                         </div>
+                         <dl class="ani_content_default_container mt-10 max-w-xl space-y-8 type_base leading-7 text-secondary-dark lg:max-w-none">
+                              {% for block in block.children %}
+                                   {% set delayTime = (loop.index * 100) + 60 %}
+                                   {% if block.content_title_plain|length %}
+                                        <div class="ani_default_element_content relative pl-9">
+                                             <dt class="inline type_base text-primary-dark font-semibold">
+                                                  {% for image in block.svg_inline.all() %}
+                                                       {{ svg(image)|attr({
+                                                                 class: 'absolute left-1 top-1 h-5 w-5 text-accent'
+                                                       }) }}
+                                                  {% endfor %}
+                                                  {{ block.content_title_plain }}
+                                             </dt>
+                                             <dd class="inline">{{ block.content_body_plain }}</dd>
+                                        </div>
+                                   {% endif %}
+                              {% endfor %}
+                         </dl>
+                    </div>
+               </div>
+               <div class="ani_title_default_container">
+                    {% if block.image_max_one|length %}
+                         {% for image in block.image_max_one.all() %}
+
+                              {% set photoDisplay = image.hero_optimization %}
+                              <picture x-show="shown" x-transition x-transition.delay.40.duration.600>
+                                   <source srcset="{{ photoDisplay.srcsetWidthWebP(768) }}" sizes="100vw" type="image/webp"/>
+                                   <img src="{{ photoDisplay.placeholderImage(768) }}" srcset="{{ photoDisplay.srcsetWidth(768) }}" sizes="100vw" class="ani_default_element_title w-full max-w-none rounded-xl shadow-xl ring-1 ring-primary-dark/10 lg:-ml-0" {% for width,height in photoDisplay.variantHeights %} width="{{width}}" height="{{height}}" {% endfor %}/>
+                              </picture>
+                         {% endfor %}
+                    {% endif %}
+               </div>
+          </div>
+     </div>
+</div>

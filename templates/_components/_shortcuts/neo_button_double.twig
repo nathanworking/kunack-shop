@@ -1,0 +1,46 @@
+
+{% for button in block.content_buttons.limit(1).all() %}
+    {% switch button.type %}
+        {% case "internal" %}
+            {% if button.contentPage|length %}
+                {% include "_partials/button" with {
+                    text: button.contentButtonText,
+                    url: button.contentPage.one().url,
+                    accent: 1,
+                    class: ''
+                } %}
+            {% endif %}
+    
+        {% case "external" %}
+            {% include "_partials/button" with {
+                text: button.contentButtonText,
+                url: button.contentUrl,
+                target: "_blank",
+                accent: 1,
+                class: ''
+            } %}
+    {% endswitch %}
+
+{% endfor %}
+{% for button in block.content_buttons.offset(1) %}
+    {% switch button.type %}
+        {% case "internal" %}
+            {% if button.contentPage|length %}
+                {% include "_partials/button_arrow" with {
+                    text: button.contentButtonText,
+                    url: button.contentPage.one().url,
+                    secondary: 1,
+                    class: ''
+                } %}
+            {% endif %}
+    
+        {% case "external" %}
+            {% include "_partials/button_arrow" with {
+                text: button.contentButtonText,
+                url: button.contentUrl,
+                target: "_blank",
+                secondary: 1,
+                class: ''
+            } %}
+    {% endswitch %}
+{% endfor %}

@@ -1,0 +1,413 @@
+/* 
+      Chaos 3.0.0 
+      Global Styles
+*/
+
+/* Hide google captcha - make sure you add disclaimer */
+.grecaptcha-badge { visibility: hidden; }
+
+/* Colors, Base Typography */
+@layer base {
+
+      :root { 
+            /* Global fonts */
+            --font-title: 'Inter', monospace;
+            --font-body: 'Inter', monospace;
+            --font-link: 'Inter', monospace;
+
+            /* Global radius */
+            --border-radius: 0.25rem; 
+            --border-radius-sm: 0.125rem; 
+            --border-radius-md: 0.375rem; 
+            --border-radius-lg: 0.5rem; 
+            --border-radius-xl: 0.75rem; 
+      }
+
+      /* Default theme (typically light) */
+      :root, [data-theme="default"] {
+            /* main */
+            --color-primary-dark: 209 24% 23%;
+            --color-primary-light: 0 0% 100%;
+            --color-primary-light-alt: 204 38% 97%;
+
+            --color-secondary-dark: 208 20% 38%;
+            --color-secondary-light: 208 21% 82%;
+
+            --color-tertiary: 208 20% 38%;
+            --color-tertiary-content: 209 24% 87%;
+            --color-tertiary-focus: 208 20% 38%;
+
+            --color-accent: 25 95% 53%;
+            --color-accent-focus: 24 95% 61%;
+
+            --color-warning: 35 79% 66%;
+            --color-success: 170 78% 36%;
+            --color-error: 217 91% 60%;
+
+            
+      }
+    
+      body, .type-body {
+            font-family: var(--font-body);
+            font-weight: theme(fontWeight.normal);
+            font-size: theme(fontSize.base);
+            line-height: theme(lineHeight.6);
+            @media screen(lg) { 
+                  font-size: theme(fontSize.xl);
+                  line-height: theme(lineHeight.7);
+            }
+      }
+    
+      h1, h2, h3, h4, .font-title {
+        font-family: var(--font-title);
+      }
+
+      .font-title { 
+          font-weight: theme(fontWeight.bold);
+      }
+    
+      .type_4xl {
+          font-size: theme(fontSize.4xl);
+          line-height: theme(lineHeight.9);
+          font-weight: theme(fontWeight.bold);
+        @media screen(lg) { 
+              font-size: theme(fontSize.6xl);
+              line-height: theme(lineHeight.none);
+        }
+      }
+    
+      .type_3xl {
+          font-size: theme(fontSize.3xl);
+          line-height: theme(lineHeight.8);
+          font-weight: theme(fontWeight.bold);
+        @media screen(lg) { 
+              font-size: theme(fontSize.4xl);
+              line-height: theme(lineHeight.9);
+        }
+      }
+    
+      .type_2xl {
+          font-size: theme(fontSize.xl);
+          line-height: theme(lineHeight.7);
+          font-weight: theme(fontWeight.bold);
+        @media screen(lg) { 
+              font-size: theme(fontSize.3xl);
+              line-height: theme(lineHeight.9);
+        }
+      }
+    
+      .type_xl {
+          font-size: theme(fontSize.lg);
+          line-height: theme(lineHeight.7);
+          font-weight: theme(fontWeight.bold);
+        @media screen(lg) { 
+              font-size: theme(fontSize.2xl);
+              line-height: theme(lineHeight.8);
+        }
+      }
+      .type_lg {
+        font-size: theme(fontSize.base);
+        line-height: theme(lineHeight.7);
+        @media screen(lg) { 
+              font-size: theme(fontSize.lg);
+              line-height: theme(lineHeight.8);
+        }
+      }
+      .type_base {
+        font-size: theme(fontSize.base);
+        line-height: theme(lineHeight.7);
+        @media screen(lg) { 
+              line-height: theme(lineHeight.7);
+        }
+      }
+      .type_sm, small {
+        font-size: theme(fontSize.sm);
+        line-height: theme(lineHeight.5);
+        @media screen(lg) { 
+              font-size: theme(fontSize.base);
+              line-height: theme(lineHeight.6);
+        }
+      }
+      .type_xs, small {
+        font-size: theme(fontSize.xs);
+        line-height: theme(lineHeight.5);
+        @media screen(lg) { 
+              font-size: theme(fontSize.sm);
+              line-height: theme(lineHeight.6);
+        }
+      }
+    
+      a, .link, .type_link {
+        color: hsl(var(--color-primary) / var(--tw-text-opacity));
+        font-family: var(--font-link);
+        font-weight: theme(fontWeight.semibold);
+      }
+    
+      strong {
+        font-weight: theme(fontWeight.bold);
+      }
+    
+      s {
+       text-decoration-line: line-through;
+      }
+    
+      mark {
+            background-color: hsl(var(--color-accent) / 0.2);
+            color: inherit;
+      }
+    
+      /* no-js support */
+      html:not(.js) .no-js\:is-hidden {
+        display: none !important;
+      }
+}
+
+/* Animation standard classes */
+.ani_link_default { 
+     transition-duration: 0.25s;
+     transition-timing-function: ease;
+     transition-delay: 0s;
+     transition-property: color;
+}
+
+/* Components - Buttons, boxes, shadow */
+@layer components {
+
+      .btn {
+            position: relative;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            white-space: nowrap;
+            padding-left: 0.75rem;
+            padding-right: 0.75rem;
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            padding-left: 0.45rem;
+            padding-right: 0.45rem;
+            cursor: pointer;
+            text-decoration: none;
+            line-height: 1.2;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transition: all 0.2s ease;
+            will-change: transform;
+            @media (min-width: 1024px) {
+                  padding-left: 1.25rem/* 20px */;
+                  padding-right: 1.25rem/* 20px */;
+                  padding-top: 0.75rem/* 8px */;
+                  padding-bottom: 0.75rem/* 8px */;
+            }
+      }
+      .btn.btn--secondary { 
+            padding-left: 0;
+            padding-right: 0;
+      }
+
+      .btn:active {
+            transform: translateY(2px);
+      }
+
+      /* themes */
+      .btn--accent {
+            background: hsl(var(--color-accent));
+            color: hsl(var(--color-primary-light));
+            border-radius: var(--border-radius);
+            box-shadow: inset 0px 1px 0px hsla(var(--color-primary-dark) / 0.15), 0px 1px 3px hsla(var(--color-primary-dark) / 0.25), 0px 2px 6px hsla(var(--color-primary-dark) / 0.1), 0px 6px 10px -2px hsla(var(--color-primary-dark) / 0.25);
+      }
+
+      .btn--accent:hover {
+            background: hsl(var(--color-accent-focus));
+            box-shadow: inset 0px 1px 0px hsla(var(--color-primary-dark) / 0.15), 0px 1px 2px hsla(var(--color-primary-dark) / 0.25), 0px 1px 4px hsla(var(--color-primary-dark) / 0.1), 0px 3px 6px -2px hsla(var(--color-primary-dark) / 0.25);
+      }
+
+      .btn--accent:focus {
+            box-shadow: inset 0px 1px 0px hsla(var(--color-primary-light) / 0.15), 0px 1px 2px hsla(var(--color-primary-dark) / 0.25), 0px 1px 1px hsla(var(--color-primary-dark) / 0.1), 0px 3px 6px -2px hsla(var(--color-primary-dark) / 0.25), 0px 0px 0px 0px hsl(var(--color-primary-dark)), 0px 0px 0px 0px hsl(var(--color-primary-dark));
+      }
+
+      .btn--secondary {
+            background: transparent;
+            color: hsl(var(--color-primary-dark));
+      }      
+      .btn--secondary:hover {
+            color: hsl(var(--color-secondary-dark));
+      }
+
+      .btn--secondary-light {
+            background: transparent;
+            color: hsl(var(--color-primary-light));
+      }
+      .btn--secondary-light:hover {
+            color: hsl(var(--color-secondary-light));
+      }
+
+
+      /* feedback */
+      .btn--disabled, .btn[disabled], .btn[readonly] {
+            opacity: 0.6;
+            cursor: not-allowed;
+      }
+
+      /* size */
+      .btn--sm {
+            font-size: 0.8em;
+      }
+
+      .btn--md {
+            font-size: 1.2em;
+      }
+
+      .btn--lg {
+            font-size: 1.4em;
+      }
+
+     /* Section */
+     
+
+     /* Containers */
+     .container { 
+          margin-left: auto;
+          margin-right: auto;
+          max-width: theme(maxWidth.7xl);
+          padding-left: theme(padding.6);
+          padding-right: theme(padding.6);
+          @media screen(md) { 
+               padding-left: 0px;
+               padding-right: 0px;
+          }
+     }
+     .container-no-p { 
+          max-width: theme(maxWidth.6xl);
+     }
+      .container-7xl { 
+          max-width: theme(maxWidth.7xl);
+      }
+
+      /* Boxes */
+      .box_padding_lg { 
+            padding-left: theme(padding.6);
+            padding-right: theme(padding.6);
+            padding-top: theme(padding.32);
+            padding-bottom: theme(padding.32);
+            @media screen(md) { 
+                  padding-left: theme(padding.6);
+                  padding-right: theme(padding.6);
+                  padding-top: theme(padding.24);
+                  padding-bottom: theme(padding.24);
+            }
+            @media screen(lg) { 
+                  padding-left: theme(padding.8);
+                  padding-right: theme(padding.8);
+            }
+      }
+      
+      .box_icon { 
+          position: absolute;
+          left: 0;
+          right: 0;
+          display: flex;
+          width: theme(width.10);
+          height: theme(height.10);
+          align-items: center;
+          justify-content: center;
+          border-radius: theme(borderRadius.lg);
+          background: hsl(var(--color-accent));
+      }
+      .box_pill { 
+          position: relative; 
+          border-radius: 9999px;
+          padding-left: theme(padding.3);
+          padding-right: theme(padding.3);
+          padding-top: theme(padding.1);
+          padding-bottom: theme(padding.1);
+          color: hsl(var(--color-secondary-dark));
+      }
+      .svg_boxed { 
+          width: theme(width.6);
+          height: theme(height.6);
+          color: hsl(var(--color-primary-light));
+      }
+
+      /* Grids */
+     .grid_2x2 { 
+          display: grid;
+          grid-template-columns: theme(gridTemplateColumns.1);
+          column-gap: theme(gap.6);
+          row-gap: theme(gap.8);
+          max-width: theme(maxWidth.xl);
+          @media screen(lg) { 
+               grid-template-columns: theme(gridTemplateColumns.2);
+               row-gap: theme(gap.16);
+               max-width: none;
+         }
+     }
+
+
+     /* Splits - Opinionated grids that have contnet and images, etc... in specific orders */
+
+
+     /* Stacked on small but left text right image */
+     .split_content_image { 
+          @media screen(lg) { 
+               display: grid;
+               grid-template-columns: theme(gridTemplateColumns.12);
+               column-gap: theme(gap.8);
+         }
+     }
+     .split_content_image__content { 
+          @media screen(lg) { 
+               grid-column: span 7 / span 7;
+         }
+          @media screen(xl) { 
+               grid-column: span 6 / span 6;
+         }
+     }
+     /* lg:col-span-5 lg:-mr-8 xl:absolute */
+     .split_content_image__image { 
+          position: relative;
+          @media screen(lg) { 
+               grid-column: span 5 / span 5;
+               margin-right: -2rem;
+         }
+          @media screen(xl) { 
+               position: absolute;
+               inset: 0px;
+               left: 50%;
+               margin-right: 0;
+         }
+     }
+
+       /* Dynamic colors for sections and anything underneith them */
+       section.dynamic_bg:nth-child(even) { 
+          background-color: hsl(var(--color-primary-light) / 1);
+          .card_dynamic_bg { 
+               background: var(--color-primary-light-alt);
+          }
+     }
+       section.dynamic_bg:nth-child(odd) { 
+          background-color: hsl(var(--color-primary-light-alt) / 1);
+          .card_dynamic_bg { 
+               background: var(--color-primary-light);
+          }
+     }
+
+     /* Custom styles for components. Repeat a big set more than twice? Add it here as a style for easier editing */
+     .image_tile_portrait { 
+          aspect-ratio: theme(aspectRatio.2)/theme(aspectRatio.3);
+          width: 100%;
+          background: theme(backgroundColor.gray.50);
+          object-fit: cover;
+          box-shadow: theme(boxShadow.lg);
+          border-radius: theme(borderRadius.xl);
+     }
+     .box_outline { 
+          pointer-events: none;
+          position: absolute;
+          inset: 0px;
+          border-radius: theme(borderRadius.xl);
+          --tw-ring-inset: inset;
+          --tw-ring-color: rgb(17 24 39 / 0.1);
+          box-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+     }
+      
+}

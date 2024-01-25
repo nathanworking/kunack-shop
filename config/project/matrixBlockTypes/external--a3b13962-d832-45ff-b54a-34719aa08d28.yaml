@@ -1,0 +1,105 @@
+field: 9129b3f1-6b8a-4d90-a315-00edfd4fa622 # Subtitle Link Box
+fieldLayouts:
+  65c63454-6bed-46f5-9e1a-85a4721d3b87:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 81781ec8-76d6-4f74-9f5f-f41395993863 # Pre-Link Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 37d965d0-3d95-47c8-abd2-d88427a9e943
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 3639f63e-adb7-4387-b5ea-6a501ac1e004 # Link Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ed90df0a-eb89-405d-98df-aa1bb5d34ccb
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 15436fcc-e8c6-4c68-abf8-631cbe87c151 # Link URL
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3f35d0d1-e38e-4a3f-aa1c-0fd6a5fe2ead
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 02199d50-d188-4819-b021-783c1ec1814c
+        userCondition: null
+fields:
+  3639f63e-adb7-4387-b5ea-6a501ac1e004: # Link Text
+    columnSuffix: vucatthn
+    contentColumnType: text
+    fieldGroup: null
+    handle: contentButtonText
+    instructions: null
+    name: 'Link Text'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  15436fcc-e8c6-4c68-abf8-631cbe87c151: # Link URL
+    columnSuffix: citzbwra
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: contentUrl
+    instructions: null
+    name: 'Link URL'
+    searchable: false
+    settings:
+      maxLength: 255
+      types:
+        - url
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+  81781ec8-76d6-4f74-9f5f-f41395993863: # Pre-Link Text
+    columnSuffix: vecyrmbv
+    contentColumnType: text
+    fieldGroup: null
+    handle: contentLinkPrefix
+    instructions: null
+    name: 'Pre-Link Text'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: external
+name: External
+sortOrder: 2

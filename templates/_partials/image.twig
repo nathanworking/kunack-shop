@@ -1,0 +1,7 @@
+{% set additionalClasses = (class ?? false) ? " " ~ class : "" %}
+
+
+<picture>
+     <source srcset="{{ photoDisplay.srcsetWidthWebP(1200) }}" sizes="100vw" type="image/webp"/>
+     <img src="{{ photoDisplay.placeholderImage(1200) }}" srcset="{{ photoDisplay.srcsetWidth(1200) }}" sizes="100vw" class="{{ additionalClasses }}" {% for width,height in photoDisplay.variantHeights %} width="{{width}}" height="{{height}}" {% endfor %}/>
+</picture>

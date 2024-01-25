@@ -1,0 +1,64 @@
+childBlocks: null
+conditions: null
+description: ''
+enabled: true
+field: 10b88df9-f053-420f-b8d5-5c61232d585f # Footer
+fieldLayouts:
+  7ba4c9cb-9c65-4acb-a4bc-ab25779c6a33:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: c2ca9df1-28d9-4199-9640-1cbf54b91cd9 # Links - Max 4
+            instructions: null
+            label: Navigation
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 112bfd03-5dea-4b19-8ba1-3e189c0cd20a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: df7ff4dd-dc38-479e-b649-a8ef8a698d3f # Icon Links
+            instructions: null
+            label: 'Social Networks'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 72f36171-4615-469a-8077-70f9c5ff8411
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: a5ecc83e-c8ee-4d47-ba2f-17bb67ee6fa9 # Plain Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fdaeb068-b8cc-40b9-8374-87720be8a69f
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 002c522f-f87c-450b-ac5b-b1f93c80c204
+        userCondition: null
+group: null
+groupChildBlockTypes: true
+handle: footer_simple_centered
+icon: null
+ignorePermissions: true
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: 'Simple Centered'
+sortOrder: 1
+topLevel: true

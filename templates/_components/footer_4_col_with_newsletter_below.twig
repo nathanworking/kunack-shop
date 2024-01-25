@@ -1,0 +1,126 @@
+
+<footer class="" aria-labelledby="footer-heading">
+  <h2 id="footer-heading" class="sr-only">Footer</h2>
+  <div class="container px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
+    <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+     <a href="{{ siteUrl }}">
+          {% for image in block.svg_inline.all() %}
+               {{ svg(image)|attr({
+                         class: 'h-7'
+               }) }}
+          {% endfor %}
+     </a>
+      <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+          <div class="md:grid md:grid-cols-2 md:gap-8">
+          {% for block in craft.neo.blocks.descendantOf(block).all() %}
+               {% switch block.type.handle %}
+               {% case 'link_group' %}
+                    <div class="{% if loop.index is divisible by(2) %} mt-10 md:mt-0 {% endif %}">
+
+                         <h3 class="type_xs font-semibold leading-6 text-primary-dark">{{ block.content_title_plain }}</h3>
+                         <ul role="list" class="mt-6 space-y-4"> 
+                              {% if block.links_max_four|length %}
+                                   {% for block in block.links_max_four.all() %}
+                                             {% if block.type == "regular" %}
+                                                  {% apply spaceless %}
+                                                  <li>
+                                                       <a href="{% for entry in block.contentPage %}{{ entry.url }}{% endfor %}" 
+                                                       class="type_xs leading-6 text-secondary-dark hover:text-primary-dark">
+                                                       {{ block.contentLabel }}
+                                                       </a>
+                                                  </li>
+                                                  {% endapply %}
+                                             {% endif %}
+                                        {% endfor %}
+                              {% endif %}
+                         </ul>
+                    </div>
+               {% endswitch %}  
+
+               {% if loop.index == 2 %}
+                    </div>
+                    <div class="md:grid md:grid-cols-2 md:gap-8">
+               {% endif %}
+
+          {% endfor %}
+
+        </div>
+
+
+      </div>
+    </div>
+    <div class="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24 lg:flex lg:items-center lg:justify-between">
+      <div>
+          <h3 class="type_sm font-semibold leading-6 text-primary-dark">
+               {{ block.content_title_plain }}
+          </h3>
+          <p class="mt-2 type_xs leading-6 text-secondary-dark">
+               {{ block.content_subtitle_plain }}
+          </p>
+      </div>
+          {% if block.content_form|length %}
+               {% set form = block.content_form.one() %}
+
+               {% set thanksUrl = 'https://chaos.ddev.site/thanks' %}
+               {% do form.setSettings({
+                    redirectUrl: thanksUrl ~ '?submissionId={id}',
+               }) %}
+
+               {{ craft.formie.renderForm(form, {
+               themeConfig: {
+                    fieldInput: { 
+                         attributes: { 
+                              class: 'text_xs bg-transparent',
+                         }
+                    },
+                    buttonWrapper: { 
+                         attributes: { 
+                              class: 'mx-0 flex',
+                         }
+                    },
+                    page: { 
+                         attributes: { 
+                              class: 'flex items-end justify-center my-0',
+                         }
+                    },
+                    row: { 
+                         attributes: { 
+                              class: 'mb-0',
+                         }
+                    },
+                    submitButton: {
+                         attributes: {
+                              class: 'ml-3 shadow-md mb-4',
+                         }
+                    },
+               },
+               }) }}
+
+               {% include "_partials/form_cache_default.twig" %}
+          {% endif %}
+     </div>
+    <div class="mt-8 border-t border-gray-900/10 pt-8 md:flex md:items-center md:justify-between">
+      <div class="flex space-x-6 md:order-2">
+          {% for block in block.icon_links.all() %}
+               {% if block.type == "social" %}
+                    <a href="{{ block.network_link }}" target="_blank" class="text-secondary-dark hover:text-accent ani_link_default">
+                         <span class="sr-only">
+                              {{ block.network_name }}
+                         </span>
+                         {% for image in block.network_icon.all() %}
+                              {{ svg(image)|attr({
+                                   class: 'w-6 h-6',
+                                   fill: 'currentColor'
+                              }) }}
+                         {% endfor %}
+                    </a>
+               {% endif %}
+          {% endfor %}
+      </div>
+     <p class="mt-8 type_xs leading-5 text-secondary-dark md:order-1 md:mt-0">
+          &copy; {{ "now"|date('Y') }} {{ siteName }}. All rights reserved.
+     </p>
+    </div>
+  </div>
+</footer>
+

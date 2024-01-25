@@ -1,0 +1,23 @@
+columnSuffix: ofljrfni
+contentColumnType: string
+fieldGroup: 8e54d255-9214-4889-8d34-f3ae16facab1 # Reusable Fields
+handle: content_form
+instructions: null
+name: Form
+searchable: false
+settings:
+  allowSelfRelations: false
+  branchLimit: null
+  localizeRelations: false
+  maintainHierarchy: false
+  maxRelations: 1
+  minRelations: null
+  selectionLabel: null
+  showSiteMenu: true
+  sources: '*'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: verbb\formie\fields\Forms

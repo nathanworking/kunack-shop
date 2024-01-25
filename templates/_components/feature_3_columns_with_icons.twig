@@ -1,0 +1,48 @@
+<section class="dynamic_bg py-24 sm:py-32" x-data="{ shown: false }" x-intersect.threshold.80="shown = true">
+     <div class="container">
+          <div class="mx-auto max-w-2xl lg:mx-0">
+               <h2 class="type_3xl font-bold tracking-tight text-primary-dark sm:type_4xl" x-show="shown" x-transition x-transition.delay.10.duration.600>
+                    {{ block.content_title_plain }}
+               </h2>
+               <p class="mt-6 type_lg leading-8 text-secondary-dark" x-show="shown" x-transition x-transition.delay.20.duration.600>
+                    {{ block.content_body_plain }}
+               </p>
+          </div>
+          <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+               <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+
+               {% for block in block.children %}
+                    {% set delayTime = (loop.index * 100) + 30 %}
+                         {% if block.content_title_plain|length %}
+                              <div class="flex flex-col"  x-show="shown" x-transition x-transition.delay.{{ delayTime }}.duration.600>
+                                   <dt class="text_base font-semibold leading-7 text-primary-dark">
+                                        <div class="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-accent">
+                                             {% for image in block.svg_inline.all() %}
+                                                  {{ svg(image)|attr({
+                                                            class: 'h-6 w-6 text-primary-light'
+                                                  }) }}
+                                             {% endfor %}
+                                        </div>
+                                        {{ block.content_title_plain }}
+                                   </dt>
+                                   <dd class="mt-1 flex flex-auto flex-col text_base leading-7 text-secondary-dark">
+                                        <p class="flex-auto">
+                                             {{ block.content_body_plain }}
+                                        </p>
+                                        {% for block in block.link_max_1.all() %}
+                                             {% if block.type == "regular" %}
+                                                  <p class="mt-6">
+                                                       <a href="{% for entry in block.contentPage %}{{ entry.url }}{% endfor %}" class="text_sm font-semibold leading-6 text-accent">
+                                                            {{ block.contentLabel }} <span aria-hidden="true">→</span>
+                                                       </a>
+                                                  </p>
+                                             {% endif %}
+                                        {% endfor %}
+                                   </dd>
+                              </div>
+                         {% endif %}
+                    {% endfor %}
+               </dl>
+          </div>
+     </div>
+</section>

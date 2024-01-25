@@ -1,0 +1,45 @@
+<div class="bg-primary-dark py-24 sm:py-32" x-data="{ shown: false }" x-intersect.threshold.80="shown = true">
+     <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="mx-auto max-w-2xl sm:text-center">
+               <h2 class="type_base font-semibold leading-7 text-accent" x-show="shown" x-transition x-transition.delay.10.duration.600>{{ block.content_subtitle_plain }}</h2>
+               <p class="mt-2 type_3xl font-bold tracking-tight text-primary-light sm:type_4xl" x-show="shown" x-transition x-transition.delay.20.duration.600>{{ block.content_title_plain }}</p>
+               <p class="mt-6 type_lg leading-8 text-secondary-light" x-show="shown" x-transition x-transition.delay.30.duration.600>{{ block.content_body_plain }}}</p>
+          </div>
+     </div>
+     <div class="relative overflow-hidden pt-16">
+          <div class="mx-auto max-w-7xl px-6 lg:px-8">
+               {% if block.image_max_one|length %}
+                    {% for image in block.image_max_one.all() %}
+                         {% set photoDisplay = image.hero_optimization %}
+                         <picture x-show="shown" x-transition x-transition.delay.40.duration.600 class="w-full h-full object-cover">
+                              <source srcset="{{ photoDisplay.srcsetWidthWebP(768) }}" sizes="100vw" type="image/webp"/>
+                              <img src="{{ photoDisplay.placeholderImage(768) }}" srcset="{{ photoDisplay.srcsetWidth(768) }}" sizes="100vw" class="mb-[-12%] rounded-xl shadow-2xl ring-1 ring-white/10" {% for width,height in photoDisplay.variantHeights %} width="{{width}}" height="{{height}}" {% endfor %}/>
+                         </picture>
+                    {% endfor %}
+               {% endif %}
+               <div class="relative" aria-hidden="true">
+                    <div class="absolute -inset-x-20 bottom-0 bg-gradient-to-t from-primary-dark pt-[7%]"></div>
+               </div>
+          </div>
+     </div>
+     <div class="mx-auto mt-16 max-w-7xl px-6 sm:mt-20 md:mt-24 lg:px-8">
+          <dl class="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-10 type_base leading-7 text-secondary-light sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16">
+               {% for block in block.children %}
+                    {% set delayTime = (loop.index * 100) + 50 %}
+                    {% if block.content_title_plain|length %}
+                         <div class="relative pl-9"  x-show="shown" x-transition.delay.{{ delayTime }}.duration.600>
+                              <dt class="inline font-semibold text-primary-light">
+                                   {% for image in block.svg_inline.all() %}
+                                        {{ svg(image)|attr({
+                                                  class: 'absolute left-1 top-1 h-5 w-5 text-accent'
+                                        }) }}
+                                   {% endfor %}
+                                   {{ block.content_title_plain }}
+                              </dt>
+                              <dd class="inline">{{ block.content_body_plain }}</dd>
+                         </div>
+                    {% endif %}
+               {% endfor %}
+          </dl>
+     </div>
+</div>

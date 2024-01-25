@@ -1,0 +1,17 @@
+<section class="dynamic_bg" x-data="{ shown: false }" x-intersect.threshold.100="shown = true">
+     <div class="container"> 
+          <div class="box_padding_lg">
+               <div class="mx-auto max-w-2xl text-center">
+                    <h2 class="text-primary-dark type_3xl" x-show="shown" x-transition x-transition.delay.40.duration.600>
+                         {{ block.content_title_plain_break|nl2br }}
+                    </h2>
+                    <p class="mx-auto mt-6 max-w-xl type_lg text-secondary-dark" x-show="shown" x-transition x-transition.delay.100.duration.600>
+                         {{ block.content_body_plain }}
+                    </p>
+                    <div class="mt-10 flex items-center justify-center gap-x-6" x-show="shown" x-transition x-transition.delay.200.duration.600>
+                         {% include "_components/_shortcuts/neo_button_double.twig" %}
+                    </div>
+               </div>
+          </div>
+     </div>
+</section>

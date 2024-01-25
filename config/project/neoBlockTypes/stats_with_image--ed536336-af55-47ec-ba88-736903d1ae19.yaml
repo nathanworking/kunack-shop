@@ -1,0 +1,77 @@
+childBlocks:
+  - content_title_subtitle_plain
+conditions: null
+description: ''
+enabled: true
+field: 4a2e3929-984b-40ff-96fb-0d1322e1cafe # Content
+fieldLayouts:
+  4cd6b451-3f6f-4f93-a045-4d14a42d3d5b:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 104df9c9-f17e-42d2-9ca9-77aa97418c17 # Image - 1 Max
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5478d8d1-36b5-47c8-9ce0-dc1aa4c6b776
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 3628e283-b2cc-43b9-ac7e-c8d84e14200c # Plain Subtitle
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 840f05fd-3ae7-4348-ba20-b62ac4bb4d91
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: a5ecc83e-c8ee-4d47-ba2f-17bb67ee6fa9 # Plain Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 302d7474-a9f3-4e08-9dd4-c22152b33fb4
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 6311f6e0-0362-4c66-bb2c-bd8cb7a04633 # Body
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: da4f4e6d-9859-4385-81c0-ec962dcdc236
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: cdf96d7e-8507-4487-9665-9a0340728d13
+        userCondition: null
+group: null
+groupChildBlockTypes: true
+handle: stats_with_image
+icon: null
+ignorePermissions: true
+maxBlocks: 0
+maxChildBlocks: 4
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 2
+minSiblingBlocks: 0
+name: 'Stats with Image'
+sortOrder: 12
+topLevel: true

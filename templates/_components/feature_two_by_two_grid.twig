@@ -1,0 +1,41 @@
+<section class="dynamic_bg ani_default_container relative py-24 sm:py-32" >
+     <div class="container"> 
+
+          <div class="mx-auto max-w-2xl lg:text-center">
+               <h2 class="ani_default_element type_base text-accent font-semibold" x-show="shown" x-transition x-transition.delay.10.duration.600>
+                    {{ block.content_subtitle_plain }}
+               </h2>
+               <p class="ani_default_element mt-2 tracking-tight type_3xl text-primary-dark" x-show="shown" x-transition x-transition.delay.20.duration.600>
+                    {{ block.content_title_plain }}
+               </p>
+               <p class="ani_default_element mt-6 type_lg text-secondary-dark" x-show="shown" x-transition x-transition.delay.40.duration.600>
+                    {{ block.content_body_plain }}
+               </p>
+          </div>
+
+          <div class="mx-auto mt-16 max-w-2xl lg:mt-24 lg:max-w-4xl">
+               <dl class="grid_2x2">
+                    {% for block in block.children %}
+                       {% set delayTime = loop.index * 100 %}
+                         {% if block.content_title_plain|length %}
+                              <div class="ani_default_element relative pl-16">
+                                   <dt class="type_base text-primary-dark font-semibold">
+                                        <div class="box_icon" x-show="shown" x-transition.delay.{{ delayTime }}.duration.600>
+                                             {% for image in block.svg_inline.all() %}
+                                                  {{ svg(image)|attr({
+                                                            class: 'svg_boxed'
+                                                  }) }}
+                                             {% endfor %}
+                                        </div>
+                                        {{ block.content_title_plain }}
+                                   </dt>
+                                   <dd class="ani_default_element mt-2 type_base text-secondary-dark" x-show="shown" x-transition.delay.{{ delayTime }}.duration.600>
+                                        {{ block.content_body_plain }}
+                                   </dd>
+                              </div>
+                         {% endif %}
+                    {% endfor %}
+               </dl>
+          </div>
+     </div>
+</section>

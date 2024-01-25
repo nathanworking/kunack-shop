@@ -1,0 +1,18 @@
+{# Ensure we load polyfills for older browsers that don't support `fetch()` #}
+<script src="https://cdn.polyfill.io/v2/polyfill.js?features=fetch,Promise"></script>
+
+<script>
+    // Wait until the DOM is ready
+    document.addEventListener('DOMContentLoaded', (event) => {
+        // Fetch the form we want to deal with
+        let $form = document.querySelector('#{{ form.formId }}');
+
+        // Find the CSRF token hidden input, so we can replace it
+        let $csrfInput = $form.querySelector('input[name="CRAFT_CSRF_TOKEN"]');
+
+        // Fetch the new token for the form and replace the CSRF input with our new one
+        fetch('/actions/formie/forms/refresh-tokens?form={{ form.handle }}')
+            .then(result => { return result.json(); })
+            .then(result => { $csrfInput.outerHTML = result.csrf.input; });
+    });
+</script>

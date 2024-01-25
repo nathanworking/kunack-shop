@@ -1,0 +1,19 @@
+childBlocks: null
+conditions: null
+description: ''
+enabled: true
+field: 10b88df9-f053-420f-b8d5-5c61232d585f # Footer
+group: null
+groupChildBlockTypes: true
+handle: copyright_and_social
+icon: null
+ignorePermissions: true
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: 'Copyright and Social'
+sortOrder: 4
+topLevel: true

@@ -1,0 +1,19 @@
+columnSuffix: fjxxfuox
+contentColumnType: text
+fieldGroup: f1eb585f-5636-4ac4-84ee-0d7bbe197b4f # Content Builders
+handle: content_title_plain_break
+instructions: null
+name: 'Plain Title Linebreak'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 2
+  multiline: true
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

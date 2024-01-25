@@ -1,0 +1,93 @@
+field: a78f97bd-d015-4e9b-b0d9-76b99c607ea5 # Link - Max 1
+fieldLayouts:
+  7aa7dbb1-5412-4443-bf12-d7a14b817367:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: d8671605-5ca5-4a32-b3c3-5a2e803e65b3 # Label
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ce3b7d57-1308-4315-b650-83e8b4736085
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 4e58456c-e5b8-43a2-b2c2-c906e7fef840 # Page
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: dcfbfe0d-0557-484f-aa67-314c03b763da
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: b2656d4f-23e6-48dd-ba0c-d7741e9913d5
+        userCondition: null
+fields:
+  4e58456c-e5b8-43a2-b2c2-c906e7fef840: # Page
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: contentPage
+    instructions: null
+    name: Page
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      branchLimit: null
+      localizeRelations: false
+      maintainHierarchy: false
+      maxRelations: 1
+      minRelations: null
+      selectionCondition:
+        __assoc__:
+          -
+            - elementType
+            - craft\elements\Entry
+          -
+            - fieldContext
+            - global
+          -
+            - class
+            - craft\elements\conditions\entries\EntryCondition
+      selectionLabel: 'Select page'
+      showSiteMenu: true
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  d8671605-5ca5-4a32-b3c3-5a2e803e65b3: # Label
+    columnSuffix: xtlkaieb
+    contentColumnType: string(200)
+    fieldGroup: null
+    handle: contentLabel
+    instructions: null
+    name: Label
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: 50
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: regular
+name: Regular
+sortOrder: 1

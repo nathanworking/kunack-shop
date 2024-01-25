@@ -1,0 +1,59 @@
+<section class="dynamic_bg relative">
+  <div class="container split_content_image lg:px-8">
+
+    <div class="split_content_image__content px-6 pb-24 pt-10 sm:pb-32 lg:px-0 lg:pb-56 lg:pt-48">
+      <div class="mx-auto max-w-2xl lg:mx-0">
+
+          {% for image in block.svg_inline.all() %}
+               {{ svg(image)|attr({
+                         class: 'h-11 fill-current text-accent ani_default_element'
+               }) }}
+          {% endfor %}
+
+          <div class="hidden sm:mt-32 sm:flex lg:mt-16">
+          {% for button in block.subtitle_box_pill.all() %}
+               {% if button.contentButtonText|length %}
+               <div class="box_pill type_xs ring-1 ring-primary-dark/10 hover:ring-primary-dark/20"> 
+                    {{ button.contentLinkPrefix }}
+                    <a 
+                         {% if button.type == "internal" %}
+                              href="{{ button.contentPage.one().url }}"
+                         {% endif %}
+                         {% if button.type == "external" %}
+                              href="{{ button.contentUrl }}"
+                         {% endif %}
+                         class="ani_default_element whitespace-nowrap font-semibold cursor-pointer text-accent"
+                         x-show="shown" x-transition x-transition.delay.10.duration.600>
+                         <span class="ani_default_element absolute inset-0" aria-hidden="true"></span x-show="shown" x-transition x-transition.delay.10.duration.600>
+                              {{ button.contentButtonText }}
+                         <span aria-hidden="true" x-show="shown" x-transition x-transition.delay.10.duration.600>&rarr;</span>
+                    </a>
+               </div>
+               {% endif %}
+          {% endfor %}
+          </div>
+          <h1 class="ani_default_element mt-24 type_4xl text-primary-dark sm:mt-10" x-show="shown" x-transition x-transition.delay.10.duration.600>
+               {{ block.content_title_plain }}
+          </h1>
+          <p class="ani_default_element mt-6 type_lg text-secondary-dark" x-show="shown" x-transition x-transition.delay.20.duration.600>
+               {{ block.content_body_plain }}
+          </p>
+        <div class="ani_default_element mt-10 flex items-center gap-x-6 type_xs" x-show="shown" x-transition x-transition.delay.30.duration.600> 
+          {% include "_components/_shortcuts/neo_button_double.twig" %}
+        </div>
+      </div>
+    </div>
+
+    <div class="split_content_image__image ani_default_element" x-show="shown" x-transition x-transition.delay.40.duration.600>
+          {% if block.image_max_one|length %}
+               {% for image in block.image_max_one.all() %}
+                    {% set photoDisplay = image.hero_optimization %}
+                         {% include "_partials/image" with {
+                              class: 'aspect-[3/2] w-full bg-gray-50 object-cover lg:absolute lg:inset-0 lg:aspect-auto lg:h-full'
+                         } %}
+               {% endfor %}
+          {% endif %}
+    </div>
+
+  </div>
+</section>

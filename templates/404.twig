@@ -1,0 +1,67 @@
+{% extends "_layouts/default.twig" %}
+
+{% block bodyTag %}
+  {{ parent()|attr({
+    class: 'bg-gray-100 p-4'
+  }) }}
+{% endblock %}
+
+{% block _inline_css %}
+	<style>
+    {{source ("404_critical.min.css", ignore_missing = true)}}
+  </style>
+{% endblock %}
+
+{% block content %}
+  <div class="p-4 mx-auto w-full max-w-4xl bg-gray-200 shadow">
+    <div class="max-w-[40rem]">
+      <div class="prose prose-xl prose-red">
+        <h1>New!</h1>
+        <p>Thanks for installing Craft CMS!</p>
+
+        <p> inline css </p> 
+        <p> 
+
+          {{source ("index_critical.min.css", ignore_missing = true)}}
+        </p> 
+        <div class="w-6 h-6 block custom-box"> </div>
+        <p>You’re looking at the <code>index.html</code> template file located in your
+            <code>templates/</code> folder. Once you’re ready to start building out your site’s
+            front end, you can replace this with something custom.</p>
+
+        <div class="container">
+          <div id="player" data-plyr-provider="vimeo" data-plyr-embed-id="76979871"></div>
+        </div>
+
+
+        <p>If you’re new to Craft CMS, take some time to check out the resources on the right
+            when you get a chance&mdash;especially
+            <a href="https://craftcms.com/community#slack" target="_blank">Slack</a>
+            and <a href="http://craftcms.stackexchange.com/" target="_blank">Stack Exchange</a>.
+            The Craft community is full of smart, friendly, and helpful people!</p>
+        <p><span class="go"><a href="{{ cpUrl('') }}">Go to your Control Panel</a></span></p>
+        <h2>Official Resources</h2>
+        <ul>
+          <li><a href="http://docs.craftcms.com/v4/" target="_blank">Craft 4 Documentation</a></li>
+          <li><a href="https://docs.craftcms.com/api/v4/" target="_blank">Craft 4 Class Reference</a></li>
+          <li><a href="https://demo.craftcms.com/" target="_blank">Demo site</a></li>
+          <li><a href="https://craftcms.com/community#slack" target="_blank">Craft Slack</a></li>
+          <li><a href="https://craftcommerce.com/" target="_blank">Craft Commerce</a></li>
+        </ul>
+        <h2>Community Resources</h2>
+        <ul>
+          <li><a href="https://craftquest.io/" target="_blank">CraftQuest</a> <small>– Unlimited access to Craft training (and more) from Mijingo.</small></li>
+          <li><a href="https://webdesign.tutsplus.com/categories/craft-cms/courses" target="_blank">Envato Tuts+</a> <small>– Video courses.</small></li>
+          <li><a href="https://nystudio107.com/blog" target="_blank">nystudio107 Blog</a> <small>– Articles about Craft and modern web development.</small></li>
+          <li><a href="http://craftlinklist.com/" target="_blank">Craft Link List</a> <small>– Bimonthly newsletter about the Craft ecosystem.</small></li>
+          <li><a href="http://craftcms.stackexchange.com/" target="_blank">Craft CMS Stack Exchange</a> <small>– Community-run Q&A for Craft developers.</small></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block pageScript %}
+      {{ craft.vite.script('src/js/page/index.js', false) }}
+{% endblock %}

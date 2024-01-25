@@ -1,0 +1,65 @@
+childBlocks:
+  - content_title_subtitle_svg
+conditions: null
+description: ''
+enabled: true
+field: 4a2e3929-984b-40ff-96fb-0d1322e1cafe # Content
+fieldLayouts:
+  04aa03dd-61d4-42b3-a236-5c8d8b19ebb6:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 3628e283-b2cc-43b9-ac7e-c8d84e14200c # Plain Subtitle
+            instructions: null
+            label: Subtitle
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 983cdc3c-f021-4693-9e29-58b3f9c8cdfb
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: a5ecc83e-c8ee-4d47-ba2f-17bb67ee6fa9 # Plain Title
+            instructions: null
+            label: Title
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 67987df5-59ad-4fef-ae46-7c05b531debb
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 6311f6e0-0362-4c66-bb2c-bd8cb7a04633 # Body
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 58f00611-2d36-4882-8d84-9c2f63211b7a
+            userCondition: null
+            warning: null
+            width: 100
+        name: Summary
+        uid: baceda7e-f582-4553-94c0-b8ae3e54487b
+        userCondition: null
+group: null
+groupChildBlockTypes: true
+handle: feature_two_by_two_grid
+icon: null
+ignorePermissions: true
+maxBlocks: 0
+maxChildBlocks: 4
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 2
+minSiblingBlocks: 0
+name: 'Feature 2x2 Grid with Icons'
+sortOrder: 11
+topLevel: true

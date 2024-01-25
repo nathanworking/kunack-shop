@@ -1,0 +1,4 @@
+{% if block.content_form|length %}
+     {% set form = block.content_form.one() %}
+     {% include "_partials/form_display.twig" %}
+{% endif %}

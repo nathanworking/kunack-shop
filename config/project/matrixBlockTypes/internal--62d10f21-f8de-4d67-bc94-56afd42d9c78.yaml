@@ -1,0 +1,125 @@
+field: 9129b3f1-6b8a-4d90-a315-00edfd4fa622 # Subtitle Link Box
+fieldLayouts:
+  ec62340a-4c7b-423a-953d-738a4cce95d0:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: fe80b9ea-064a-4cb3-b008-adf949a539a6 # Pre-Link Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0804153c-38fd-4dfe-bcd4-d9b5f32db039
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 4692da99-50e9-4a7a-a872-6d0662e53217 # Link Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8f520afa-a4fc-4ad3-abc0-38590b17ef10
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: a6a55c08-7394-4776-9bcc-4cf0e9bbb140 # Page
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e6b61591-300b-4427-958a-0479b13687b3
+            userCondition: null
+            warning: null
+            width: 25
+        name: Content
+        uid: a9c5bd59-9f85-4040-9a85-f3c82849088b
+        userCondition: null
+fields:
+  4692da99-50e9-4a7a-a872-6d0662e53217: # Link Text
+    columnSuffix: nclknmec
+    contentColumnType: text
+    fieldGroup: null
+    handle: contentButtonText
+    instructions: null
+    name: 'Link Text'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  a6a55c08-7394-4776-9bcc-4cf0e9bbb140: # Page
+    columnSuffix: bdiuenxe
+    contentColumnType: string
+    fieldGroup: null
+    handle: contentPage
+    instructions: null
+    name: Page
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      branchLimit: null
+      localizeRelations: false
+      maintainHierarchy: false
+      maxRelations: 1
+      minRelations: null
+      selectionCondition:
+        __assoc__:
+          -
+            - elementType
+            - craft\elements\Entry
+          -
+            - fieldContext
+            - global
+          -
+            - class
+            - craft\elements\conditions\entries\EntryCondition
+      selectionLabel: null
+      showSiteMenu: true
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  fe80b9ea-064a-4cb3-b008-adf949a539a6: # Pre-Link Text
+    columnSuffix: bpsltipl
+    contentColumnType: text
+    fieldGroup: null
+    handle: contentLinkPrefix
+    instructions: null
+    name: 'Pre-Link Text'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: internal
+name: Internal
+sortOrder: 1

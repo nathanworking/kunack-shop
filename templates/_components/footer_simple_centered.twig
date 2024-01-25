@@ -1,0 +1,36 @@
+<footer> 
+  <div class="container overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
+    <nav class="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
+     {% for block in block.links_max_four.all() %}
+          {% if block.type == "regular" %}
+          <div class="pb-6">
+               <a href="{% for entry in block.contentPage %}{{ entry.url }}{% endfor %}" class="type_xs text-secondary-dark hover:text-primary-dark ani_link_default">
+                    {{ block.contentLabel }}     
+               </a>
+          </div>
+          {% endif %}
+     {% endfor %}
+    </nav>
+    <div class="mt-10 flex justify-center space-x-10">
+     {% for block in block.icon_links.all() %}
+          {% if block.type == "social" %}
+               <a href="{{ block.network_link }}" target="_blank" class="text-secondary-dark/60 hover:text-primary-dark/60 ani_link_default">
+                    <span class="sr-only">
+                         {{ block.network_name }}
+                    </span>
+                    {% for image in block.network_icon.all() %}
+                         {{ svg(image)|attr({
+                              class: 'w-6 h-6',
+                              fill: 'currentColor'
+                         }) }}
+                    {% endfor %}
+               </a>
+          {% endif %}
+     {% endfor %}
+    </div>
+     <p class="mt-10 text-center type_xs text-secondary-dark/60">
+          &copy; {{ now|date("Y") }} 
+          {{ block.content_title_plain }}
+     </p>
+  </div>
+</footer>

@@ -1,0 +1,625 @@
+dateModified: 1699549209
+email:
+  fromEmail: dev@vessul.co
+  fromName: Chaos
+  replyToEmail: null
+  template: null
+  transportSettings:
+    messageStream: ''
+    token: $POSTMARK_API
+  transportType: craftcms\postmark\Adapter
+fs:
+  default:
+    hasUrls: true
+    name: Default
+    settings:
+      addSubfolderToRootUrl: true
+      autoFocalPoint: false
+      bucket: $S3_BUCKET
+      bucketSelectionMode: manual
+      cfDistributionId: $CLOUDFRONT_DISTRIBUTION_ID
+      cfPrefix: $CLOUDFRONT_PATH_PREFIX
+      expires: '3 months'
+      keyId: $S3_KEY_ID
+      makeUploadsPublic: false
+      region: $S3_REGION
+      secret: $S3_SECRET
+      storageClass: ''
+      subfolder: ''
+    type: craft\awss3\Fs
+    url: $S3_ASSET_URL
+graphql:
+  publicToken:
+    enabled: false
+    expiryDate: null
+meta:
+  __names__:
+    0b24ab9f-87c0-46ac-b013-beb8502e8369: 'Network Name' # Network Name
+    0c2fe349-0e24-4880-826f-11b200f12e59: 'Simple Centered' # Simple Centered
+    1aa4bc79-ef8a-4dad-87ac-ea7eee537ee7: 'Highlight Color' # Highlight Color
+    1e744d36-e0ed-45f5-89c8-4105bfd2f340: 'Icon SVG' # Icon SVG
+    2b43adc8-0efc-4a58-bccf-4138eb38aea7: 'Select Page' # Select Page
+    2d246055-fed8-4f26-b54d-8d6493956ebe: URL # URL
+    3b83d0bf-917c-4cac-86f3-3ff777465a85: Link # Link
+    03c81418-fff9-4dfc-b63a-f973f0abbce5: Text # Text
+    3d0aee8c-c441-40fd-ac84-9167c9e2ef2e: 'Button Text' # Button Text
+    3d2060fc-afd5-4766-99c7-a7b52f93d7e3: 'CTA Split with image' # CTA Split with image
+    4a2e3929-984b-40ff-96fb-0d1322e1cafe: Content # Content
+    4b93b3be-f7cf-45f9-8d70-bff72d550ac2: 'Hero Optimization' # Hero Optimization
+    4e58456c-e5b8-43a2-b2c2-c906e7fef840: Page # Page
+    5b5580dd-b954-4984-8d15-44be8577c010: Content # Content
+    6a4a57fb-0f7d-4a85-99d6-b0e4be164cc4: 'Overlay Close' # Overlay Close
+    6b3d544d-666f-4b83-b41c-c1a5e2e51a77: URL # URL
+    7efb07c6-26df-470c-850c-894a07b5afb4: 'Body Paragraghs' # Body Paragraghs
+    8c76c2b0-c215-4a85-bd3b-0cccffd7eb0a: 'Inline SVG' # Inline SVG
+    8e54d255-9214-4889-8d34-f3ae16facab1: 'Reusable Fields' # Reusable Fields
+    8e808cf4-e1c0-4a55-b591-39306b3ec22c: 'CTA Simple Justified' # CTA Simple Justified
+    9aa25dcc-fd5c-4735-968b-0f5016abcc67: New # New
+    9b5d3535-78fa-436a-92b1-2863d6488288: OverlayText # OverlayText
+    9f9592ec-68d6-4e1f-8271-6856523ea803: 'Button Text' # Button Text
+    10b88df9-f053-420f-b8d5-5c61232d585f: Footer # Footer
+    10f86d95-9b00-4966-98bd-9dfe9815e60a: 'Title - Subtitle' # Title - Subtitle
+    13d9e3a6-c642-4ad7-88b5-487abe3f28f5: Label # Label
+    014cca91-da08-4b7e-9d7c-d6e9a30f3805: 'Hero with Background Image' # Hero with Background Image
+    26e25045-b1ad-4612-bf9a-61b48495489f: Simple # Simple
+    029f68a8-6c06-49ba-9b1a-37b1bd4b3bfb: Text # Text
+    30cce96c-b64b-478a-9e43-b3310ef21004: 'Feature with image' # Feature with image
+    31a24946-22be-4226-8e5e-c296fa3aff16: Title # Title
+    47d85af7-a58a-401a-91ac-8a7e694423d2: Uploads # Uploads
+    59ecf0f4-72c5-4f5c-8a8a-f26ecd733866: 'Content Builder Simple' # Content Builder Simple
+    61f1b92b-f2e8-4449-8142-f6901437e62a: Text # Text
+    62d10f21-f8de-4d67-bc94-56afd42d9c78: Internal # Internal
+    87d02ee3-cd56-40a7-95bf-29a706064f6c: Buttons # Buttons
+    89b0337d-b6c4-496b-82a0-bb061cb940cc: 'Stats Simple Grid' # Stats Simple Grid
+    91c04365-91cc-4207-bce9-822f346aa548: 'Internal Link' # Internal Link
+    96c4d8b1-e79a-462b-b993-39f3521d554d: 'Overlay Close' # Overlay Close
+    104df9c9-f17e-42d2-9ca9-77aa97418c17: 'Image - 1 Max' # Image - 1 Max
+    115ccbb3-5a28-4030-8b66-38f74bf56ea0: 'Hero with Image Tiles' # Hero with Image Tiles
+    394f4fc6-ce17-449d-a81e-5587b5d757f9: Social # Social
+    0619ccd5-f1ea-495b-abaf-4942eae4fdb7: 'Vimeo Link' # Vimeo Link
+    2547e037-81db-40a3-897c-62f27b403565: 'Stats with Description' # Stats with Description
+    2955f477-1db7-4cb2-a877-8824ed94972d: Default # Default
+    3628e283-b2cc-43b9-ac7e-c8d84e14200c: 'Plain Subtitle' # Plain Subtitle
+    3639f63e-adb7-4387-b5ea-6a501ac1e004: 'Link Text' # Link Text
+    4256e713-87cb-4622-b105-11499fe8a7aa: 'Theme default' # Theme default
+    4692da99-50e9-4a7a-a872-6d0662e53217: 'Link Text' # Link Text
+    4834dc7b-112b-41a8-8295-6f55015450c3: 'Feature 3 Columns with Icons' # Feature 3 Columns with Icons
+    6082d9e5-d2c1-40ff-820a-a394acb687b6: 'Select Page' # Select Page
+    6311f6e0-0362-4c66-bb2c-bd8cb7a04633: Body # Body
+    6843b2c5-53ac-4475-9e56-54005a52fc36: 'Title - Subtitle - SVG - Link' # Title - Subtitle - SVG - Link
+    7784a1d8-9a75-4d7a-83fb-38edf02403ff: Text # Text
+    9129b3f1-6b8a-4d90-a315-00edfd4fa622: 'Subtitle Link Box' # Subtitle Link Box
+    15436fcc-e8c6-4c68-abf8-631cbe87c151: 'Link URL' # Link URL
+    41801d0c-a7cd-4b32-9b66-048268200963: Icon # Icon
+    81781ec8-76d6-4f74-9f5f-f41395993863: 'Pre-Link Text' # Pre-Link Text
+    579019c4-1502-4d5e-abb7-4d7c04d47aa8: Form # Form
+    13415084-3dd4-4637-afed-1b158430a6ab: 'Navigation Centered' # Navigation Centered
+    24809992-38f9-40cb-b66f-0d795040d725: 'Copyright and Social' # Copyright and Social
+    33256147-375b-4aaa-9f2a-1ee861454c19: 'Overlay Title' # Overlay Title
+    77585975-21ed-40f6-8958-03320ff99605: Form # Form
+    a2c1a242-e2c4-4102-882d-20fdf12839db: Globals # Globals
+    a3b13962-d832-45ff-b54a-34719aa08d28: External # External
+    a5ecc83e-c8ee-4d47-ba2f-17bb67ee6fa9: 'Plain Title' # Plain Title
+    a6a55c08-7394-4776-9bcc-4cf0e9bbb140: Page # Page
+    a9f4234c-9bae-4c2c-919e-86a55b1a6b12: Page # Page
+    a38ec9c7-125f-402c-8e46-9b212b50ee85: 'Overlay Title' # Overlay Title
+    a52e368d-3fc2-417f-ac29-682612b69713: 'Select Form' # Select Form
+    a78f97bd-d015-4e9b-b0d9-76b99c607ea5: 'Link - Max 1' # Link - Max 1
+    aa9e223a-cbf7-4aed-b628-c4b1a95c2321: Header # Header
+    abd4084c-0d61-4110-97b0-2f095d8c5445: Chaos # Chaos
+    ac8bb16a-3bd3-4c0e-892e-00a4dabf3ecb: 'External Link' # External Link
+    ac935a13-bd0d-4769-82e5-9bea8ee2fbbc: OverlayText # OverlayText
+    be3cbb2a-d8c6-45a9-b3cc-2e6aa9076ab8: 'Lead Paragraph' # Lead Paragraph
+    bf10ade7-0db7-4e8d-a58c-5681f9aed9dd: 'Plain Title Linebreak' # Plain Title Linebreak
+    c03f7cab-8ba8-4293-900f-aa8696040aef: 'Feature 2x2 Grid with Icons' # Feature 2x2 Grid with Icons
+    c1f7cf2b-6f8b-4d29-96c7-966703201757: 'Feature Grid Icons With Large Image' # Feature Grid Icons With Large Image
+    c2ca9df1-28d9-4199-9640-1cbf54b91cd9: 'Links - Max 4' # Links - Max 4
+    c9ad4742-8a60-4610-81d2-b991eb362fb7: Regular # Regular
+    c51cc501-9cf8-422c-a605-79dcf1a3385c: 'Contact Simple Centered' # Contact Simple Centered
+    c1319c0f-3c23-43c8-9d55-b1e3b0024c01: 'Hero Split with Image' # Hero Split with Image
+    cacf9851-daaf-4115-bd89-35d61982362a: Globals # Globals
+    d86b72e9-154b-4ab7-b644-db7e0de9353e: 'CTA Simple Centered' # CTA Simple Centered
+    d896cbcb-1810-4f7e-bfbd-ddd72aaf712e: '4 Column with Newsletter below' # 4 Column with Newsletter below
+    d3929762-9227-4190-852a-319f5d568647: 'Public Schema' # Public Schema
+    d8671605-5ca5-4a32-b3c3-5a2e803e65b3: Label # Label
+    da0d8102-a6a2-41b7-8054-577d5956e53a: 'Link Group' # Link Group
+    dc76aea0-d30f-47b8-baa9-5f6297b0e832: Regular # Regular
+    df7ff4dd-dc38-479e-b649-a8ef8a698d3f: 'Icon Links' # Icon Links
+    e510f893-335d-417c-8a0d-f610ac8068f2: 'Contact Form' # Contact Form
+    e990e24f-89cb-4e2d-af75-2025e3fd7c64: Utility # Utility
+    e8498d62-a4a7-4a2d-a853-cd2a074e1d77: 'Default Optimization' # Default Optimization
+    ed536336-af55-47ec-ba88-736903d1ae19: 'Stats with Image' # Stats with Image
+    ef9757ee-092d-4c2e-84a6-4ffe69bd3f6e: 'Image - 5 Max' # Image - 5 Max
+    f1eb585f-5636-4ac4-84ee-0d7bbe197b4f: 'Content Builders' # Content Builders
+    f8c4b6c2-d2f3-4965-9ba8-3c96db57e372: Page # Page
+    f47db53f-0a1f-4342-87c8-34e29d0f2016: 'Title - Subtitle - SVG' # Title - Subtitle - SVG
+    f1481cac-5f13-4cba-8a68-d16b7839a08b: Chaos # Chaos
+    f33943e2-0903-4e8c-9b29-5da65662d044: 'FAQ with text' # FAQ with text
+    fe80b9ea-064a-4cb3-b008-adf949a539a6: 'Pre-Link Text' # Pre-Link Text
+plugins:
+  architect:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+  async-queue:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  aws-s3:
+    edition: standard
+    enabled: true
+    schemaVersion: '2.0'
+  blitz:
+    edition: standard
+    enabled: true
+    licenseKey: Y6KF0L5NMOPONV3PFPJJJY7F
+    schemaVersion: 4.5.0
+    settings:
+      apiKey: ''
+      cacheControlHeader: 'public, s-maxage=31536000, max-age=0'
+      cacheDuration: 600000
+      cacheElementQueries: true
+      cacheElements: true
+      cacheGeneratorSettings:
+        __assoc__:
+          -
+            - concurrency
+            - '3'
+      cacheGeneratorType: putyourlightson\blitz\drivers\generators\HttpGenerator
+      cacheNonHtmlResponses: false
+      cachePurgerType: putyourlightson\blitz\drivers\purgers\DummyPurger
+      cacheStorageSettings:
+        __assoc__:
+          -
+            - folderPath
+            - '@webroot/cache/blitz'
+          -
+            - createGzipFiles
+            - ''
+          -
+            - createBrotliFiles
+            - ''
+      cacheStorageType: putyourlightson\blitz\drivers\storage\FileStorage
+      cachingEnabled: false
+      debug: false
+      deployerType: putyourlightson\blitz\drivers\deployers\DummyDeployer
+      driverJobPriority: 100
+      esiEnabled: false
+      excludedQueryStringParams:
+        -
+          __assoc__:
+            -
+              - queryStringParam
+              - gclid
+        -
+          __assoc__:
+            -
+              - queryStringParam
+              - fbclid
+      generatePagesWithQueryStringParams: true
+      hintsEnabled: true
+      includedQueryStringParams:
+        -
+          __assoc__:
+            -
+              - queryStringParam
+              - '.*'
+      includedUriPatterns:
+        -
+          __assoc__:
+            -
+              - uriPattern
+              - ''
+        -
+          __assoc__:
+            -
+              - uriPattern
+              - .
+      injectScriptEvent: DOMContentLoaded
+      integrations:
+        - putyourlightson\blitz\drivers\integrations\CommerceIntegration
+        - putyourlightson\blitz\drivers\integrations\FeedMeIntegration
+        - putyourlightson\blitz\drivers\integrations\SeomaticIntegration
+      maxRetryAttempts: 10
+      mutexTimeout: 1
+      outputComments: true
+      purgeAssetImagesWhenChanged: true
+      queryStringCaching: 1
+      queueJobTtr: 300
+      refreshCacheAutomaticallyForGlobals: true
+      refreshCacheJobPriority: 10
+      refreshCacheWhenElementMovedInStructure: true
+      refreshCacheWhenElementSavedNotLive: false
+      refreshCacheWhenElementSavedUnchanged: false
+      refreshMode: 3
+      sendPoweredByHeader: true
+      ssiEnabled: true
+      trackElementQueries: true
+      trackElements: true
+  ckeditor:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.0.0
+  cookies:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  cp-field-inspect:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  eager-beaver:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  empty-coalesce:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  environment-label:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  fastcgi-cache-bust:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  feed-me:
+    edition: standard
+    enabled: true
+    schemaVersion: 5.1.0.0
+  field-manager:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  formie:
+    edition: standard
+    enabled: true
+    licenseKey: U9II5S4B4ST0H8ZC44BTQF7U
+    schemaVersion: 2.0.10
+    settings:
+      ajaxTimeout: 10
+      captchas:
+        __assoc__:
+          -
+            - recaptcha
+            -
+              __assoc__:
+                -
+                  - type
+                  - verbb\formie\integrations\captchas\Recaptcha
+                -
+                  - enabled
+                  - '1'
+                -
+                  - saveSpam
+                  - true
+                -
+                  - settings
+                  -
+                    __assoc__:
+                      0:
+                        - handle
+                        - recaptcha
+                      1:
+                        - secretKey
+                        - $GOOGLE_SECRET_KEY
+                      2:
+                        - siteKey
+                        - $GOOGLE_SITE_KEY
+                      3:
+                        - type
+                        - v3
+                      4:
+                        - size
+                        - normal
+                      5:
+                        - theme
+                        - light
+                      6:
+                        - badge
+                        - bottomright
+                      7:
+                        - language
+                        - en
+                      8:
+                        - minScore
+                        - 0.5
+                      10:
+                        - scriptLoadingMethod
+                        - asyncDefer
+          -
+            - hcaptcha
+            -
+              __assoc__:
+                -
+                  - type
+                  - verbb\formie\integrations\captchas\Hcaptcha
+                -
+                  - enabled
+                  - '0'
+                -
+                  - saveSpam
+                  - true
+                -
+                  - settings
+                  -
+                    __assoc__:
+                      0:
+                        - handle
+                        - hcaptcha
+                      3:
+                        - size
+                        - normal
+                      4:
+                        - theme
+                        - light
+                      5:
+                        - language
+                        - en
+                      6:
+                        - minScore
+                        - 0.5
+                      7:
+                        - scriptLoadingMethod
+                        - asyncDefer
+          -
+            - friendlyCaptcha
+            -
+              __assoc__:
+                -
+                  - type
+                  - verbb\formie\integrations\captchas\FriendlyCaptcha
+                -
+                  - enabled
+                  - '0'
+                -
+                  - saveSpam
+                  - true
+                -
+                  - settings
+                  -
+                    __assoc__:
+                      -
+                        - handle
+                        - friendlyCaptcha
+          -
+            - turnstile
+            -
+              __assoc__:
+                -
+                  - type
+                  - verbb\formie\integrations\captchas\Turnstile
+                -
+                  - enabled
+                  - '0'
+                -
+                  - saveSpam
+                  - true
+                -
+                  - settings
+                  -
+                    __assoc__:
+                      0:
+                        - handle
+                        - turnstile
+                      3:
+                        - scriptLoadingMethod
+                        - asyncDefer
+          -
+            - duplicate
+            -
+              __assoc__:
+                -
+                  - type
+                  - verbb\formie\integrations\captchas\Duplicate
+                -
+                  - enabled
+                  - '1'
+                -
+                  - saveSpam
+                  - true
+                -
+                  - settings
+                  -
+                    __assoc__:
+                      -
+                        - handle
+                        - duplicate
+          -
+            - honeypot
+            -
+              __assoc__:
+                -
+                  - type
+                  - verbb\formie\integrations\captchas\Honeypot
+                -
+                  - enabled
+                  - '1'
+                -
+                  - saveSpam
+                  - true
+                -
+                  - settings
+                  -
+                    __assoc__:
+                      -
+                        - handle
+                        - honeypot
+          -
+            - javascript
+            -
+              __assoc__:
+                -
+                  - type
+                  - verbb\formie\integrations\captchas\Javascript
+                -
+                  - enabled
+                  - '0'
+                -
+                  - saveSpam
+                  - true
+                -
+                  - settings
+                  -
+                    __assoc__:
+                      -
+                        - handle
+                        - javascript
+      defaultDateDisplayType: ''
+      defaultDateTime: null
+      defaultDateValueOption: ''
+      defaultEmailTemplate: ''
+      defaultFileUploadVolume: ''
+      defaultFormTemplate: ''
+      defaultInstructionsPosition: below-input
+      defaultLabelPosition: above-input
+      defaultPage: submissions
+      emptyValuePlaceholder: 'No response.'
+      enableBackSubmission: true
+      enableCsrfValidationForGuests: true
+      enableLargeFieldStorage: false
+      enableUnloadWarning: false
+      includeDraftElementUsage: false
+      includeRevisionElementUsage: false
+      maxIncompleteSubmissionAge: 30
+      maxSentNotificationsAge: 30
+      pdfPaperOrientation: portrait
+      pdfPaperSize: letter
+      pluginName: Forms
+      queuePriority: null
+      saveSpam: true
+      sendEmailAlerts: false
+      sentNotifications: true
+      spamBehaviour: showSuccess
+      spamBehaviourMessage: ''
+      spamEmailNotifications: false
+      spamKeywords: ''
+      spamLimit: 500
+      useQueueForIntegrations: true
+      useQueueForNotifications: true
+  image-optimize:
+    edition: standard
+    enabled: true
+    licenseKey: NCA57HE5U6O7IHKQTWM8R2NG
+    schemaVersion: 1.0.0
+    settings:
+      allowUpScaledImageVariants: true
+      assetVolumeSubFolders: true
+      autoSharpenScaledImages: true
+      capSilhouetteSvgSize: true
+      createColorPalette: false
+      createPlaceholderSilhouettes: false
+      imageTransformTypeSettings:
+        __assoc__:
+          -
+            - nystudio107\imageoptimizeimgix\imagetransforms\ImgixImageTransform
+            -
+              __assoc__:
+                -
+                  - domain
+                  - ''
+                -
+                  - apiKey
+                  - ''
+                -
+                  - securityToken
+                  - ''
+                -
+                  - unsharpMask
+                  - '20'
+          -
+            - nystudio107\imageoptimizesharp\imagetransforms\SharpImageTransform
+            -
+              __assoc__:
+                -
+                  - baseUrl
+                  - $IMAGE_TRANSFORM_URL
+          -
+            - nystudio107\imageoptimizethumbor\imagetransforms\ThumborImageTransform
+            -
+              __assoc__:
+                -
+                  - baseUrl
+                  - ''
+                -
+                  - securityKey
+                  - ''
+                -
+                  - includeBucketPrefix
+                  - ''
+      lowerQualityRetinaImageVariants: false
+      sharpenScaledImagePercentage: 50
+      transformClass: nystudio107\imageoptimizesharp\imagetransforms\SharpImageTransform
+  imager-x:
+    edition: pro
+    enabled: true
+    licenseKey: BBKWCOJHCG7249KELKMSDHFY
+    schemaVersion: 4.0.0
+  knock-knock:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.1.1
+  minify:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  neo:
+    edition: standard
+    enabled: true
+    licenseKey: 8CRSQUW080EQ22BDZYTR4T4B
+    schemaVersion: 3.6.2
+  postmark:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.1
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+  retcon:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  retour:
+    edition: standard
+    enabled: true
+    licenseKey: NCWHZYOH2AUZ40RMW7NO2OAY
+    schemaVersion: 3.0.11
+  secrets:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  seomatic:
+    edition: standard
+    enabled: true
+    licenseKey: 6ZAJRTOJN3HOBK3VUV2WKWXA
+    schemaVersion: 3.0.12
+  sprig:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.1
+  typedlinkfield:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+  typogrify:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  vite:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+system:
+  edition: solo
+  live: true
+  name: Chaos
+  schemaVersion: 4.4.0.4
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  requireEmailVerification: true

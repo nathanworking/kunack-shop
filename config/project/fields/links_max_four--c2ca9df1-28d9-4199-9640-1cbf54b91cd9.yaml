@@ -1,0 +1,16 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 8e54d255-9214-4889-8d34-f3ae16facab1 # Reusable Fields
+handle: links_max_four
+instructions: null
+name: 'Links - Max 4'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_links_max_four}}'
+  maxBlocks: 4
+  minBlocks: null
+  propagationKeyFormat: null
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

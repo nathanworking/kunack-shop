@@ -1,0 +1,12 @@
+defaultPlacement: end
+enableVersioning: true
+handle: page
+name: Page
+propagationMethod: all
+siteSettings:
+  abd4084c-0d61-4110-97b0-2f095d8c5445: # Chaos
+    enabledByDefault: true
+    hasUrls: true
+    template: page/_entry
+    uriFormat: '{slug}'
+type: channel

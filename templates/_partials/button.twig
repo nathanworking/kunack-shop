@@ -1,0 +1,14 @@
+{% set accentBtn = accent ?? false %}
+{% set secondaryBtn = secondary ?? false %}
+{% set showArrow = arrow ?? false %}
+
+{% set linkTarget = target ?? "_self" %}
+{% set additionalClasses = (class ?? false) ? " " ~ class : "" %}
+
+{% set accent = accentBtn ? 'btn btn--accent' : '' %}
+{% set secondary = secondaryBtn ? 'btn btn--secondary' : '' %}
+
+
+<a href="{{ url ?? "#" }}" role="button" class="{{ accent }} {{ secondary }} {{ additionalClasses }}" target="{{ linkTarget }}">
+	{{ text ?? "Get started" }}
+</a>

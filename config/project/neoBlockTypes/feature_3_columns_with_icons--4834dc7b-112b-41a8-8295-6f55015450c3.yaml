@@ -1,0 +1,53 @@
+childBlocks:
+  - content_title_subtitle_svg_link
+conditions: null
+description: ''
+enabled: true
+field: 4a2e3929-984b-40ff-96fb-0d1322e1cafe # Content
+fieldLayouts:
+  8bdb0b8f-ca4a-4efd-80fb-eff7105956a2:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: a5ecc83e-c8ee-4d47-ba2f-17bb67ee6fa9 # Plain Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 02f1c11a-3590-4637-a108-39ace345b322
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 6311f6e0-0362-4c66-bb2c-bd8cb7a04633 # Body
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0efff5e2-50ac-4f62-afcb-4b352182b02b
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: ba96e30d-a4ca-46c8-8caa-831dfe81df76
+        userCondition: null
+group: null
+groupChildBlockTypes: true
+handle: feature_3_columns_with_icons
+icon: null
+ignorePermissions: true
+maxBlocks: 0
+maxChildBlocks: 3
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 3
+minSiblingBlocks: 0
+name: 'Feature 3 Columns with Icons'
+sortOrder: 9
+topLevel: true

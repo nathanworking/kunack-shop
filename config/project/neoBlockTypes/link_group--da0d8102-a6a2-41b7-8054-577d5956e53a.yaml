@@ -1,0 +1,52 @@
+childBlocks: null
+conditions: null
+description: ''
+enabled: true
+field: 10b88df9-f053-420f-b8d5-5c61232d585f # Footer
+fieldLayouts:
+  7c78e386-47a8-4928-81d0-f046e2c41b49:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: a5ecc83e-c8ee-4d47-ba2f-17bb67ee6fa9 # Plain Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1d047b3c-7287-4ce5-aae9-727ce17fdfbd
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: c2ca9df1-28d9-4199-9640-1cbf54b91cd9 # Links - Max 4
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4157c6a8-65b1-45bd-8b21-08562c878ed8
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 9dc8a41c-5495-41d4-a3f7-733a5536588b
+        userCondition: null
+group: null
+groupChildBlockTypes: true
+handle: link_group
+icon: null
+ignorePermissions: true
+maxBlocks: 4
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+minBlocks: 2
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: 'Link Group'
+sortOrder: 3
+topLevel: false

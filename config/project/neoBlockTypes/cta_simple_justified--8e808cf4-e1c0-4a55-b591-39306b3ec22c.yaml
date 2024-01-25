@@ -1,0 +1,52 @@
+childBlocks: null
+conditions: null
+description: ''
+enabled: true
+field: 4a2e3929-984b-40ff-96fb-0d1322e1cafe # Content
+fieldLayouts:
+  88e883ce-9264-4c54-a55e-851b7655f341:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: bf10ade7-0db7-4e8d-a58c-5681f9aed9dd # Plain Title Linebreak
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2b3a6111-bbd4-4e8c-a425-2ce44560e032
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 87d02ee3-cd56-40a7-95bf-29a706064f6c # Buttons
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4a417fa1-4364-454d-8ec5-6b9bbb5ea9b4
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 5c895596-0317-4474-aadf-dcf0833b9828
+        userCondition: null
+group: null
+groupChildBlockTypes: true
+handle: cta_simple_justified
+icon: null
+ignorePermissions: true
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: 'CTA Simple Justified'
+sortOrder: 16
+topLevel: true

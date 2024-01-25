@@ -1,0 +1,11 @@
+handle: theme_default
+name: 'Theme default'
+outputCssLayout: true
+outputCssLocation: page-header
+outputCssTheme: true
+outputJsBase: true
+outputJsLocation: page-footer
+outputJsTheme: true
+sortOrder: 1
+template: _partials/_form-templates
+useCustomTemplates: true

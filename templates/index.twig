@@ -1,0 +1,5 @@
+{# Set the `entry` variable manually #}
+{% set entry = craft.entries.section('page').slug('home'|literal).one() %}
+
+{# Load the channel entry template #}
+{% include "page/_entry" %}

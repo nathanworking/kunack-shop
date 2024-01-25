@@ -1,0 +1,64 @@
+childBlocks: null
+conditions: null
+description: ''
+enabled: true
+field: 4a2e3929-984b-40ff-96fb-0d1322e1cafe # Content
+fieldLayouts:
+  e749186e-6a03-4dcf-8cc6-848174e5692a:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: a5ecc83e-c8ee-4d47-ba2f-17bb67ee6fa9 # Plain Title
+            instructions: null
+            label: Title
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ee523424-bc41-4ad8-aa9e-c272232dce72
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 6311f6e0-0362-4c66-bb2c-bd8cb7a04633 # Body
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7b284f0e-3403-4f9f-a708-af5c1d2e1e0a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 8c76c2b0-c215-4a85-bd3b-0cccffd7eb0a # Inline SVG
+            instructions: null
+            label: SVG
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b946bb0f-8d6d-40d6-b934-5dac5ef3f059
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: a57a198b-fa64-40eb-a00c-574782386004
+        userCondition: null
+group: null
+groupChildBlockTypes: true
+handle: content_title_subtitle_svg
+icon: null
+ignorePermissions: true
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: 'Title - Subtitle - SVG'
+sortOrder: 3
+topLevel: false

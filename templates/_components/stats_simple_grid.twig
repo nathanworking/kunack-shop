@@ -1,0 +1,29 @@
+<section class="dynamic_bg py-24 sm:py-32" x-data="{ shown: false }" x-intersect.threshold.80="shown = true">
+     <div class="container">
+          <div class="mx-auto max-w-2xl lg:max-w-none">
+               <div class="text-center">
+                    <h2 class="type_3xl font-bold tracking-tight text-primary-dark sm:text-4xl" x-show="shown" x-transition x-transition.delay.10.duration.600>
+                         {{ block.content_title_plain}}
+                    </h2>
+                    <p class="mt-4 type_lg leading-8 text-secondary-dark" x-show="shown" x-transition x-transition.delay.20.duration.600>
+                         {{ block.content_subtitle_plain }}
+                    </p>
+               </div>
+               <dl class="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4">
+                    {% for block in block.children %}
+                         {% set delayTime = (loop.index * 100) + 30 %}
+                         {% if block.content_title_plain|length %}
+                              <div class="flex flex-col bg-secondary-darl/5 p-8"  x-show="shown" x-transition x-transition.delay.delayTime.duration.600>
+                                   <dt class="type_sm font-semibold leading-6 text-secondary-dark"> 
+                                        {{ block.content_subtitle_plain }}
+                                   </dt>
+                                   <dd class="order-first type_3xl font-semibold tracking-tight text-primary-dark">
+                                        {{ block.content_title_plain }}
+                                   </dd>
+                              </div>
+                         {% endif %}
+                    {% endfor %}
+               </dl>
+          </div>
+     </div>
+</section>

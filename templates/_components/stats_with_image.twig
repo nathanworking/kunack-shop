@@ -1,0 +1,32 @@
+<div class="relative dynamic_bg" x-data="{ shown: false }" x-intersect.threshold.80="shown = true">
+
+    {% if block.image_max_one|length %}
+          {% for image in block.image_max_one.all() %}
+               {% set photoDisplay = image.hero_optimization %}
+                    {% include "_partials/image" with {
+                         class: 'h-56 w-full bg-gray-50 object-cover lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-1/2'
+                    } %}
+          {% endfor %}
+     {% endif %}
+
+     <div class="mx-auto grid max-w-7xl lg:grid-cols-2">
+          <div class="px-6 pb-24 pt-16 sm:pb-32 sm:pt-20 lg:col-start-2 lg:px-8 lg:pt-32">
+               <div class="mx-auto max-w-2xl lg:mr-0 lg:max-w-lg">
+                    <h2 class="type_base font-semibold leading-8 text-accent" x-show="shown" x-transition="" x-transition.delay.10.duration.600>{{ block.content_subtitle_plain }}</h2>
+                    <p class="mt-2 type_2xl font-bold tracking-tight text-primary-dark sm:text-4xl" x-show="shown" x-transition="" x-transition.delay.20.duration.600>{{ block.content_title_plain }}</p>
+                    <p class="mt-6 type_lg leading-8 text-secondary-dark" x-show="shown" x-transition="" x-transition.delay.30.duration.600>{{ block.content_body_plain }}</p>
+                    <dl class="mt-16 grid max-w-xl grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 xl:mt-16">
+                         {% for block in block.children %}
+                              {% set delayTime = (loop.index * 100) + 40 %}
+                              {% if block.content_title_plain|length %}
+                                   <div class="flex flex-col gap-y-3 border-l border-secondary-900/10 pl-6">
+                                        <dt class="type_sm leading-6 text-secondary-dark">{{ block.content_subtitle_plain }}</dt>
+                                        <dd class="order-first type_2xl font-semibold tracking-tight text-primary-dark">{{ block.content_title_plain }}</dd>
+                                   </div>
+                              {% endif %}
+                         {% endfor %}
+                    </dl>
+               </div>
+          </div>
+     </div>
+</div>

@@ -1,0 +1,133 @@
+field: df7ff4dd-dc38-479e-b649-a8ef8a698d3f # Icon Links
+fieldLayouts:
+  8f779876-9263-413e-b72b-7c373127e816:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 0b24ab9f-87c0-46ac-b013-beb8502e8369 # Network Name
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f92f2726-e1eb-4777-8117-b76e799f1f52
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 41801d0c-a7cd-4b32-9b66-048268200963 # Icon
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: cf1689b5-ded8-479a-adfd-8dd534e36a27
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 3b83d0bf-917c-4cac-86f3-3ff777465a85 # Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 35125744-8769-4608-a8d9-aa3b6d5ceb15
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: c928395a-6960-401f-a7fe-8477ed890469
+        userCondition: null
+fields:
+  0b24ab9f-87c0-46ac-b013-beb8502e8369: # Network Name
+    columnSuffix: tkgzjglq
+    contentColumnType: text
+    fieldGroup: null
+    handle: network_name
+    instructions: null
+    name: 'Network Name'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  3b83d0bf-917c-4cac-86f3-3ff777465a85: # Link
+    columnSuffix: gysivsub
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: network_link
+    instructions: null
+    name: Link
+    searchable: false
+    settings:
+      maxLength: 255
+      types:
+        - url
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+  41801d0c-a7cd-4b32-9b66-048268200963: # Icon
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: network_icon
+    instructions: null
+    name: Icon
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowSubfolders: true
+      allowUploads: true
+      allowedKinds: null
+      branchLimit: null
+      defaultUploadLocationSource: 'volume:47d85af7-a58a-401a-91ac-8a7e694423d2' # Uploads
+      defaultUploadLocationSubpath: null
+      localizeRelations: false
+      maintainHierarchy: false
+      maxRelations: 1
+      minRelations: null
+      previewMode: full
+      restrictFiles: false
+      restrictLocation: true
+      restrictedDefaultUploadSubpath: /icons
+      restrictedLocationSource: 'volume:47d85af7-a58a-401a-91ac-8a7e694423d2' # Uploads
+      restrictedLocationSubpath: null
+      selectionCondition:
+        __assoc__:
+          -
+            - elementType
+            - craft\elements\Asset
+          -
+            - fieldContext
+            - global
+          -
+            - class
+            - craft\elements\conditions\assets\AssetCondition
+      selectionLabel: null
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+handle: social
+name: Social
+sortOrder: 1

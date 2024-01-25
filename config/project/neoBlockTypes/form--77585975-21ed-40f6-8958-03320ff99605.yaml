@@ -1,0 +1,40 @@
+childBlocks: null
+conditions: null
+description: ''
+enabled: true
+field: 4a2e3929-984b-40ff-96fb-0d1322e1cafe # Content
+fieldLayouts:
+  75f0cc94-ad6b-45af-96ed-c2564875eb63:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 579019c4-1502-4d5e-abb7-4d7c04d47aa8 # Form
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3e2a5862-96a2-42e5-a31e-d500efbf1338
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 4a5fa39f-431f-409f-a85a-b5bc4d1672b9
+        userCondition: null
+group: null
+groupChildBlockTypes: true
+handle: form
+icon: null
+ignorePermissions: true
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: Form
+sortOrder: 20
+topLevel: true

@@ -1,0 +1,52 @@
+childBlocks: null
+conditions: null
+description: ''
+enabled: true
+field: 4a2e3929-984b-40ff-96fb-0d1322e1cafe # Content
+fieldLayouts:
+  9c7404c3-4ae9-4645-9490-0ba16fbe62ec:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: a5ecc83e-c8ee-4d47-ba2f-17bb67ee6fa9 # Plain Title
+            instructions: null
+            label: Title
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e7f5690c-a484-458e-a87e-de29d203901d
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 3628e283-b2cc-43b9-ac7e-c8d84e14200c # Plain Subtitle
+            instructions: null
+            label: Subtitle
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9392f998-b902-4438-a7dd-f14e00101c8b
+            userCondition: null
+            warning: null
+            width: 50
+        name: Titles
+        uid: 47383895-479d-480c-b7dc-1c40f2bb0c66
+        userCondition: null
+group: null
+groupChildBlockTypes: true
+handle: content_title_subtitle_plain
+icon: null
+ignorePermissions: true
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: 'Title - Subtitle'
+sortOrder: 1
+topLevel: false

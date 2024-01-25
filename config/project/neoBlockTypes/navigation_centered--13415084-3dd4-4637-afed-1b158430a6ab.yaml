@@ -1,0 +1,64 @@
+childBlocks: null
+conditions: null
+description: ''
+enabled: true
+field: aa9e223a-cbf7-4aed-b628-c4b1a95c2321 # Header
+fieldLayouts:
+  d9d42436-13e2-4880-9968-cfb743dbea12:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 8c76c2b0-c215-4a85-bd3b-0cccffd7eb0a # Inline SVG
+            instructions: 'SVGs only!'
+            label: 'Logo '
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 504637ba-877f-4d75-b97b-4a599bb9ea9d
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: c2ca9df1-28d9-4199-9640-1cbf54b91cd9 # Links - Max 4
+            instructions: null
+            label: Links
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5a419743-749f-4883-9cc0-191dd682e7fd
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 87d02ee3-cd56-40a7-95bf-29a706064f6c # Buttons
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 77af5883-e1c4-4e83-b0ea-bcf7162ffe92
+            userCondition: null
+            warning: null
+            width: 25
+        name: Navigation
+        uid: 682a871e-515f-4702-81d0-fa99c2a88f30
+        userCondition: null
+group: null
+groupChildBlockTypes: true
+handle: navigation_centered
+icon: null
+ignorePermissions: true
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: 'Navigation Centered'
+sortOrder: 1
+topLevel: true

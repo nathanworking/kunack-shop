@@ -1,0 +1,88 @@
+childBlocks: null
+conditions: null
+description: ''
+enabled: true
+field: 4a2e3929-984b-40ff-96fb-0d1322e1cafe # Content
+fieldLayouts:
+  d018d86d-b92c-4fa8-837a-0949d4211937:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 104df9c9-f17e-42d2-9ca9-77aa97418c17 # Image - 1 Max
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: cd714f62-56dc-4109-b422-91eadafda305
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 3628e283-b2cc-43b9-ac7e-c8d84e14200c # Plain Subtitle
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: eebbe04e-e84d-4761-8ba8-1a11263e4bde
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: a5ecc83e-c8ee-4d47-ba2f-17bb67ee6fa9 # Plain Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f78be12b-b147-4bda-bc96-5dd47127d1e0
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 6311f6e0-0362-4c66-bb2c-bd8cb7a04633 # Body
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9273d640-b2af-483d-a2f2-fc44e2a61a68
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 87d02ee3-cd56-40a7-95bf-29a706064f6c # Buttons
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 542fdcb3-f6ac-4686-a243-563c9ac86b7b
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 6ba408a4-15d2-4728-9d2a-5082fc14f1ff
+        userCondition: null
+group: null
+groupChildBlockTypes: true
+handle: cta_split_with_image
+icon: null
+ignorePermissions: true
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: 'CTA Split with image'
+sortOrder: 17
+topLevel: true

@@ -1,0 +1,19 @@
+columnSuffix: gonrdpsz
+contentColumnType: text
+fieldGroup: 8e54d255-9214-4889-8d34-f3ae16facab1 # Reusable Fields
+handle: content_subtitle_plain
+instructions: null
+name: 'Plain Subtitle'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

@@ -1,0 +1,9 @@
+baseUrl: $PRIMARY_SITE_URL
+enabled: true
+handle: default
+hasUrls: true
+language: en-US
+name: Chaos
+primary: true
+siteGroup: f1481cac-5f13-4cba-8a68-d16b7839a08b # Chaos
+sortOrder: 1

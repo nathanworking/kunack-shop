@@ -1,0 +1,24 @@
+{% extends "_layouts/default.twig" %}
+
+{% block bodyTag %}
+{% endblock %}
+
+{% block _inline_css %}
+  <style>
+    {{source ("page_critical.min.css", ignore_missing = true)}}
+  </style>
+{% endblock %}
+
+{% block content %}
+  
+  {% if entry|length %}
+       {% include "_builders/content" with { "blocks": entry.builder_content.all() } %}
+     {% else %}
+     Nothing built yet!
+  {% endif %}
+
+{% endblock %}
+
+{% block pageScript %}
+      {{ craft.vite.script('src/js/page/index.js', false) }}
+{% endblock %}
