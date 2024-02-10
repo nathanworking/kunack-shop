@@ -18,7 +18,7 @@ export default defineConfig(({command}) => ({
         app: path.resolve(__dirname, 'src/js/app.js'),
       },
     },
-    output: { 
+    output: {
      sourcemap: true
     },
   },

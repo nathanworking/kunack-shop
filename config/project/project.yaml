@@ -1,4 +1,4 @@
-dateModified: 1699549209
+dateModified: 1707419969
 email:
   fromEmail: dev@vessul.co
   fromName: Chaos
@@ -109,6 +109,7 @@ meta:
     abd4084c-0d61-4110-97b0-2f095d8c5445: Chaos # Chaos
     ac8bb16a-3bd3-4c0e-892e-00a4dabf3ecb: 'External Link' # External Link
     ac935a13-bd0d-4769-82e5-9bea8ee2fbbc: OverlayText # OverlayText
+    ad65eb2c-62e3-452f-8e1a-68b90581586b: 'Product Grid with Add to Cart' # Product Grid with Add to Cart
     be3cbb2a-d8c6-45a9-b3cc-2e6aa9076ab8: 'Lead Paragraph' # Lead Paragraph
     bf10ade7-0db7-4e8d-a58c-5681f9aed9dd: 'Plain Title Linebreak' # Plain Title Linebreak
     c03f7cab-8ba8-4293-900f-aa8696040aef: 'Feature 2x2 Grid with Icons' # Feature 2x2 Grid with Icons
@@ -124,6 +125,7 @@ meta:
     d8671605-5ca5-4a32-b3c3-5a2e803e65b3: Label # Label
     da0d8102-a6a2-41b7-8054-577d5956e53a: 'Link Group' # Link Group
     dc76aea0-d30f-47b8-baa9-5f6297b0e832: Regular # Regular
+    def275a5-ef42-4370-b839-f2f908536304: 'Shopify Products' # Shopify Products
     df7ff4dd-dc38-479e-b649-a8ef8a698d3f: 'Icon Links' # Icon Links
     e510f893-335d-417c-8a0d-f610ac8068f2: 'Contact Form' # Contact Form
     e990e24f-89cb-4e2d-af75-2025e3fd7c64: Utility # Utility
@@ -595,6 +597,17 @@ plugins:
     enabled: true
     licenseKey: 6ZAJRTOJN3HOBK3VUV2WKWXA
     schemaVersion: 3.0.12
+  shopify:
+    edition: standard
+    enabled: true
+    schemaVersion: 4.0.6
+    settings:
+      accessToken: $SHOPIFY_ADMIN_API_TOKEN
+      apiKey: $SHOPIFY_API_KEY
+      apiSecretKey: $SHOPIFY_API_SECRET
+      hostName: $SHOPIFY_HOST_NAME
+      template: ''
+      uriFormat: ''
   sprig:
     edition: standard
     enabled: true

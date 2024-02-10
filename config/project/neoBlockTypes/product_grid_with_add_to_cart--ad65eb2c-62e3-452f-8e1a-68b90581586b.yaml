@@ -1,11 +1,10 @@
-childBlocks:
-  - content_title_subtitle_svg_link
+childBlocks: null
 conditions: null
 description: ''
 enabled: true
 field: 4a2e3929-984b-40ff-96fb-0d1322e1cafe # Content
 fieldLayouts:
-  bf58bcfa-8cd6-4b80-b03e-12b0614342d4:
+  c24328e1-2158-4805-9f4b-6ec4cb764c82:
     tabs:
       -
         elementCondition: null
@@ -18,36 +17,36 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 02f1c11a-3590-4637-a108-39ace345b322
+            uid: 8f21887f-0478-47d6-977b-d9d7397e0836
             userCondition: null
             warning: null
-            width: 100
+            width: 50
           -
             elementCondition: null
-            fieldUid: 6311f6e0-0362-4c66-bb2c-bd8cb7a04633 # Body
+            fieldUid: def275a5-ef42-4370-b839-f2f908536304 # Shopify Products
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 0efff5e2-50ac-4f62-afcb-4b352182b02b
+            uid: 174577de-2447-4ff3-a52d-d11fc14b7f3f
             userCondition: null
             warning: null
-            width: 100
+            width: 50
         name: Content
-        uid: ba96e30d-a4ca-46c8-8caa-831dfe81df76
+        uid: 11c2e417-666b-41db-9068-a1b03814b9ce
         userCondition: null
 group: null
 groupChildBlockTypes: true
-handle: feature_3_columns_with_icons
+handle: product_grid_with_add_to_cart
 icon: null
 ignorePermissions: true
 maxBlocks: 0
-maxChildBlocks: 3
+maxChildBlocks: 0
 maxSiblingBlocks: 0
 minBlocks: 0
-minChildBlocks: 3
+minChildBlocks: 0
 minSiblingBlocks: 0
-name: 'Feature 3 Columns with Icons'
-sortOrder: 9
+name: 'Product Grid with Add to Cart'
+sortOrder: 21
 topLevel: true

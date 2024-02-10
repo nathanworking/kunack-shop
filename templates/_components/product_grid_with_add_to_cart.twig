@@ -1,0 +1,43 @@
+<div class="bg-primary-light">
+    <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+        <h2 class="type_2xl font-bold text-primary-dark">{{ block.content_title_plain }}</h2>
+
+        <div class="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
+
+            {% for product in block.shopify_products.all() %}
+                {% set variant = product.getDefaultVariant() %}
+                {% set displayPrice = variant.price|currency %}
+                {% set displayImage = product.image_max_one.one() %}
+                <div>
+                    <div class="relative">
+                        <div class="relative h-72 w-full overflow-hidden rounded-lg">
+                            {% set size = 576 %}
+                            {% if displayImage %}
+                                {% set optimizedImage = displayImage.default_optimization %}
+                                <picture>
+                                    <source srcset="{{ optimizedImage.srcsetWidthWebP(size) }}" sizes="100vw" type="image/webp"/>
+                                    <img src="{{ optimizedImage.placeholderImage(size) }}" srcset="{{ optimizedImage.srcsetWidth(size) }}" sizes="100vw" alt="{{ displayImage.alt ?? '' }}" class="absolute inset-0 h-full w-full object-cover" {% for width,height in optimizedImage.variantHeights %} width="{{width}}" height="{{height}}" {% endfor %} />
+                                </picture>
+                            {% else %}
+                                {# TODO: Find suitable placeholder image #}
+                                <img src="//via.placeholder.com/{{ size }}?text=Missing+Product+Image" alt="Placeholder image" class="w-full h-full object-cover object-center" />
+                            {% endif %}
+                        </div>
+                        <div class="relative mt-4">
+                            <h3 class="type_xs font-medium text-primary-dark">{{ product.title }}</h3>
+                            <p class="mt-1 type_xs text-primary-dark/80">{{ product.vendor }}</p>
+                        </div>
+                        <div class="absolute inset-x-0 top-0 flex h-72 items-end justify-end overflow-hidden rounded-lg p-4">
+                            <div aria-hidden="true" class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50"></div>
+                            <p class="relative type_lg font-semibold text-primary-light">{{ displayPrice }}</p>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <button data-default-variant-id="{{ variant.id }}" class="buy-button relative flex w-full items-center justify-center rounded-md border border-transparent bg-secondary-light px-8 py-2 type_xs font-medium text-primary-dark hover:bg-secondary-light/80">Add to bag<span class="sr-only">, {{ product.title }}</span></button>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
