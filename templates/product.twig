@@ -1,0 +1,20 @@
+{# Standard element title: #}
+{{ product.title }}
+  {# -> Root Beer #}
+
+{# Shopify HTML content: #}
+{{ product.bodyHtml|raw }}
+  {# -> <p>...</p> #}
+
+{# Images: #}
+{% for image in product.images %}
+  <img src="{{ image.src }}" alt="{{ image.alt }}">
+    {# -> <img src="https://cdn.shopify.com/..." alt="Bubbly Soda"> #}
+{% endfor %}
+
+{# Variants: #}
+<select name="variantId">
+  {% for variant in product.getVariants() %}
+    <option value="{{ variant.id }}">{{ variant.title }} ({{ variant.price|currency }})</option>
+  {% endfor %}
+</select>

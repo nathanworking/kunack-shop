@@ -20,6 +20,7 @@
     "craftcms/feed-me": "5.2.0",
     "craftcms/postmark": "^3.0",
     "craftcms/redactor": "^3.0.0",
+    "craftcms/shopify": "^4.0",
     "mmikkel/cp-field-inspect": "^1.4",
     "mmikkel/retcon": "2.7.3",
     "nystudio107/craft-cookies": "^4.0",

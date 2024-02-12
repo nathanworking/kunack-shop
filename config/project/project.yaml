@@ -1,4 +1,4 @@
-dateModified: 1699549209
+dateModified: 1707731418
 email:
   fromEmail: dev@vessul.co
   fromName: Chaos
@@ -585,7 +585,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: NCWHZYOH2AUZ40RMW7NO2OAY
-    schemaVersion: 3.0.11
+    schemaVersion: 3.0.12
   secrets:
     edition: standard
     enabled: true
@@ -595,6 +595,17 @@ plugins:
     enabled: true
     licenseKey: 6ZAJRTOJN3HOBK3VUV2WKWXA
     schemaVersion: 3.0.12
+  shopify:
+    edition: standard
+    enabled: true
+    schemaVersion: 4.0.6
+    settings:
+      accessToken: $SHOPIFY_ADMIN_ACCESS_TOKEN
+      apiKey: $SHOPIFY_API_KEY
+      apiSecretKey: $SHOPIFY_API_SECRET
+      hostName: $SHOPIFY_HOSTNAME
+      template: product.twig
+      uriFormat: 'products/{slug}'
   sprig:
     edition: standard
     enabled: true
@@ -611,6 +622,9 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+shopify:
+  productFieldLayout:
+    c086b0af-0bbe-4b1d-bdfd-1494947b09bf: null
 system:
   edition: solo
   live: true
