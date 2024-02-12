@@ -1,4 +1,4 @@
-dateModified: 1707731418
+dateModified: 1707736039
 email:
   fromEmail: dev@vessul.co
   fromName: Chaos
@@ -38,6 +38,7 @@ meta:
     0c2fe349-0e24-4880-826f-11b200f12e59: 'Simple Centered' # Simple Centered
     1aa4bc79-ef8a-4dad-87ac-ea7eee537ee7: 'Highlight Color' # Highlight Color
     1e744d36-e0ed-45f5-89c8-4105bfd2f340: 'Icon SVG' # Icon SVG
+    2a9ed652-50ce-4dd4-adb2-43b3b867753f: 'Product Overview With Multiple Style Changes' # Product Overview With Multiple Style Changes
     2b43adc8-0efc-4a58-bccf-4138eb38aea7: 'Select Page' # Select Page
     2d246055-fed8-4f26-b54d-8d6493956ebe: URL # URL
     3b83d0bf-917c-4cac-86f3-3ff777465a85: Link # Link
