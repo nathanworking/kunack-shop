@@ -5,29 +5,29 @@
 
 {% set defaultVariant = product.getDefaultVariant() %}
 
-<div class="bg-white">
+<div class="bg-primary-light">
   <div class="pb-16 pt-6 sm:pb-24">
     <nav aria-label="Breadcrumb" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <ol role="list" class="flex items-center space-x-4">
         <li>
           <div class="flex items-center">
-            <a href="#" class="mr-4 text-sm font-medium text-gray-900">Women</a>
-            <svg viewBox="0 0 6 20" aria-hidden="true" class="h-5 w-auto text-gray-300">
+            <a href="#" class="mr-4 type_xs font-medium text-primary-dark">Women</a>
+            <svg viewBox="0 0 6 20" aria-hidden="true" class="h-5 w-auto text-secondary-dark">
               <path d="M4.878 4.34H3.551L.27 16.532h1.327l3.281-12.19z" fill="currentColor" />
             </svg>
           </div>
         </li>
         <li>
           <div class="flex items-center">
-            <a href="#" class="mr-4 text-sm font-medium text-gray-900">Clothing</a>
-            <svg viewBox="0 0 6 20" aria-hidden="true" class="h-5 w-auto text-gray-300">
+            <a href="#" class="mr-4 type_xs font-medium text-primary-dark">Clothing</a>
+            <svg viewBox="0 0 6 20" aria-hidden="true" class="h-5 w-auto text-secondary-dark">
               <path d="M4.878 4.34H3.551L.27 16.532h1.327l3.281-12.19z" fill="currentColor" />
             </svg>
           </div>
         </li>
 
-        <li class="text-sm">
-          <a href="#" aria-current="page" class="font-medium text-gray-500 hover:text-gray-600">{{ product.title }}</a>
+        <li class="type_xs">
+          <a href="#" aria-current="page" class="font-medium text-secondary-dark">{{ product.title }}</a>
         </li>
       </ol>
     </nav>
@@ -35,8 +35,8 @@
       <div class="lg:grid lg:auto-rows-min lg:grid-cols-12 lg:gap-x-8">
         <div class="lg:col-span-5 lg:col-start-8">
           <div class="flex justify-between">
-            <h1 class="text-xl font-medium text-gray-900">{{ product.title }}</h1>
-            <p class="text-xl font-medium text-gray-900">{{ defaultVariant.price|currency }}</p>
+            <h1 class="type_lg font-medium text-primary-dark">{{ product.title }}</h1>
+            <p class="type_lg font-medium text-primary-dark">{{ defaultVariant.price|currency }}</p>
           </div>
         </div>
 
@@ -74,12 +74,12 @@
           {% for option in product.options %}
                <div class="mt-8">
                <div class="flex items-center justify-between">
-                    <h2 class="text-sm font-medium text-gray-900">{{option.name}}</h2>
+                    <h2 class="type_xs font-medium text-primary-dark">{{option.name}}</h2>
                </div>
                <fieldset class="mt-2">
                     <div class="grid grid-cols-3 gap-3 sm:grid-cols-6">
                          {% for value in option.values %}
-                              <label class="flex items-center justify-center rounded-md border py-3 px-3 text-sm font-medium uppercase sm:flex-1 cursor-pointer focus:outline-none">
+                              <label class="flex items-center justify-center rounded-md border py-3 px-3 type_xs font-medium uppercase sm:flex-1 cursor-pointer focus:outline-none">
                                    <input type="radio" class="sr-only" data-option="{{option.position}}" value="{{value}}">
                                    <span id="size-choice-0-label">{{value}}</span>
                               </label>
@@ -88,14 +88,14 @@
                </fieldset>
           {% endfor %}
 
-               <button type="submit" class="mt-8 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Add to cart</button>
+               <button type="submit" class="mt-8 flex w-full btn btn--accent  ">Add to cart</button>
           </form>
 
           <!-- Product details -->
           <div class="mt-10">
-            <h2 class="text-sm font-medium text-gray-900">Description</h2>
+            <h2 class="type_xs font-medium text-primary-dark">Description</h2>
 
-            <div class="prose prose-sm mt-4 text-gray-500">
+            <div class="prose prose-sm mt-4 text-secondary-dark">
               {{product.bodyHtml|raw}}
             </div>
           </div>
