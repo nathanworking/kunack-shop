@@ -36,6 +36,7 @@
         <div class="lg:col-span-5 lg:col-start-8">
           <div class="flex justify-between">
             <h1 class="type_lg font-medium text-primary-dark">{{ product.title }}</h1>
+            <h2 id="selectedVariation"></h2>
             <p class="type_lg font-medium text-primary-dark" id="price">{{ defaultVariant.price|currency }}</p>
           </div>
         </div>
@@ -79,8 +80,8 @@
                <fieldset class="mt-2">
                     <div class="grid grid-cols-3 gap-3 sm:grid-cols-6">
                          {% for value in option.values %}
-                              <label class="flex items-center justify-center rounded-md border py-3 px-3 type_xs font-medium uppercase sm:flex-1 cursor-pointer focus:outline-none">
-                                   <input type="radio" class="sr-only" data-option="{{option.position}}" value="{{value}}">
+                              <label class="flex items-center justify-center rounded-md border type_xs font-medium uppercase sm:flex-1 cursor-pointer focus:outline-none btn">
+                                   <input type="radio" class="sr-only" data-option="{{option.position}}" name="{{option.position}}" value="{{value}}" {% if loop.first %} checked {% endif %}>
                                    <span id="size-choice-0-label">{{value}}</span>
                               </label>
                          {%  endfor %}
@@ -108,6 +109,7 @@
 {% js %}
 
 // Store references to <form> elements:
+const currencySymbol = "$";
 const $form = document.getElementById("add-to-cart");
 const $variantInput = document.getElementById("variant");
 const $optionInputs = document.querySelectorAll("[data-option]");
@@ -130,31 +132,37 @@ const findVariant = (options) => {
   }
 };
 
-// Listen for change events on the form, rather than the individual option menus:
 $form.addEventListener("change", (e) => {
-  const selectedOptions = {};
 
-  // Loop over option menus and build an object of selected values:
-  $optionInputs.forEach(($input) => {
-    // Add the value under the "position" key
-    selectedOptions[$input.dataset.option] = $input.value;
-  });
+     const selectedOptions = {};
 
-  // Use our helper function to resolve a variant:
-  const variant = findVariant(selectedOptions);
+     $optionInputs.forEach(($input) => {
+          // Add the value under the "position" key
+          
+          if($input.checked) {
+               $input.parentElement.classList.add("btn--accent");
+               selectedOptions[$input.dataset.option] = $input.value;
+          }
+          else {
+               $input.parentElement.classList.remove("btn--accent");
+          }
 
-  if (!variant) {
-    console.warn("No variant exists for options:", selectedOptions);
+          // Use our helper function to resolve a variant:
+          const variant = findVariant(selectedOptions);
 
-    return;
-  }
+          if (!variant) {
+               console.warn("No variant exists for options:", selectedOptions); 
+               return;
+          }
 
-  // Assign the resolved variant’s ID to the hidden input:
-  $variantInput.value = variant.id;
+          // update the UI with the correct pricing
+          document.getElementById("price").innerText = currencySymbol + variant.price;
 
-  // update price in UI
-  console.dir(variant);
-  document.getElementById("price").innerHTML = "$" + variant.price;
+          // Assign the resolved variant’s ID to the hidden input:
+          $variantInput.value = variant.id;
+
+     });
+
 });
 
 // Trigger an initial `change` event to simulate a selection:
