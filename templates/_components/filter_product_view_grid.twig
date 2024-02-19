@@ -112,7 +112,7 @@
                   <div class="space-y-6">
                     <div class="flex items-center">
                       <input id="category-0-mobile" name="category[]" value="new-arrivals" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-accent focus:text-accent">
-                      <label for="category-0-mobile" class="ml-3 type_xs text-primary-light">All New Arrivals</label>
+                      <label for="category-0-mobile" class="ml-3 type_xs text-primary-light">{{ block.content_title_plain }}</label>
                     </div>
                     <div class="flex items-center">
                       <input id="category-1-mobile" name="category[]" value="tees" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-accent focus:text-accent">
@@ -189,8 +189,8 @@
 
     <main class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
       <div class="border-b border-gray-200 pb-10">
-        <h1 class="text-4xl font-bold tracking-tight text-primary-dark">New Arrivals</h1>
-        <p class="mt-4 text-base text-secondary-dark">Checkout out the latest release of Basic Tees, new and improved with four openings!</p>
+        <h1 class="text-4xl font-bold tracking-tight text-primary-dark">{{ block.content_title_plain }}</h1>
+        <p class="mt-4 text-base text-secondary-dark">{{ block.content_subtitle_plain }}</p>
       </div>
 
       <div class="pt-12 lg:grid lg:grid-cols-3 lg:gap-x-8 xl:grid-cols-4">
@@ -211,7 +211,7 @@
                 <fieldset>
                   <legend class="block type_xs font-medium text-primary-dark">Category</legend>
                   <div class="space-y-3 pt-6">
-                    
+
                     <div class="flex items-center">
                       <input id="color-0" name="color[]" value="white" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-accent focus:text-accent">
                       <label for="color-0" class="ml-3 type_xs text-secondary-dark">White</label>
