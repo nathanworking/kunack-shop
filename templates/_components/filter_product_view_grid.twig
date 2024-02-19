@@ -1,0 +1,12 @@
+{% set products = craft.shopifyProducts.all() %}
+
+<ul>
+  {% for product in products %}
+    {% set defaultVariant = product.getDefaultVariant() %}
+
+    <li>
+      <a href="{{ product.url }}">{{ product.title }}</a>
+      <span>{{ defaultVariant.price|currency }}</span>
+    </li>
+  {% endfor %}
+</ul>

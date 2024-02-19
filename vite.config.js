@@ -23,15 +23,15 @@ export default defineConfig(({command}) => ({
     },
   },
   plugins: [
-     critical({
-          criticalUrl: "http://chaos.ddev.site",
-          criticalBase: "./templates",
-          criticalPages: [
-          { uri: "/", template: "page/_entry" },
-          { uri: "/404", template: "404" },
-     ],
-          criticalConfig: {},
-     }),
+     // critical({
+     //      criticalUrl: "http://chaos.ddev.site",
+     //      criticalBase: "./templates",
+     //      criticalPages: [
+     //      { uri: "/", template: "page/_entry" },
+     //      { uri: "/404", template: "404" },
+     // ],
+     //      criticalConfig: {},
+     // }),
      manifestSRI(),
      viteCompression({
           filter: /\.(js|mjs|json|css|map)$/i
