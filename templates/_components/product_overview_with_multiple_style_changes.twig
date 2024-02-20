@@ -61,7 +61,7 @@
         </div>
 
         <div class="mt-8 lg:col-span-5">
-          <form id="add-to-cart" method="post" action="{{ craft.shopify.store.getUrl('cart/add') }}">
+          <div id="add-to-cart" method="post" action="{{ craft.shopify.store.getUrl('cart/add') }}">
 
           {# Create a hidden input to send the resolved variant ID to Shopify: #}
           {{ hiddenInput('id', null, {
@@ -89,8 +89,8 @@
                </fieldset>
           {% endfor %}
 
-               <button type="submit" class="mt-8 flex w-full btn btn--accent  ">Add to cart</button>
-          </form>
+               <button data-default-variant-id="" id="add-to-cart-button" class="buy-button mt-8 flex w-full btn btn--accent">Add to cart</button>
+          </div>
 
           <!-- Product details -->
           <div class="mt-10">
@@ -157,6 +157,9 @@ $form.addEventListener("change", (e) => {
 
           // update the UI with the correct pricing
           document.getElementById("price").innerText = currencySymbol + variant.price;
+
+          //update the add to cart button with the correct variant ID
+          document.getElementById("add-to-cart-button").setAttribute("data-default-variant-id", variant.id);
 
           // Assign the resolved variant’s ID to the hidden input:
           $variantInput.value = variant.id;
