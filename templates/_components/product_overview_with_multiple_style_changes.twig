@@ -9,23 +9,20 @@
   <div class="pb-16 pt-6 sm:pb-24">
     <nav aria-label="Breadcrumb" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <ol role="list" class="flex items-center space-x-4">
-        <li>
-          <div class="flex items-center">
-            <a href="#" class="mr-4 type_xs font-medium text-primary-dark">Women</a>
-            <svg viewBox="0 0 6 20" aria-hidden="true" class="h-5 w-auto text-secondary-dark">
-              <path d="M4.878 4.34H3.551L.27 16.532h1.327l3.281-12.19z" fill="currentColor" />
-            </svg>
-          </div>
-        </li>
-        <li>
-          <div class="flex items-center">
-            <a href="#" class="mr-4 type_xs font-medium text-primary-dark">Clothing</a>
-            <svg viewBox="0 0 6 20" aria-hidden="true" class="h-5 w-auto text-secondary-dark">
-              <path d="M4.878 4.34H3.551L.27 16.532h1.327l3.281-12.19z" fill="currentColor" />
-            </svg>
-          </div>
-        </li>
-
+          {% if block.links_max_four|length %}
+               {% for block in block.links_max_four.all() %}
+                    <li>
+                         {% apply spaceless %}
+                              <div class="flex items-center">
+                                   <a href="{% for entry in block.contentPage %}{{ entry.url }}{% endfor %}" class="mr-4 type_xs font-medium text-primary-dark"> {{ block.contentLabel }}</a>
+                                   <svg viewBox="0 0 6 20" aria-hidden="true" class="h-5 w-auto text-secondary-dark">
+                                        <path d="M4.878 4.34H3.551L.27 16.532h1.327l3.281-12.19z" fill="currentColor" />
+                                   </svg>
+                              </div>
+                         {% endapply %}
+                    </li>
+               {% endfor %}
+          {% endif %}
         <li class="type_xs">
           <a href="#" aria-current="page" class="font-medium text-secondary-dark">{{ product.title }}</a>
         </li>
