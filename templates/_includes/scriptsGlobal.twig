@@ -1,2 +1,6 @@
 {# vite our app; pass `false` so that CSS is not async loaded #}
 {{ craft.vite.script('src/js/app.js', false) }}
+
+{# both for shopify cart system #}
+{% do view.registerJsFile('https://sdks.shopifycdn.com/js-buy-sdk/v2/latest/index.umd.min.js') %}
+{{ craft.vite.script('src/js/shopify.js', false) }}
