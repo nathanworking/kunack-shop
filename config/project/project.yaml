@@ -1,4 +1,4 @@
-dateModified: 1707931677
+dateModified: 1708356034
 email:
   fromEmail: dev@vessul.co
   fromName: Chaos
@@ -38,7 +38,6 @@ meta:
     0c2fe349-0e24-4880-826f-11b200f12e59: 'Simple Centered' # Simple Centered
     1aa4bc79-ef8a-4dad-87ac-ea7eee537ee7: 'Highlight Color' # Highlight Color
     1e744d36-e0ed-45f5-89c8-4105bfd2f340: 'Icon SVG' # Icon SVG
-    2a9ed652-50ce-4dd4-adb2-43b3b867753f: 'Product Overview With Multiple Style Changes' # Product Overview With Multiple Style Changes
     2b43adc8-0efc-4a58-bccf-4138eb38aea7: 'Select Page' # Select Page
     2d246055-fed8-4f26-b54d-8d6493956ebe: URL # URL
     3b83d0bf-917c-4cac-86f3-3ff777465a85: Link # Link
@@ -99,6 +98,7 @@ meta:
     33256147-375b-4aaa-9f2a-1ee861454c19: 'Overlay Title' # Overlay Title
     77585975-21ed-40f6-8958-03320ff99605: Form # Form
     a2c1a242-e2c4-4102-882d-20fdf12839db: Globals # Globals
+    a2d444b5-a9b6-44a6-b3c4-512238797bda: 'Product Overview With Multiple Style Changes' # Product Overview With Multiple Style Changes
     a3b13962-d832-45ff-b54a-34719aa08d28: External # External
     a5ecc83e-c8ee-4d47-ba2f-17bb67ee6fa9: 'Plain Title' # Plain Title
     a6a55c08-7394-4776-9bcc-4cf0e9bbb140: Page # Page
@@ -138,10 +138,6 @@ meta:
     f33943e2-0903-4e8c-9b29-5da65662d044: 'FAQ with text' # FAQ with text
     fe80b9ea-064a-4cb3-b008-adf949a539a6: 'Pre-Link Text' # Pre-Link Text
 plugins:
-  architect:
-    edition: standard
-    enabled: true
-    schemaVersion: 2.0.0
   async-queue:
     edition: standard
     enabled: true
@@ -605,8 +601,8 @@ plugins:
       apiKey: $SHOPIFY_API_KEY
       apiSecretKey: $SHOPIFY_API_SECRET
       hostName: $SHOPIFY_HOSTNAME
-      template: product.twig
-      uriFormat: 'products/{slug}'
+      template: ''
+      uriFormat: ''
   sprig:
     edition: standard
     enabled: true
@@ -625,7 +621,7 @@ plugins:
     schemaVersion: 1.0.0
 shopify:
   productFieldLayout:
-    c086b0af-0bbe-4b1d-bdfd-1494947b09bf: null
+    d015c892-278a-49a8-b19d-cb6c8287f605: null
 system:
   edition: solo
   live: true

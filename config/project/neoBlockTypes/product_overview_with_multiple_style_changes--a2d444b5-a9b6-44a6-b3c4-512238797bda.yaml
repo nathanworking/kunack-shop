@@ -1,0 +1,19 @@
+childBlocks: null
+conditions: null
+description: ''
+enabled: true
+field: 4a2e3929-984b-40ff-96fb-0d1322e1cafe # Content
+group: null
+groupChildBlockTypes: true
+handle: product_overview_with_multiple_style_changes
+icon: null
+ignorePermissions: true
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: 'Product Overview With Multiple Style Changes'
+sortOrder: 21
+topLevel: true
