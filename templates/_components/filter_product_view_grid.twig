@@ -1,4 +1,4 @@
-<div class="dynamic_background">
+<div x-data="{showMobileFilterMenu:false}" class="dynamic_background">
   <!--
     Mobile filter dialog
 
@@ -7,31 +7,17 @@
   <div class="relative z-40 sm:hidden" role="dialog" aria-modal="true">
     <!--
       Off-canvas menu backdrop, show/hide based on off-canvas menu state.
-
-      Entering: "transition-opacity ease-linear duration-300"
-        From: "opacity-0"
-        To: "opacity-100"
-      Leaving: "transition-opacity ease-linear duration-300"
-        From: "opacity-100"
-        To: "opacity-0"
     -->
-    <div class="fixed inset-0 bg-primary-dark bg-opacity-25"></div>
+    <div x-show="showMobileFilterMenu" class="fixed inset-0 bg-primary-dark bg-opacity-25"></div>
 
-    <div class="fixed inset-0 z-40 flex">
+    <div x-show="showMobileFilterMenu" class="fixed inset-0 z-40 flex">
       <!--
         Off-canvas menu, show/hide based on off-canvas menu state.
-
-        Entering: "transition ease-in-out duration-300 transform"
-          From: "translate-x-full"
-          To: "translate-x-0"
-        Leaving: "transition ease-in-out duration-300 transform"
-          From: "translate-x-0"
-          To: "translate-x-full"
       -->
       <div class="relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-primary-light py-4 pb-6 shadow-xl">
         <div class="flex items-center justify-between px-4">
           <h2 class="type_xl font-medium text-primary-dark">Filters</h2>
-          <button type="button" class="-mr-2 flex h-10 w-10 items-center justify-center rounded-md bg-primary-light p-2 text-secondary-dark hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-accent/80">
+          <button @click="showMobileFilterMenu = false" type="button" class="-mr-2 flex h-10 w-10 items-center justify-center rounded-md bg-primary-light p-2 text-secondary-dark hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-accent/80">
             <span class="sr-only">Close menu</span>
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -40,144 +26,45 @@
         </div>
 
         <!-- Filters -->
-        <form class="mt-4">
-          <div class="border-t border-primary-light px-4 py-6">
-            <h3 class="-mx-2 -my-3 flow-root">
-              <!-- Expand/collapse question button -->
-              <button type="button" class="flex w-full items-center justify-between bg-primary-light px-2 py-3 type_xs text-secondary-dark" aria-controls="filter-section-0" aria-expanded="false">
-                <span class="font-medium text-primary-dark">Category</span>
-                <span class="ml-6 flex items-center">
-                  <!--
-                    Expand/collapse icon, toggle classes based on question open state.
+          <form class="mt-4">
+               {% for block in blocks %}
+                    {% if block.type.handle == 'filter_product_view_grid' %}
+                         {% for product_filter in block.children() %}
+                              <div x-data="{checked{{loop.index}}:0,show{{loop.index}}:true}" class="border-t border-primary-light px-4 py-6">
+                                   <h3 class="-mx-2 -my-3 flow-root">
+                                   <!-- Expand/collapse question button -->
+                                   <button  @click="show{{loop.index}} = !show{{loop.index}}" type="button" class="flex w-full items-center justify-between bg-primary-light px-2 py-3 type_xs text-secondary-dark" aria-controls="filter-section-0" aria-expanded="false">
+                                        <span class="font-medium text-primary-dark">{{product_filter.content_title_plain}}</span>
+                                        <span class="ml-6 flex items-center">
+                                        <!--
+                                             Expand/collapse icon, toggle classes based on question open state.
 
-                    Open: "-rotate-180", Closed: "rotate-0"
-                  -->
-                  <svg class="rotate-0 h-5 w-5 transform" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-                  </svg>
-                </span>
-              </button>
-            </h3>
-            <div class="pt-6" id="filter-section-0">
-              <div class="space-y-6">
-                <div class="flex items-center">
-                  <input id="filter-mobile-category-0" name="category[]" value="tees" type="checkbox" class="h-4 w-4 rounded border-secondary-dark text-accent focus:ring-accent/80">
-                  <label for="filter-mobile-category-0" class="ml-3 type_xs text-secondary-dark">Tees</label>
-                </div>
-                <div class="flex items-center">
-                  <input id="filter-mobile-category-1" name="category[]" value="crewnecks" type="checkbox" class="h-4 w-4 rounded border-secondary-dark text-accent focus:ring-accent/80">
-                  <label for="filter-mobile-category-1" class="ml-3 type_xs text-secondary-dark">Crewnecks</label>
-                </div>
-                <div class="flex items-center">
-                  <input id="filter-mobile-category-2" name="category[]" value="hats" type="checkbox" class="h-4 w-4 rounded border-secondary-dark text-accent focus:ring-accent/80">
-                  <label for="filter-mobile-category-2" class="ml-3 type_xs text-secondary-dark">Hats</label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="border-t border-secondary-dark px-4 py-6">
-            <h3 class="-mx-2 -my-3 flow-root">
-              <!-- Expand/collapse question button -->
-              <button type="button" class="flex w-full items-center justify-between bg-primary-light px-2 py-3 type_xs text-secondary-dark" aria-controls="filter-section-1" aria-expanded="false">
-                <span class="font-medium text-primary-dark">Brand</span>
-                <span class="ml-6 flex items-center">
-                  <!--
-                    Expand/collapse icon, toggle classes based on question open state.
-
-                    Open: "-rotate-180", Closed: "rotate-0"
-                  -->
-                  <svg class="rotate-0 h-5 w-5 transform" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-                  </svg>
-                </span>
-              </button>
-            </h3>
-            <div class="pt-6" id="filter-section-1">
-              <div class="space-y-6">
-                <div class="flex items-center">
-                  <input id="filter-mobile-brand-0" name="brand[]" value="clothing-company" type="checkbox" class="h-4 w-4 rounded border-secondary-dark text-accent focus:ring-accent/80">
-                  <label for="filter-mobile-brand-0" class="ml-3 type_xs text-secondary-dark">Clothing Company</label>
-                </div>
-                <div class="flex items-center">
-                  <input id="filter-mobile-brand-1" name="brand[]" value="fashion-inc" type="checkbox" class="h-4 w-4 rounded border-secondary-dark text-accent focus:ring-accent/80">
-                  <label for="filter-mobile-brand-1" class="ml-3 type_xs text-secondary-dark">Fashion Inc.</label>
-                </div>
-                <div class="flex items-center">
-                  <input id="filter-mobile-brand-2" name="brand[]" value="shoes-n-more" type="checkbox" class="h-4 w-4 rounded border-secondary-dark text-accent focus:ring-accent/80">
-                  <label for="filter-mobile-brand-2" class="ml-3 type_xs text-secondary-dark">Shoes &#039;n More</label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="border-t border-secondary-dark px-4 py-6">
-            <h3 class="-mx-2 -my-3 flow-root">
-              <!-- Expand/collapse question button -->
-              <button type="button" class="flex w-full items-center justify-between bg-primary-light px-2 py-3 type_xs text-secondary-dark" aria-controls="filter-section-2" aria-expanded="false">
-                <span class="font-medium text-primary-dark">Color</span>
-                <span class="ml-6 flex items-center">
-                  <!--
-                    Expand/collapse icon, toggle classes based on question open state.
-
-                    Open: "-rotate-180", Closed: "rotate-0"
-                  -->
-                  <svg class="rotate-0 h-5 w-5 transform" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-                  </svg>
-                </span>
-              </button>
-            </h3>
-            <div class="pt-6" id="filter-section-2">
-              <div class="space-y-6">
-                <div class="flex items-center">
-                  <input id="filter-mobile-color-0" name="color[]" value="white" type="checkbox" class="h-4 w-4 rounded border-secondary-dark text-accent focus:ring-accent/80">
-                  <label for="filter-mobile-color-0" class="ml-3 type_xs text-secondary-dark">White</label>
-                </div>
-                <div class="flex items-center">
-                  <input id="filter-mobile-color-1" name="color[]" value="black" type="checkbox" class="h-4 w-4 rounded border-secondary-dark text-accent focus:ring-accent/80">
-                  <label for="filter-mobile-color-1" class="ml-3 type_xs text-secondary-dark">Black</label>
-                </div>
-                <div class="flex items-center">
-                  <input id="filter-mobile-color-2" name="color[]" value="grey" type="checkbox" class="h-4 w-4 rounded border-secondary-dark text-accent focus:ring-accent/80">
-                  <label for="filter-mobile-color-2" class="ml-3 type_xs text-secondary-dark">Grey</label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="border-t border-secondary-dark px-4 py-6">
-            <h3 class="-mx-2 -my-3 flow-root">
-              <!-- Expand/collapse question button -->
-              <button type="button" class="flex w-full items-center justify-between bg-primary-light px-2 py-3 type_xs text-secondary-dark" aria-controls="filter-section-3" aria-expanded="false">
-                <span class="font-medium text-primary-dark">Sizes</span>
-                <span class="ml-6 flex items-center">
-                  <!--
-                    Expand/collapse icon, toggle classes based on question open state.
-
-                    Open: "-rotate-180", Closed: "rotate-0"
-                  -->
-                  <svg class="rotate-0 h-5 w-5 transform" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-                  </svg>
-                </span>
-              </button>
-            </h3>
-            <div class="pt-6" id="filter-section-3">
-              <div class="space-y-6">
-                <div class="flex items-center">
-                  <input id="filter-mobile-sizes-0" name="sizes[]" value="s" type="checkbox" class="h-4 w-4 rounded border-secondary-dark text-accent focus:ring-accent/80">
-                  <label for="filter-mobile-sizes-0" class="ml-3 type_xs text-secondary-dark">S</label>
-                </div>
-                <div class="flex items-center">
-                  <input id="filter-mobile-sizes-1" name="sizes[]" value="m" type="checkbox" class="h-4 w-4 rounded border-secondary-dark text-accent focus:ring-accent/80">
-                  <label for="filter-mobile-sizes-1" class="ml-3 type_xs text-secondary-dark">M</label>
-                </div>
-                <div class="flex items-center">
-                  <input id="filter-mobile-sizes-2" name="sizes[]" value="l" type="checkbox" class="h-4 w-4 rounded border-secondary-dark text-accent focus:ring-accent/80">
-                  <label for="filter-mobile-sizes-2" class="ml-3 type_xs text-secondary-dark">L</label>
-                </div>
-              </div>
-            </div>
-          </div>
-        </form>
+                                             Open: "-rotate-180", Closed: "rotate-0"
+                                        -->
+                                        <svg 
+                                             class="h-5 w-5 transform"
+                                             :class="{'rotate-180' : !show{{loop.index}}}"
+                                             viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                             <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                                        </svg>
+                                        </span>
+                                   </button>
+                                   </h3>
+                                   <div x-show="show{{loop.index}}" class="pt-6" id="filter-section-{{loop.index}}">
+                                        <div class="space-y-6">
+                                             {% for filter_options in product_filter.children %}
+                                                  <div class="flex items-center">
+                                                       <input id="filter-{{product_filter.content_title_plain|url_encode}}-{{loop.index}}" name="{{product_filter.content_title_plain|url_encode}}[]" value="{{product_filter.content_title_plain|url_encode}}[]" type="checkbox" class="h-4 w-4 rounded border-secondary-dark text-accent focus:ring-accent/80">
+                                                       <label for="filter-{{product_filter.content_title_plain|url_encode}}-{{loop.index}}" class="ml-3 type_xs text-secondary-dark">{{filter_options.content_title_plain}}</label>
+                                                  </div>
+                                             {% endfor %}                                            
+                                        </div>
+                                   </div>
+                              </div>
+                         {% endfor %}
+                    {% endif %}
+               {% endfor %}
+          </form>
       </div>
     </div>
   </div>
@@ -193,7 +80,7 @@
         </div>
 
         <!-- Mobile filter dialog toggle, controls the 'mobileFilterDialogOpen' state. -->
-        <button type="button" class="inline-block type_xs font-medium text-primary-dark hover:text-primary-dark sm:hidden">Filters</button>
+        <button @click="showMobileFilterMenu = true" type="button" class="inline-block type_xs font-medium text-primary-dark hover:text-primary-dark sm:hidden">Filters</button>
 
         <div class="hidden sm:flex sm:items-baseline sm:space-x-8">
           {% for block in blocks %}
@@ -210,19 +97,11 @@
                               </button>
                               </div>
 
-                              <!--
-                              Entering: "transition ease-out duration-100"
-                                   From: "transform opacity-0 scale-95"
-                                   To: "transform opacity-100 scale-100"
-                              Leaving: "transition ease-in duration-75"
-                                   From: "transform opacity-100 scale-100"
-                                   To: "transform opacity-0 scale-95"
-                              -->
                               <div x-show="show{{loop.index}}" class="absolute right-0 z-10 mt-2 origin-top-right rounded-md bg-primary-light p-4 shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none">
                                    <form class="space-y-4">
                                         {% for filter_options in product_filter.children %}
                                              <div class="flex items-center">
-                                                  <input @change="checked{{loop.parent.loop.index}} += ($event.target.checked) ? +1 : -1" id="filter-{{product_filter.content_title_plain|url_encode}}-{{loop.index}}" name="{{product_filter.content_title_plain|url_encode}}[]" value="tees" type="checkbox" class="h-4 w-4 rounded border-secondary-dark text-accent focus:ring-accent/80">
+                                                  <input @change="checked{{loop.parent.loop.index}} += ($event.target.checked) ? +1 : -1" id="filter-{{product_filter.content_title_plain|url_encode}}-{{loop.index}}" name="{{product_filter.content_title_plain|url_encode}}[]" value="{{filter_options.content_title_plain|url_encode}}" type="checkbox" class="h-4 w-4 rounded border-secondary-dark text-accent focus:ring-accent/80">
                                                   <label for="filter-{{product_filter.content_title_plain|url_encode}}-{{loop.index}}" class="ml-3 whitespace-nowrap pr-6 type_xs font-medium text-primary-dark">{{filter_options.content_title_plain}}</label>
                                              </div>
                                         {% endfor %}
