@@ -1,51 +1,19 @@
-childBlocks: null
+childBlocks:
+  - product_filter
 conditions: null
 description: ''
 enabled: true
 field: 4a2e3929-984b-40ff-96fb-0d1322e1cafe # Content
-fieldLayouts:
-  4c159c26-13c1-48c2-8e14-7621790f01fc:
-    tabs:
-      -
-        elementCondition: null
-        elements:
-          -
-            elementCondition: null
-            fieldUid: a5ecc83e-c8ee-4d47-ba2f-17bb67ee6fa9 # Plain Title
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 32df82af-17a7-4e70-83ef-d9c7084407bb
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: 3628e283-b2cc-43b9-ac7e-c8d84e14200c # Plain Subtitle
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: faacb529-dbbd-4b54-9f9a-ff9c2c9f40fa
-            userCondition: null
-            warning: null
-            width: 100
-        name: Content
-        uid: 24d310cd-8f37-4c78-b323-76dfc1e3660f
-        userCondition: null
 group: null
 groupChildBlockTypes: true
 handle: filter_product_view_grid
 icon: null
 ignorePermissions: true
 maxBlocks: 0
-maxChildBlocks: 0
+maxChildBlocks: 6
 maxSiblingBlocks: 0
 minBlocks: 0
-minChildBlocks: 0
+minChildBlocks: 1
 minSiblingBlocks: 0
 name: 'Filter Product View Grid'
 sortOrder: 21
