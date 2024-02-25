@@ -1,4 +1,4 @@
-dateModified: 1708348055
+dateModified: 1708878131
 email:
   fromEmail: dev@vessul.co
   fromName: Chaos
@@ -582,7 +582,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: NCWHZYOH2AUZ40RMW7NO2OAY
-    schemaVersion: 3.0.11
+    schemaVersion: 3.0.12
   secrets:
     edition: standard
     enabled: true
