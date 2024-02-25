@@ -1,4 +1,14 @@
-<div x-data="{showMobileFilterMenu:false}" class="dynamic_background">
+<div x-data="{
+          showMobileFilterMenu:false,
+          library: JSON.parse(new URLSearchParams(location.search).get('library')) || [],
+          plant: new URLSearchParams(location.search).get('plant') || [],
+     }" 
+     x-init="$watch('library', (value) => {
+          const url = new URL(window.location.href);
+          url.searchParams.set('library', JSON.stringify(value));
+          history.pushState(null, document.title, url.toString());
+     })"
+     class="dynamic_background">
   <!--
     Mobile filter dialog
 
@@ -25,7 +35,7 @@
           </button>
         </div>
 
-        <!-- Filters -->
+        <!-- Mobile Filters -->
           <form class="mt-4">
                {% for block in blocks %}
                     {% if block.type.handle == 'filter_product_view_grid' %}
@@ -54,8 +64,8 @@
                                         <div class="space-y-6">
                                              {% for filter_options in product_filter.children %}
                                                   <div class="flex items-center">
-                                                       <input id="filter-{{product_filter.content_title_plain|url_encode}}-{{loop.index}}" name="{{product_filter.content_title_plain|url_encode}}[]" value="{{product_filter.content_title_plain|url_encode}}[]" type="checkbox" class="h-4 w-4 rounded border-secondary-dark text-accent focus:ring-accent/80">
-                                                       <label for="filter-{{product_filter.content_title_plain|url_encode}}-{{loop.index}}" class="ml-3 type_xs text-secondary-dark">{{filter_options.content_title_plain}}</label>
+                                                       <input id="desktop-filter-{{product_filter.content_title_plain|base64_encode}}-{{loop.index}}" name="{{product_filter.content_title_plain|base64_encode}}[]" value="{{product_filter.content_title_plain|base64_encode}}[]" type="checkbox" class="h-4 w-4 rounded border-secondary-dark text-accent focus:ring-accent/80">
+                                                       <label for="desktop-filter-{{product_filter.content_title_plain|base64_encode}}-{{loop.index}}" class="ml-3 type_xs text-secondary-dark">{{filter_options.content_title_plain}}</label>
                                                   </div>
                                              {% endfor %}                                            
                                         </div>
@@ -64,6 +74,7 @@
                          {% endfor %}
                     {% endif %}
                {% endfor %}
+
           </form>
       </div>
     </div>
@@ -82,6 +93,7 @@
         <!-- Mobile filter dialog toggle, controls the 'mobileFilterDialogOpen' state. -->
         <button @click="showMobileFilterMenu = true" type="button" class="inline-block type_xs font-medium text-primary-dark hover:text-primary-dark sm:hidden">Filters</button>
 
+          <!-- Desktop Filters -->
         <div class="hidden sm:flex sm:items-baseline sm:space-x-8">
           {% for block in blocks %}
                {% if block.type.handle == 'filter_product_view_grid' %}
@@ -101,8 +113,8 @@
                                    <form class="space-y-4">
                                         {% for filter_options in product_filter.children %}
                                              <div class="flex items-center">
-                                                  <input @change="checked{{loop.parent.loop.index}} += ($event.target.checked) ? +1 : -1" id="filter-{{product_filter.content_title_plain|url_encode}}-{{loop.index}}" name="{{product_filter.content_title_plain|url_encode}}[]" value="{{filter_options.content_title_plain|url_encode}}" type="checkbox" class="h-4 w-4 rounded border-secondary-dark text-accent focus:ring-accent/80">
-                                                  <label for="filter-{{product_filter.content_title_plain|url_encode}}-{{loop.index}}" class="ml-3 whitespace-nowrap pr-6 type_xs font-medium text-primary-dark">{{filter_options.content_title_plain}}</label>
+                                                  <input x-model="{{product_filter.content_title_plain|base64_encode}}" @change="checked{{loop.parent.loop.index}} += ($event.target.checked) ? +1 : -1" id="filter-{{product_filter.content_title_plain|base64_encode}}-{{loop.index}}" name="{{product_filter.content_title_plain|base64_encode}}[]" value="{{filter_options.content_title_plain|base64_encode}}" type="checkbox" class="h-4 w-4 rounded border-secondary-dark text-accent focus:ring-accent/80">
+                                                  <label for="filter-{{product_filter.content_title_plain|base64_encode}}-{{loop.index}}" class="ml-3 whitespace-nowrap pr-6 type_xs font-medium text-primary-dark">{{filter_options.content_title_plain}}</label>
                                              </div>
                                         {% endfor %}
                                    </form>
@@ -112,8 +124,63 @@
                     {% endfor %}
                {% endif %}
           {% endfor %}
+
+
+
+                         <div x-data="{checkedLibrary:0,showLibrary:false}" id="desktop-menu-Library" class="relative inline-block text-left">
+                              <div>
+                              <button @click="showLibrary = !showLibrary" type="button" class="group inline-flex items-center justify-center type_xs font-medium text-primary-dark hover:text-primary-dark" aria-expanded="false">
+                                   <span>Library</span>
+                                   <span x-show="checkedLibrary > 0" x-text="checkedLibrary" class="ml-1.5 rounded bg-accent px-1.5 py-0.5 type_xs font-semibold tabular-nums text-primary-light">1</span>
+                                   <svg class="-mr-1 ml-1 h-5 w-5 flex-shrink-0 text-secondary-dark group-hover:text-secondary-dark" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                   <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                                   </svg>
+                              </button>
+                              </div>
+
+                              <div x-show="showLibrary" class="absolute right-0 z-10 mt-2 origin-top-right rounded-md bg-primary-light p-4 shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                   <form class="space-y-4">
+                                             <div class="flex items-center">
+                                                  <input x-model="library" @change="checkedLibrary += ($event.target.checked) ? +1 : -1" id="filter-library-1" name="library[]" value="hunger" type="checkbox" class="h-4 w-4 rounded border-secondary-dark text-accent focus:ring-accent/80">
+                                                  <label for="filter-library-1" class="ml-3 whitespace-nowrap pr-6 type_xs font-medium text-primary-dark">hunger</label>
+                                             </div>
+                                             <div class="flex items-center">
+                                                  <input x-model="library" @change="checkedLibrary += ($event.target.checked) ? +1 : -1" id="filter-library-2" name="library[]" value="games" type="checkbox" class="h-4 w-4 rounded border-secondary-dark text-accent focus:ring-accent/80">
+                                                  <label for="filter-library-2" class="ml-3 whitespace-nowrap pr-6 type_xs font-medium text-primary-dark">games</label>
+                                             </div>
+                                   </form>
+                              </div>
+
+                         </div>
+
+                         <div x-data="{checkedplant:0,showplant:false}" id="desktop-menu-plant" class="relative inline-block text-left">
+                              <div>
+                              <button @click="showplant = !showplant" type="button" class="group inline-flex items-center justify-center type_xs font-medium text-primary-dark hover:text-primary-dark" aria-expanded="false">
+                                   <span>plant</span>
+                                   <span x-show="checkedplant > 0" x-text="checkedplant" class="ml-1.5 rounded bg-accent px-1.5 py-0.5 type_xs font-semibold tabular-nums text-primary-light">1</span>
+                                   <svg class="-mr-1 ml-1 h-5 w-5 flex-shrink-0 text-secondary-dark group-hover:text-secondary-dark" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                   <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                                   </svg>
+                              </button>
+                              </div>
+
+                              <div x-show="showplant" class="absolute right-0 z-10 mt-2 origin-top-right rounded-md bg-primary-light p-4 shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                   <form class="space-y-4">
+                                             <div class="flex items-center">
+                                                  <input x-model="plant" @change="checkedplant += ($event.target.checked) ? +1 : -1" id="filter-plant-1" name="plant[]" value="hunger" type="checkbox" class="h-4 w-4 rounded border-secondary-dark text-accent focus:ring-accent/80">
+                                                  <label for="filter-plant-1" class="ml-3 whitespace-nowrap pr-6 type_xs font-medium text-primary-dark">tree</label>
+                                             </div>
+                                             <div class="flex items-center">
+                                                  <input x-model="plant" @change="checkedplant += ($event.target.checked) ? +1 : -1" id="filter-plant-2" name="plant[]" value="games" type="checkbox" class="h-4 w-4 rounded border-secondary-dark text-accent focus:ring-accent/80">
+                                                  <label for="filter-plant-2" class="ml-3 whitespace-nowrap pr-6 type_xs font-medium text-primary-dark">fern</label>
+                                             </div>
+                                   </form>
+                              </div>
+
+                         </div>
         </div>
       </div>
+
     </section>
   </div>
 </div>
