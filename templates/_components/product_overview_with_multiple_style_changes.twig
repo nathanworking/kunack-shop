@@ -1,6 +1,6 @@
 {# Watch out—these aren't the same as element IDs! #}
 {% set product = craft.shopifyProducts
-  .shopifyId(8893665411355)
+  .shopifyId(block.shopify_product_id)
   .one() %}
 
 {% set defaultVariant = product.getDefaultVariant() %}

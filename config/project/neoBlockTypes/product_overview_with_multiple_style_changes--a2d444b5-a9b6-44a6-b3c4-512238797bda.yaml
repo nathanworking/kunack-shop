@@ -4,11 +4,23 @@ description: ''
 enabled: true
 field: 4a2e3929-984b-40ff-96fb-0d1322e1cafe # Content
 fieldLayouts:
-  e15ae6cc-beff-4b20-854d-ea705d896427:
+  757ce033-d5ec-47b3-8dc0-ad5673ca7b48:
     tabs:
       -
         elementCondition: null
         elements:
+          -
+            elementCondition: null
+            fieldUid: 24e1c6a2-59d3-46be-8ed1-6d3731715bd4 # Shopify Product ID
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e6b542d4-010f-4e36-b645-cafd45679283
+            userCondition: null
+            warning: null
+            width: 100
           -
             elementCondition: null
             fieldUid: c2ca9df1-28d9-4199-9640-1cbf54b91cd9 # Links - Max 4
