@@ -13,6 +13,7 @@
         "plyr": "^3.7.8",
         "puppeteer": "^21.7.0",
         "sharp": "^0.33.2",
+        "shopify-buy": "^2.21.1",
         "vite-plugin-live-reload": "^3.0.2"
     },
     "devDependencies": {

@@ -2,5 +2,5 @@
 {{ craft.vite.script('src/js/app.js', false) }}
 
 {# both for shopify cart system #}
-{% do view.registerJsFile('https://sdks.shopifycdn.com/js-buy-sdk/v2/latest/index.umd.min.js') %}
+{% do view.registerJsFile('https://unpkg.com/@shopify/storefront-api-client@0.2.3/dist/umd/storefront-api-client.min.js') %}
 {{ craft.vite.script('src/js/shopify.js', false) }}

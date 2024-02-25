@@ -6,7 +6,6 @@ import critical from 'rollup-plugin-critical';
 import { ViteFaviconsPlugin } from "vite-plugin-favicon2";
 import * as path from 'path';
 
-
 export default defineConfig(({command}) => ({
   base: command === 'serve' ? '' : '/dist/',
   build: {
