@@ -27,10 +27,6 @@ client.checkout.create().then((checkout) => {
                client.checkout.addLineItems(checkout.id, lineItemsToAdd).then((checkout) => {
                     // Do something with the updated checkout
                     updateButtonUIToSuccess(button);
-               })
-               .fail(() => {
-                    // Do something with fail state
-                    updateButtonUIToSuccess(button);
                });
 
           });

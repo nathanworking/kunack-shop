@@ -1,0 +1,20 @@
+childBlocks:
+  - product_filter
+conditions: null
+description: ''
+enabled: true
+field: 4a2e3929-984b-40ff-96fb-0d1322e1cafe # Content
+group: null
+groupChildBlockTypes: true
+handle: filter_product_view_grid
+icon: null
+ignorePermissions: true
+maxBlocks: 0
+maxChildBlocks: 6
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 1
+minSiblingBlocks: 0
+name: 'Filter Product View Grid'
+sortOrder: 21
+topLevel: true
