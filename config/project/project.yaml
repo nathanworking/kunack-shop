@@ -1,4 +1,4 @@
-dateModified: 1708882533
+dateModified: 1708874656
 email:
   fromEmail: dev@vessul.co
   fromName: Chaos
@@ -62,6 +62,7 @@ meta:
     10f86d95-9b00-4966-98bd-9dfe9815e60a: 'Title - Subtitle' # Title - Subtitle
     13d9e3a6-c642-4ad7-88b5-487abe3f28f5: Label # Label
     014cca91-da08-4b7e-9d7c-d6e9a30f3805: 'Hero with Background Image' # Hero with Background Image
+    24e1c6a2-59d3-46be-8ed1-6d3731715bd4: 'Shopify Product ID' # Shopify Product ID
     19c5cbed-5fa7-492d-b70e-92920a53acb0: 'Product Filter' # Product Filter
     26e25045-b1ad-4612-bf9a-61b48495489f: Simple # Simple
     029f68a8-6c06-49ba-9b1a-37b1bd4b3bfb: Text # Text
@@ -101,6 +102,7 @@ meta:
     33256147-375b-4aaa-9f2a-1ee861454c19: 'Overlay Title' # Overlay Title
     77585975-21ed-40f6-8958-03320ff99605: Form # Form
     a2c1a242-e2c4-4102-882d-20fdf12839db: Globals # Globals
+    a2d444b5-a9b6-44a6-b3c4-512238797bda: 'Product Overview With Multiple Style Changes' # Product Overview With Multiple Style Changes
     a3b13962-d832-45ff-b54a-34719aa08d28: External # External
     a5ecc83e-c8ee-4d47-ba2f-17bb67ee6fa9: 'Plain Title' # Plain Title
     a6a55c08-7394-4776-9bcc-4cf0e9bbb140: Page # Page
@@ -623,6 +625,7 @@ plugins:
     schemaVersion: 1.0.0
 shopify:
   productFieldLayout:
+    d015c892-278a-49a8-b19d-cb6c8287f605: null
     dc0fdeb6-d347-476c-9619-66d1ef86d969: null
 system:
   edition: solo
