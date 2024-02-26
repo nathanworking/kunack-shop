@@ -1,0 +1,40 @@
+childBlocks: null
+conditions: null
+description: ''
+enabled: true
+field: 4a2e3929-984b-40ff-96fb-0d1322e1cafe # Content
+fieldLayouts:
+  725876e4-1233-493e-b68a-0f2edecff160:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: a5ecc83e-c8ee-4d47-ba2f-17bb67ee6fa9 # Plain Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: aa1727c1-f719-4380-8dc6-c7e699d3b530
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: b906fde6-1059-441a-84a4-84b6e4ff24f7
+        userCondition: null
+group: null
+groupChildBlockTypes: true
+handle: product_filter_value
+icon: null
+ignorePermissions: true
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: 'Product Filter Value'
+sortOrder: 23
+topLevel: false
