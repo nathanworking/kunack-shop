@@ -1,4 +1,4 @@
-dateModified: 1709044798
+dateModified: 1709059194
 email:
   fromEmail: dev@vessul.co
   fromName: Chaos
@@ -116,6 +116,7 @@ meta:
     abd4084c-0d61-4110-97b0-2f095d8c5445: Chaos # Chaos
     ac8bb16a-3bd3-4c0e-892e-00a4dabf3ecb: 'External Link' # External Link
     ac935a13-bd0d-4769-82e5-9bea8ee2fbbc: OverlayText # OverlayText
+    b881efc3-c94c-4e87-bddb-dde9488c77e8: Tags # Tags
     be3cbb2a-d8c6-45a9-b3cc-2e6aa9076ab8: 'Lead Paragraph' # Lead Paragraph
     bf10ade7-0db7-4e8d-a58c-5681f9aed9dd: 'Plain Title Linebreak' # Plain Title Linebreak
     c03f7cab-8ba8-4293-900f-aa8696040aef: 'Feature 2x2 Grid with Icons' # Feature 2x2 Grid with Icons
@@ -625,10 +626,6 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
-shopify:
-  productFieldLayout:
-    d015c892-278a-49a8-b19d-cb6c8287f605: null
-    dc0fdeb6-d347-476c-9619-66d1ef86d969: null
 system:
   edition: solo
   live: true

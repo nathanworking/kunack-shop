@@ -1,0 +1,31 @@
+tabs:
+  -
+    elementCondition: null
+    elements:
+      -
+        elementCondition: null
+        fieldUid: a78f97bd-d015-4e9b-b0d9-76b99c607ea5 # Link - Max 1
+        instructions: null
+        label: null
+        required: false
+        tip: null
+        type: craft\fieldlayoutelements\CustomField
+        uid: b5347c59-d4ed-4ab0-951d-e28f82d78538
+        userCondition: null
+        warning: null
+        width: 100
+      -
+        elementCondition: null
+        fieldUid: b881efc3-c94c-4e87-bddb-dde9488c77e8 # Tags
+        instructions: null
+        label: null
+        required: false
+        tip: null
+        type: craft\fieldlayoutelements\CustomField
+        uid: 208e393f-b22a-4529-b709-701032b9620f
+        userCondition: null
+        warning: null
+        width: 100
+    name: Content
+    uid: e6f8d1a2-f912-4183-9ec6-5110ed749681
+    userCondition: null

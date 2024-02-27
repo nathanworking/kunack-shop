@@ -1,4 +1,17 @@
-<div class="bg-primary-light">
+<div x-data="{
+          selectedTags: Array.from(new URLSearchParams(window.location.search).values()).toString().split(',') ?? [],
+          isSelected(productTags) {
+               console.log(this.selectedTags);
+               if(!this.selectedTags.length) {
+                    return true;
+               }
+               return this.selectedTags.some(item => productTags.includes(item));
+          }
+     }"
+     @get-params-changed.window="
+          const searchParams = Array.from(new URLSearchParams(window.location.search).values()).toString().split(',');
+          this.selectedTags = searchParams;
+     " class="bg-primary-light">
     <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
         <h2 class="type_2xl font-bold text-primary-dark">{{ block.content_title_plain }}</h2>
 
@@ -8,7 +21,7 @@
                 {% set variant = product.getDefaultVariant() %}
                 {% set displayPrice = variant.price|currency %}
                 {% set displayImage = product.image_max_one %}
-                <div>
+                <a x-data x-show="isSelected('{{product.content_tags}}')" class="product-card" >
                     <div class="relative">
                         <div class="relative h-72 w-full overflow-hidden rounded-lg">
                             {% set size = 576 %}
@@ -35,7 +48,7 @@
                     <div class="mt-6">
                         <button data-default-variant-id="{{ variant.id }}" class="buy-button relative flex w-full items-center justify-center rounded-md border border-transparent bg-secondary-light px-8 py-2 type_xs font-medium text-primary-dark hover:bg-secondary-light/80">Add to bag<span class="sr-only">, {{ product.title }}</span></button>
                     </div>
-                </div>
+                </a>
             {% endfor %}
 
         </div>

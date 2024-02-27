@@ -100,6 +100,7 @@
                                    const params = new URLSearchParams(location.search);
                                    params.set('{{product_filter.content_title_plain|snake}}', value);
                                    history.pushState(null, '', window.location.pathname + '?' + params.toString());
+                                   $dispatch('get-params-changed');
                               })"
                               id="desktop-menu-checked{{loop.index}}" class="relative inline-block text-left">
                               <div>
