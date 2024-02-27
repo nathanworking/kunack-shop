@@ -1,4 +1,4 @@
-dateModified: 1707419969
+dateModified: 1709044798
 email:
   fromEmail: dev@vessul.co
   fromName: Chaos
@@ -36,10 +36,12 @@ meta:
   __names__:
     0b24ab9f-87c0-46ac-b013-beb8502e8369: 'Network Name' # Network Name
     0c2fe349-0e24-4880-826f-11b200f12e59: 'Simple Centered' # Simple Centered
+    0d0ba181-4c51-4dfa-af50-f832a99ccf34: 'Filter Product View Grid' # Filter Product View Grid
     1aa4bc79-ef8a-4dad-87ac-ea7eee537ee7: 'Highlight Color' # Highlight Color
     1e744d36-e0ed-45f5-89c8-4105bfd2f340: 'Icon SVG' # Icon SVG
     2b43adc8-0efc-4a58-bccf-4138eb38aea7: 'Select Page' # Select Page
     2d246055-fed8-4f26-b54d-8d6493956ebe: URL # URL
+    3a4460ac-69d7-40c4-94a4-76179a3c779e: 'Product Grid with Add to Cart' # Product Grid with Add to Cart
     3b83d0bf-917c-4cac-86f3-3ff777465a85: Link # Link
     03c81418-fff9-4dfc-b63a-f973f0abbce5: Text # Text
     3d0aee8c-c441-40fd-ac84-9167c9e2ef2e: 'Button Text' # Button Text
@@ -61,6 +63,8 @@ meta:
     10f86d95-9b00-4966-98bd-9dfe9815e60a: 'Title - Subtitle' # Title - Subtitle
     13d9e3a6-c642-4ad7-88b5-487abe3f28f5: Label # Label
     014cca91-da08-4b7e-9d7c-d6e9a30f3805: 'Hero with Background Image' # Hero with Background Image
+    19c5cbed-5fa7-492d-b70e-92920a53acb0: 'Product Filter' # Product Filter
+    24e1c6a2-59d3-46be-8ed1-6d3731715bd4: 'Shopify Product ID' # Shopify Product ID
     26e25045-b1ad-4612-bf9a-61b48495489f: Simple # Simple
     029f68a8-6c06-49ba-9b1a-37b1bd4b3bfb: Text # Text
     30cce96c-b64b-478a-9e43-b3310ef21004: 'Feature with image' # Feature with image
@@ -75,6 +79,7 @@ meta:
     96c4d8b1-e79a-462b-b993-39f3521d554d: 'Overlay Close' # Overlay Close
     104df9c9-f17e-42d2-9ca9-77aa97418c17: 'Image - 1 Max' # Image - 1 Max
     115ccbb3-5a28-4030-8b66-38f74bf56ea0: 'Hero with Image Tiles' # Hero with Image Tiles
+    261c7f04-6171-435c-918b-f8077e1fd229: 'Product Filter Value' # Product Filter Value
     394f4fc6-ce17-449d-a81e-5587b5d757f9: Social # Social
     0619ccd5-f1ea-495b-abaf-4942eae4fdb7: 'Vimeo Link' # Vimeo Link
     2547e037-81db-40a3-897c-62f27b403565: 'Stats with Description' # Stats with Description
@@ -92,12 +97,14 @@ meta:
     15436fcc-e8c6-4c68-abf8-631cbe87c151: 'Link URL' # Link URL
     41801d0c-a7cd-4b32-9b66-048268200963: Icon # Icon
     81781ec8-76d6-4f74-9f5f-f41395993863: 'Pre-Link Text' # Pre-Link Text
+    349377c6-a81a-4b3a-b9ac-0a09595f8d84: 'Product Grid with Add to Cart' # Product Grid with Add to Cart
     579019c4-1502-4d5e-abb7-4d7c04d47aa8: Form # Form
     13415084-3dd4-4637-afed-1b158430a6ab: 'Navigation Centered' # Navigation Centered
     24809992-38f9-40cb-b66f-0d795040d725: 'Copyright and Social' # Copyright and Social
     33256147-375b-4aaa-9f2a-1ee861454c19: 'Overlay Title' # Overlay Title
     77585975-21ed-40f6-8958-03320ff99605: Form # Form
     a2c1a242-e2c4-4102-882d-20fdf12839db: Globals # Globals
+    a2d444b5-a9b6-44a6-b3c4-512238797bda: 'Product Overview With Multiple Style Changes' # Product Overview With Multiple Style Changes
     a3b13962-d832-45ff-b54a-34719aa08d28: External # External
     a5ecc83e-c8ee-4d47-ba2f-17bb67ee6fa9: 'Plain Title' # Plain Title
     a6a55c08-7394-4776-9bcc-4cf0e9bbb140: Page # Page
@@ -109,7 +116,6 @@ meta:
     abd4084c-0d61-4110-97b0-2f095d8c5445: Chaos # Chaos
     ac8bb16a-3bd3-4c0e-892e-00a4dabf3ecb: 'External Link' # External Link
     ac935a13-bd0d-4769-82e5-9bea8ee2fbbc: OverlayText # OverlayText
-    ad65eb2c-62e3-452f-8e1a-68b90581586b: 'Product Grid with Add to Cart' # Product Grid with Add to Cart
     be3cbb2a-d8c6-45a9-b3cc-2e6aa9076ab8: 'Lead Paragraph' # Lead Paragraph
     bf10ade7-0db7-4e8d-a58c-5681f9aed9dd: 'Plain Title Linebreak' # Plain Title Linebreak
     c03f7cab-8ba8-4293-900f-aa8696040aef: 'Feature 2x2 Grid with Icons' # Feature 2x2 Grid with Icons
@@ -125,7 +131,6 @@ meta:
     d8671605-5ca5-4a32-b3c3-5a2e803e65b3: Label # Label
     da0d8102-a6a2-41b7-8054-577d5956e53a: 'Link Group' # Link Group
     dc76aea0-d30f-47b8-baa9-5f6297b0e832: Regular # Regular
-    def275a5-ef42-4370-b839-f2f908536304: 'Shopify Products' # Shopify Products
     df7ff4dd-dc38-479e-b649-a8ef8a698d3f: 'Icon Links' # Icon Links
     e510f893-335d-417c-8a0d-f610ac8068f2: 'Contact Form' # Contact Form
     e990e24f-89cb-4e2d-af75-2025e3fd7c64: Utility # Utility
@@ -139,10 +144,6 @@ meta:
     f33943e2-0903-4e8c-9b29-5da65662d044: 'FAQ with text' # FAQ with text
     fe80b9ea-064a-4cb3-b008-adf949a539a6: 'Pre-Link Text' # Pre-Link Text
 plugins:
-  architect:
-    edition: standard
-    enabled: true
-    schemaVersion: 2.0.0
   async-queue:
     edition: standard
     enabled: true
@@ -587,7 +588,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: NCWHZYOH2AUZ40RMW7NO2OAY
-    schemaVersion: 3.0.11
+    schemaVersion: 3.0.12
   secrets:
     edition: standard
     enabled: true
@@ -602,10 +603,10 @@ plugins:
     enabled: true
     schemaVersion: 4.0.6
     settings:
-      accessToken: $SHOPIFY_ADMIN_API_TOKEN
+      accessToken: $SHOPIFY_ADMIN_ACCESS_TOKEN
       apiKey: $SHOPIFY_API_KEY
       apiSecretKey: $SHOPIFY_API_SECRET
-      hostName: $SHOPIFY_HOST_NAME
+      hostName: $SHOPIFY_HOSTNAME
       template: ''
       uriFormat: ''
   sprig:
@@ -624,6 +625,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+shopify:
+  productFieldLayout:
+    d015c892-278a-49a8-b19d-cb6c8287f605: null
+    dc0fdeb6-d347-476c-9619-66d1ef86d969: null
 system:
   edition: solo
   live: true

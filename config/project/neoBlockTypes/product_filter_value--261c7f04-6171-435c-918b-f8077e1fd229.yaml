@@ -4,7 +4,7 @@ description: ''
 enabled: true
 field: 4a2e3929-984b-40ff-96fb-0d1322e1cafe # Content
 fieldLayouts:
-  c24328e1-2158-4805-9f4b-6ec4cb764c82:
+  725876e4-1233-493e-b68a-0f2edecff160:
     tabs:
       -
         elementCondition: null
@@ -17,28 +17,16 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 8f21887f-0478-47d6-977b-d9d7397e0836
+            uid: aa1727c1-f719-4380-8dc6-c7e699d3b530
             userCondition: null
             warning: null
-            width: 50
-          -
-            elementCondition: null
-            fieldUid: def275a5-ef42-4370-b839-f2f908536304 # Shopify Products
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 174577de-2447-4ff3-a52d-d11fc14b7f3f
-            userCondition: null
-            warning: null
-            width: 50
+            width: 100
         name: Content
-        uid: 11c2e417-666b-41db-9068-a1b03814b9ce
+        uid: b906fde6-1059-441a-84a4-84b6e4ff24f7
         userCondition: null
 group: null
 groupChildBlockTypes: true
-handle: product_grid_with_add_to_cart
+handle: product_filter_value
 icon: null
 ignorePermissions: true
 maxBlocks: 0
@@ -47,6 +35,6 @@ maxSiblingBlocks: 0
 minBlocks: 0
 minChildBlocks: 0
 minSiblingBlocks: 0
-name: 'Product Grid with Add to Cart'
-sortOrder: 21
-topLevel: true
+name: 'Product Filter Value'
+sortOrder: 24
+topLevel: false

@@ -1,53 +1,52 @@
-childBlocks:
-  - content_title_subtitle_svg_link
+childBlocks: null
 conditions: null
 description: ''
 enabled: true
 field: 4a2e3929-984b-40ff-96fb-0d1322e1cafe # Content
 fieldLayouts:
-  8bdb0b8f-ca4a-4efd-80fb-eff7105956a2:
+  757ce033-d5ec-47b3-8dc0-ad5673ca7b48:
     tabs:
       -
         elementCondition: null
         elements:
           -
             elementCondition: null
-            fieldUid: a5ecc83e-c8ee-4d47-ba2f-17bb67ee6fa9 # Plain Title
+            fieldUid: 24e1c6a2-59d3-46be-8ed1-6d3731715bd4 # Shopify Product ID
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 02f1c11a-3590-4637-a108-39ace345b322
+            uid: e6b542d4-010f-4e36-b645-cafd45679283
             userCondition: null
             warning: null
             width: 100
           -
             elementCondition: null
-            fieldUid: 6311f6e0-0362-4c66-bb2c-bd8cb7a04633 # Body
+            fieldUid: c2ca9df1-28d9-4199-9640-1cbf54b91cd9 # Links - Max 4
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 0efff5e2-50ac-4f62-afcb-4b352182b02b
+            uid: 1ac3ae6f-70c8-4953-b4bb-ecc5dc6aadbe
             userCondition: null
             warning: null
             width: 100
-        name: Content
-        uid: ba96e30d-a4ca-46c8-8caa-831dfe81df76
+        name: Breadcrumbs
+        uid: 300f2632-3242-4ace-bd01-161d262188e4
         userCondition: null
 group: null
 groupChildBlockTypes: true
-handle: feature_3_columns_with_icons
+handle: product_overview_with_multiple_style_changes
 icon: null
 ignorePermissions: true
 maxBlocks: 0
-maxChildBlocks: 3
+maxChildBlocks: 0
 maxSiblingBlocks: 0
 minBlocks: 0
-minChildBlocks: 3
+minChildBlocks: 0
 minSiblingBlocks: 0
-name: 'Feature 3 Columns with Icons'
-sortOrder: 9
+name: 'Product Overview With Multiple Style Changes'
+sortOrder: 22
 topLevel: true

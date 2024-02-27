@@ -6,7 +6,6 @@ import critical from 'rollup-plugin-critical';
 import { ViteFaviconsPlugin } from "vite-plugin-favicon2";
 import * as path from 'path';
 
-
 export default defineConfig(({command}) => ({
   base: command === 'serve' ? '' : '/dist/',
   build: {
@@ -23,15 +22,15 @@ export default defineConfig(({command}) => ({
     },
   },
   plugins: [
-     critical({
-          criticalUrl: "http://chaos.ddev.site",
-          criticalBase: "./templates",
-          criticalPages: [
-          { uri: "/", template: "page/_entry" },
-          { uri: "/404", template: "404" },
-     ],
-          criticalConfig: {},
-     }),
+     // critical({
+     //      criticalUrl: "http://chaos.ddev.site",
+     //      criticalBase: "./templates",
+     //      criticalPages: [
+     //      { uri: "/", template: "page/_entry" },
+     //      { uri: "/404", template: "404" },
+     // ],
+     //      criticalConfig: {},
+     // }),
      manifestSRI(),
      viteCompression({
           filter: /\.(js|mjs|json|css|map)$/i

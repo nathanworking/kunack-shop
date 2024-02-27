@@ -3,11 +3,11 @@
         <h2 class="type_2xl font-bold text-primary-dark">{{ block.content_title_plain }}</h2>
 
         <div class="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
-
-            {% for product in block.shopify_products.all() %}
+          {% set products = craft.shopifyProducts.all() %}
+            {% for product in products %}
                 {% set variant = product.getDefaultVariant() %}
                 {% set displayPrice = variant.price|currency %}
-                {% set displayImage = product.image_max_one.one() %}
+                {% set displayImage = product.image_max_one %}
                 <div>
                     <div class="relative">
                         <div class="relative h-72 w-full overflow-hidden rounded-lg">

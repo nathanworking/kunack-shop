@@ -1,40 +1,41 @@
-childBlocks: null
+childBlocks:
+  - product_filter_value
 conditions: null
 description: ''
 enabled: true
 field: 4a2e3929-984b-40ff-96fb-0d1322e1cafe # Content
 fieldLayouts:
-  c4763af4-70bc-4f91-9987-4333d39e2708:
+  a798204a-52c0-4bf1-a67e-c0436a2ac84b:
     tabs:
       -
         elementCondition: null
         elements:
           -
             elementCondition: null
-            fieldUid: 579019c4-1502-4d5e-abb7-4d7c04d47aa8 # Form
+            fieldUid: a5ecc83e-c8ee-4d47-ba2f-17bb67ee6fa9 # Plain Title
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: b6a30e96-811a-44e2-b3fd-662264ea8f04
+            uid: 5310ea51-c302-4906-947d-97f41188f3bf
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: 116c32de-a55c-48d1-825a-4f3fc34ce15b
+        uid: 9218f73f-5b86-419a-bbeb-17f33dc91a5b
         userCondition: null
 group: null
 groupChildBlockTypes: true
-handle: contact_simple_centered
+handle: product_filter
 icon: null
 ignorePermissions: true
 maxBlocks: 0
-maxChildBlocks: 0
+maxChildBlocks: 10
 maxSiblingBlocks: 0
 minBlocks: 0
-minChildBlocks: 0
+minChildBlocks: 2
 minSiblingBlocks: 0
-name: 'Contact Simple Centered'
-sortOrder: 19
-topLevel: true
+name: 'Product Filter'
+sortOrder: 23
+topLevel: false
