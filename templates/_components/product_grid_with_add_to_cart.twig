@@ -35,7 +35,7 @@
                               continue;
                          }
                     }
-                    
+
                     if(!selectionVar) {
                          return false;
                     }
@@ -73,17 +73,18 @@
                          }" class="product-card" >
                     <div class="relative">
                         <div class="relative h-72 w-full overflow-hidden rounded-lg">
-                            {% set size = 576 %}
-                            {% if displayImage %}
-                                {% set optimizedImage = displayImage.default_optimization %}
-                                <picture>
-                                    <source srcset="{{ optimizedImage.srcsetWidthWebP(size) }}" sizes="100vw" type="image/webp"/>
-                                    <img src="{{ optimizedImage.placeholderImage(size) }}" srcset="{{ optimizedImage.srcsetWidth(size) }}" sizes="100vw" alt="{{ displayImage.alt ?? '' }}" class="absolute inset-0 h-full w-full object-cover" {% for width,height in optimizedImage.variantHeights %} width="{{width}}" height="{{height}}" {% endfor %} />
-                                </picture>
-                            {% else %}
-                                {# TODO: Find suitable placeholder image #}
-                                <img src="//via.placeholder.com/{{ size }}?text=Missing+Product+Image" alt="Placeholder image" class="w-full h-full object-cover object-center" />
-                            {% endif %}
+                        {% if product.images %}
+                              {% for image in product.images %}
+                                   {% set size = 576 %}
+                                   <picture>
+                                        <source srcset="{{ image.src }}" sizes="100vw" type="image/webp"/>
+                                        <img src="{{ image.src }}" srcset="{{ image.src }}" sizes="100vw" alt="{{ image.alt ?? '' }}" class="absolute inset-0 h-full w-full object-cover"/>
+                                   </picture>
+                              {% endfor %}
+                        {% else %}
+                             {# TODO: Find suitable placeholder image #}
+                              <img src="//via.placeholder.com/{{ size }}?text=Missing+Product+Image" alt="Placeholder image" class="w-full h-full object-cover object-center" />
+                        {% endif %}
                         </div>
                         <div class="relative mt-4">
                             <h3 class="type_xs font-medium text-primary-dark">{{ product.title }}</h3>
