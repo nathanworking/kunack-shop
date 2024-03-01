@@ -1,16 +1,53 @@
 <div x-data="{
-          selectedTags: Array.from(new URLSearchParams(window.location.search).values()).toString().split(',') ?? [],
+          getSelectedTags() {
+               let mainArray = Array.from(new URLSearchParams(window.location.search));
+               for(let i = 0; i < mainArray.length; i++)
+               {
+                    mainArray[i][1] = mainArray[i][1].split(',');
+               }
+               return mainArray;
+          },
+          selectedTags: this.getSelectedTags,
           isSelected(productTags) {
-               console.log(this.selectedTags);
-               if(!this.selectedTags.length) {
+
+               let productTagsArray = productTags.split(',');
+
+               if(!this.getSelectedTags().length) {
                     return true;
                }
-               return this.selectedTags.some(item => productTags.includes(item));
+               
+               let selectionVar = true;
+               let mainArray = this.getSelectedTags();
+
+               for(let i = 0; i < mainArray.length; i++)
+               {
+                    if(mainArray[i][1][0] == '') {
+                         continue;
+                    }
+
+                    selectionVar = false;
+
+                    for(let j = 0; j < mainArray[i][1].length; j++)
+                    {
+                         let result = productTagsArray.includes(mainArray[i][1][j]);
+                         if(result) {
+                              selectionVar = true;
+                              continue;
+                         }
+                    }
+                    
+                    if(!selectionVar) {
+                         return false;
+                    }
+               }
+
+               return selectionVar;
           }
      }"
      @get-params-changed.window="
           const searchParams = Array.from(new URLSearchParams(window.location.search).values()).toString().split(',');
           this.selectedTags = searchParams;
+          $dispatch('redo-show');
      " class="bg-primary-light">
     <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
         <h2 class="type_2xl font-bold text-primary-dark">{{ block.content_title_plain }}</h2>
@@ -21,7 +58,19 @@
                 {% set variant = product.getDefaultVariant() %}
                 {% set displayPrice = variant.price|currency %}
                 {% set displayImage = product.image_max_one %}
-                <a x-data x-show="isSelected('{{product.content_tags}}')" class="product-card" >
+                <a  x-data
+                    x-init="
+                         if(isSelected('{{product.content_tags|lower}}')) {
+                              $el.classList.remove('hidden');
+                         } else {
+                              $el.classList.add('hidden');
+                         }"   
+                    @redo-show.window="
+                         if(isSelected('{{product.content_tags|lower}}')) {
+                              $el.classList.remove('hidden');
+                         } else {
+                              $el.classList.add('hidden');
+                         }" class="product-card" >
                     <div class="relative">
                         <div class="relative h-72 w-full overflow-hidden rounded-lg">
                             {% set size = 576 %}
@@ -39,6 +88,7 @@
                         <div class="relative mt-4">
                             <h3 class="type_xs font-medium text-primary-dark">{{ product.title }}</h3>
                             <p class="mt-1 type_xs text-primary-dark/80">{{ product.vendor }}</p>
+                            <p class="type_xs">{{product.content_tags}}</p>
                         </div>
                         <div class="absolute inset-x-0 top-0 flex h-72 items-end justify-end overflow-hidden rounded-lg p-4">
                             <div aria-hidden="true" class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50"></div>
