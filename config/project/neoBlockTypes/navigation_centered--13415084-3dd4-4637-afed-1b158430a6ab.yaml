@@ -1,10 +1,11 @@
-childBlocks: null
+childBlocks:
+  - cart_icon
 conditions: null
 description: ''
 enabled: true
 field: aa9e223a-cbf7-4aed-b628-c4b1a95c2321 # Header
 fieldLayouts:
-  d9d42436-13e2-4880-9968-cfb743dbea12:
+  a37867a8-4df3-4cdd-ac17-2cde7c62998c:
     tabs:
       -
         elementCondition: null
@@ -54,7 +55,7 @@ handle: navigation_centered
 icon: null
 ignorePermissions: true
 maxBlocks: 0
-maxChildBlocks: 0
+maxChildBlocks: 1
 maxSiblingBlocks: 0
 minBlocks: 0
 minChildBlocks: 0

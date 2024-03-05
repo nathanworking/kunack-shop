@@ -1,7 +1,8 @@
 <div x-data="{
-          showCartModal:true,
+          showCartModal:false,
      }"
      x-show="showCartModal"
+     @open-cart.window="showCartModal = true"
       class="relative z-10" role="dialog" aria-modal="true">
      <!--
        Background backdrop, show/hide based on modal state.
