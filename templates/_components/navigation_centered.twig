@@ -44,7 +44,11 @@
     <div class="hidden lg:flex flex-1 items-center justify-end gap-x-6 text-sm">
           {% include "_components/_shortcuts/neo_button_double.twig" %}
     </div>
-    {% include "_components/navigation_cart_icon.twig" %}
+    {% for block in block.children %}
+     {% if block.type == 'navigation_cart_icon' %}
+          {% include "_components/navigation_cart_icon.twig" %}
+     {% endif %}
+    {% endfor %}
     <div class="flex lg:hidden">
         <button type="button" @click="isMobileNavOpen = true" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700" >
         <span class="sr-only">Open main menu</span>

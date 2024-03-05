@@ -6,7 +6,7 @@ instructions: null
 name: Header
 searchable: false
 settings:
-  maxBlocks: 1
+  maxBlocks: 2
   maxLevels: null
   maxTopBlocks: null
   minBlocks: null
