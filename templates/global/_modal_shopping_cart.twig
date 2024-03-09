@@ -1,0 +1,137 @@
+<div x-data="{
+          showCartModal:false,
+     }"
+     x-show="showCartModal"
+     @open-cart.window="showCartModal = true"
+     class="relative z-10" role="dialog" aria-modal="true">
+    <!--
+      Background backdrop, show/hide based on modal state.
+
+      Entering: "ease-out duration-300"
+        From: "opacity-0"
+        To: "opacity-100"
+      Leaving: "ease-in duration-200"
+        From: "opacity-100"
+        To: "opacity-0"
+    -->
+    <div class="hidden sm:fixed sm:inset-0 sm:block sm:bg-secondary-dark sm:bg-opacity-75 sm:transition-opacity"></div>
+
+    <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+        <div class="flex min-h-full items-stretch justify-center text-center sm:items-center sm:px-6 lg:px-8">
+            <!--
+        Modal panel, show/hide based on modal state.
+
+        Entering: "ease-out duration-300"
+          From: "opacity-0 scale-105"
+          To: "opacity-100 scale-100"
+        Leaving: "ease-in duration-200"
+          From: "opacity-100 scale-100"
+          To: "opacity-0 scale-105"
+      -->
+            <div x-data="shopify" class="flex w-full max-w-3xl transform text-left type_base transition sm:my-8">
+                <form
+                        class="relative flex w-full flex-col overflow-hidden bg-white pb-8 pt-6 sm:rounded-lg sm:pb-6 lg:py-8">
+                    <div class="flex items-center justify-between px-4 sm:px-6 lg:px-8">
+                        <h2 class="type_lg font-medium text-primary-dark">Shopping Cart</h2>
+                        <button @click="showCartModal = false" type="button"
+                                class="text-secondary-dark hover:text-secondary-light">
+                            <span class="sr-only">Close</span>
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                 stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <section aria-labelledby="cart-heading">
+                        <h2 id="cart-heading" class="sr-only">Items in your shopping cart</h2>
+
+                        <ul role="list" class="divide-y divide-primary-light px-4 sm:px-6 lg:px-8">
+                            <template x-for="(line, index) in lineItems" :key="index">
+                                <li class="flex py-8 type_xs sm:items-center">
+                                    {# TODO: Pull image from Craft CMS here, product id available on line.variant.product.id #}
+                                    <img src="https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-03.jpg"
+                                         alt="Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls."
+                                         class="h-24 w-24 flex-none rounded-lg border border-secondary-light sm:h-32 sm:w-32">
+                                    <div
+                                            class="ml-4 grid flex-auto grid-cols-1 grid-rows-1 items-start gap-x-5 gap-y-3 sm:ml-6 sm:flex sm:items-center sm:gap-0">
+                                        <div class="row-end-1 flex-auto sm:pr-6">
+                                            <h3 class="font-medium text-primary-dark">
+                                                <a href="#" x-text="Alpine.raw(line).title"></a>
+                                            </h3>
+                                            <p class="mt-1 text-secondary-dark"
+                                               x-text="Alpine.raw(line).variant.title"></p>
+                                        </div>
+                                        <p x-text="formatCurrency(Alpine.raw(line).variant.priceV2.amount, Alpine.raw(line).variant.priceV2.currencyCode)"
+                                           class="row-span-2 row-end-2 font-medium text-primary-dark sm:order-1 sm:ml-6 sm:w-1/3 sm:flex-none sm:text-right">
+                                        </p>
+                                        <div class="flex items-center sm:block sm:flex-none sm:text-center">
+                                            <label for="`quantity-${index}`" class="sr-only"
+                                                   x-text="`Quantity, ${Alpine.raw(line).title}`"></label>
+                                            <select
+                                                    :id="`quantity-${index}`"
+                                                    x-on:change="updateLine(Alpine.raw(line).id, $event.target.value)"
+                                                    x-model="Alpine.raw(line).quantity"
+                                                    class="block max-w-full rounded-md border border-secondary-light py-1.5 text-left type_base font-medium leading-5 text-primary-dark shadow-sm focus:border-accent/80 focus:outline-none focus:ring-1 focus:ring-accent/80 sm:type_xs">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                            </select>
+
+                                            <button
+                                                    type="button"
+                                                    @click="removeLine(Alpine.raw(line).id)"
+                                                    class="ml-4 font-medium text-accent hover:text-accent/80 sm:ml-0 sm:mt-2"
+                                            >
+                                                <span>Remove</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </template>
+                        </ul>
+                    </section>
+
+                    <section aria-labelledby="summary-heading" class="mt-auto sm:px-6 lg:px-8">
+                        <div class="bg-primary-dark/10 p-6 sm:rounded-lg sm:p-8">
+                            <h2 id="summary-heading" class="sr-only">Order summary</h2>
+
+                            <div class="flow-root">
+                                <dl class="-my-4 divide-y divide-secondary-dark type_xs">
+                                    <div class="flex items-center justify-between py-4">
+                                        <dt class="text-secondary-dark">Subtotal</dt>
+                                        <dd class="font-medium text-primary-dark"
+                                            x-text="Alpine.raw(subtotalPrice)"></dd>
+                                    </div>
+                                    <div class="flex items-center justify-between py-4">
+                                        <dt class="text-secondary-dark">Tax</dt>
+                                        <dd class="font-medium text-primary-dark" x-text="Alpine.raw(totalTax)"></dd>
+                                    </div>
+                                    <div class="flex items-center justify-between py-4">
+                                        <dt class="type_base font-medium text-primary-dark">Order total</dt>
+                                        <dd class="type_base font-medium text-primary-dark"
+                                            x-text="Alpine.raw(totalPrice)"></dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div class="mt-8 flex justify-end px-4 sm:px-6 lg:px-8">
+                        <button
+                                :disabled="!checkoutUrl"
+                                @click.prevent="window.open(Alpine.raw(checkoutUrl), '_self')"
+                                class="btn btn--accent">
+                            Continue to Payment
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

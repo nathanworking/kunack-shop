@@ -15,10 +15,14 @@
  */
 import Alpine from 'alpinejs';
 import focus from '@alpinejs/focus';
-import intersect from '@alpinejs/intersect'
- 
+import intersect from '@alpinejs/intersect';
+
+import shopify from '@js/component/shopify/data';
+
 Alpine.plugin(focus);
 Alpine.plugin(intersect);
+
+Alpine.data('shopify', shopify);
 
 window.Alpine = Alpine;
 Alpine.start();

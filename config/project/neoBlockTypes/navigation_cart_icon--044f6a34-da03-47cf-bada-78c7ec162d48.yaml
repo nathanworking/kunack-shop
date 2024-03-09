@@ -1,0 +1,19 @@
+childBlocks: null
+conditions: null
+description: ''
+enabled: true
+field: aa9e223a-cbf7-4aed-b628-c4b1a95c2321 # Header
+group: null
+groupChildBlockTypes: true
+handle: navigation_cart_icon
+icon: null
+ignorePermissions: true
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: 'Cart Icon'
+sortOrder: 2
+topLevel: false

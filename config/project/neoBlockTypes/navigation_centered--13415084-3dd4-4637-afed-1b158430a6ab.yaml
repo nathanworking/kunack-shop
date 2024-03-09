@@ -1,10 +1,11 @@
-childBlocks: null
+childBlocks:
+  - navigation_cart_icon
 conditions: null
 description: ''
 enabled: true
 field: aa9e223a-cbf7-4aed-b628-c4b1a95c2321 # Header
 fieldLayouts:
-  d9d42436-13e2-4880-9968-cfb743dbea12:
+  2d554e62-e8a5-491c-96d0-7ccacfae1242:
     tabs:
       -
         elementCondition: null

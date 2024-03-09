@@ -1,107 +1,114 @@
 {# Watch out—these aren't the same as element IDs! #}
 {% set product = craft.shopifyProducts
-  .shopifyId(block.shopify_product_id)
-  .one() %}
+    .shopifyId(block.shopify_product_id)
+    .one() %}
 
 {% set defaultVariant = product.getDefaultVariant() %}
 
 <div class="bg-primary-light">
-  <div class="pb-16 pt-6 sm:pb-24">
-    <nav aria-label="Breadcrumb" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <ol role="list" class="flex items-center space-x-4">
-          {% if block.links_max_four|length %}
-               {% for block in block.links_max_four.all() %}
-                    <li>
-                         {% apply spaceless %}
-                              <div class="flex items-center">
-                                   <a href="{% for entry in block.contentPage %}{{ entry.url }}{% endfor %}" class="mr-4 type_xs font-medium text-primary-dark"> {{ block.contentLabel }}</a>
-                                   <svg viewBox="0 0 6 20" aria-hidden="true" class="h-5 w-auto text-secondary-dark">
+    <div class="pb-16 pt-6 sm:pb-24">
+        <nav aria-label="Breadcrumb" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <ol role="list" class="flex items-center space-x-4">
+                {% if block.links_max_four|length %}
+                    {% for block in block.links_max_four.all() %}
+                        <li>
+                            {% apply spaceless %}
+                                <div class="flex items-center">
+                                    <a href="{% for entry in block.contentPage %}{{ entry.url }}{% endfor %}"
+                                       class="mr-4 type_xs font-medium text-primary-dark"> {{ block.contentLabel }}</a>
+                                    <svg viewBox="0 0 6 20" aria-hidden="true" class="h-5 w-auto text-secondary-dark">
                                         <path d="M4.878 4.34H3.551L.27 16.532h1.327l3.281-12.19z" fill="currentColor" />
-                                   </svg>
-                              </div>
-                         {% endapply %}
-                    </li>
-               {% endfor %}
-          {% endif %}
-        <li class="type_xs">
-          <a href="#" aria-current="page" class="font-medium text-secondary-dark">{{ product.title }}</a>
-        </li>
-      </ol>
-    </nav>
-    <div class="mx-auto mt-8 max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-      <div class="lg:grid lg:auto-rows-min lg:grid-cols-12 lg:gap-x-8">
-        <div class="lg:col-span-5 lg:col-start-8">
-          <div class="flex justify-between">
-            <h1 class="type_lg font-medium text-primary-dark">{{ product.title }}</h1>
-            <h2 id="selectedVariation"></h2>
-            <p class="type_lg font-medium text-primary-dark" id="price">{{ defaultVariant.price|currency }}</p>
-          </div>
-        </div>
-
-        <!-- Image gallery -->
-        <div class="mt-8 lg:col-span-7 lg:col-start-1 lg:row-span-3 lg:row-start-1 lg:mt-0">
-          <h2 class="sr-only">Images</h2>
-
-          <div class="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-3 lg:gap-8">
-               {% for image in product.images %}
-                    <img 
-                         src="{{ image.src }}"
-                         alt="{{ image.alt }}"
-                         {% if loop.first %}
-                              class="lg:col-span-2 lg:row-span-2 rounded-lg"
-                         {% else %}
-                              class="hidden lg:block rounded-lg"
-                         {% endif %}
-                    >
-               {% endfor %}
-          </div>
-        </div>
-
-        <div class="mt-8 lg:col-span-5">
-          <div id="add-to-cart" method="post" action="{{ craft.shopify.store.getUrl('cart/add') }}">
-
-          {# Create a hidden input to send the resolved variant ID to Shopify: #}
-          {{ hiddenInput('id', null, {
-          id: 'variant',
-          data: {
-               variants: product.variants,
-          },
-          }) }}
-
-          
-          {% for option in product.options %}
-               <div class="mt-8">
-               <div class="flex items-center justify-between">
-                    <h2 class="type_xs font-medium text-primary-dark">{{option.name}}</h2>
-               </div>
-               <fieldset class="mt-2">
-                    <div class="grid grid-cols-3 gap-3 sm:grid-cols-6">
-                         {% for value in option.values %}
-                              <label class="flex items-center justify-center rounded-md border type_xs font-medium uppercase sm:flex-1 cursor-pointer focus:outline-none btn">
-                                   <input type="radio" class="sr-only" data-option="{{option.position}}" name="{{option.position}}" value="{{value}}" {% if loop.first %} checked {% endif %}>
-                                   <span id="size-choice-0-label">{{value}}</span>
-                              </label>
-                         {%  endfor %}
+                                    </svg>
+                                </div>
+                            {% endapply %}
+                        </li>
+                    {% endfor %}
+                {% endif %}
+                <li class="type_xs">
+                    <a href="#" aria-current="page" class="font-medium text-secondary-dark">{{ product.title }}</a>
+                </li>
+            </ol>
+        </nav>
+        <div class="mx-auto mt-8 max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+            <div class="lg:grid lg:auto-rows-min lg:grid-cols-12 lg:gap-x-8">
+                <div class="lg:col-span-5 lg:col-start-8">
+                    <div class="flex justify-between">
+                        <h1 class="type_lg font-medium text-primary-dark">{{ product.title }}</h1>
+                        <h2 id="selectedVariation"></h2>
+                        <p class="type_lg font-medium text-primary-dark"
+                           id="price">{{ defaultVariant.price|currency }}</p>
                     </div>
-               </fieldset>
-          {% endfor %}
+                </div>
 
-               <button data-default-variant-id="" id="add-to-cart-button" class="buy-button mt-8 flex w-full btn btn--accent">Add to cart</button>
-          </div>
+                <!-- Image gallery -->
+                <div class="mt-8 lg:col-span-7 lg:col-start-1 lg:row-span-3 lg:row-start-1 lg:mt-0">
+                    <h2 class="sr-only">Images</h2>
 
-          <!-- Product details -->
-          <div class="mt-10">
-            <h2 class="type_xs font-medium text-primary-dark">Description</h2>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-3 lg:gap-8">
+                        {% for image in product.images %}
+                            <img
+                                    src="{{ image.src }}"
+                                    alt="{{ image.alt }}"
+                                    {% if loop.first %}
+                                        class="lg:col-span-2 lg:row-span-2 rounded-lg"
+                                    {% else %}
+                                        class="hidden lg:block rounded-lg"
+                                    {% endif %}
+                            >
+                        {% endfor %}
+                    </div>
+                </div>
 
-            <div class="prose prose-sm mt-4 text-secondary-dark">
-              {{product.bodyHtml|raw}}
+                <div class="mt-8 lg:col-span-5">
+                    <div id="add-to-cart">
+
+                        {# Create a hidden input to send the resolved variant ID to Shopify: #}
+                        {{ hiddenInput('id', null, {
+                            id: 'variant',
+                            data: {
+                                variants: product.variants,
+                            },
+                        }) }}
+
+
+                        <div class="mt-8">
+                            {% for option in product.options %}
+                                <div class="flex items-center justify-between">
+                                    <h2 class="type_xs font-medium text-primary-dark">{{ option.name }}</h2>
+                                </div>
+                                <fieldset class="mt-2">
+                                    <div class="grid grid-cols-3 gap-3 sm:grid-cols-6">
+                                        {% for value in option.values %}
+                                            <label class="flex items-center justify-center rounded-md border type_xs font-medium uppercase sm:flex-1 cursor-pointer focus:outline-none btn">
+                                                <input type="radio" class="sr-only" data-option="{{ option.position }}"
+                                                       name="{{ option.position }}"
+                                                       value="{{ value }}" {% if loop.first %} checked {% endif %}>
+                                                <span id="size-choice-0-label">{{ value }}</span>
+                                            </label>
+                                        {% endfor %}
+                                    </div>
+                                </fieldset>
+                            {% endfor %}
+
+                            {% include "_partials/buy-button" with {
+                                text: "Add to cart",
+                                class: "mt-8 flex w-full btn btn--accent",
+                            } %}
+                        </div>
+
+                        <!-- Product details -->
+                        <div class="mt-10">
+                            <h2 class="type_xs font-medium text-primary-dark">Description</h2>
+
+                            <div class="prose prose-sm mt-4 text-secondary-dark">
+                                {{ product.bodyHtml|raw }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
-</div>
 
 {% js %}
 
@@ -135,7 +142,7 @@ $form.addEventListener("change", (e) => {
 
      $optionInputs.forEach(($input) => {
           // Add the value under the "position" key
-          
+
           if($input.checked) {
                $input.parentElement.classList.add("btn--accent");
                selectedOptions[$input.dataset.option] = $input.value;
@@ -148,7 +155,7 @@ $form.addEventListener("change", (e) => {
           const variant = findVariant(selectedOptions);
 
           if (!variant) {
-               console.warn("No variant exists for options:", selectedOptions); 
+               console.warn("No variant exists for options:", selectedOptions);
                return;
           }
 
@@ -156,7 +163,7 @@ $form.addEventListener("change", (e) => {
           document.getElementById("price").innerText = currencySymbol + variant.price;
 
           //update the add to cart button with the correct variant ID
-          document.getElementById("add-to-cart-button").setAttribute("data-default-variant-id", variant.id);
+          document.querySelector('.buy-button').setAttribute('data-default-variant-id', variant.id);
 
           // Assign the resolved variant’s ID to the hidden input:
           $variantInput.value = variant.id;

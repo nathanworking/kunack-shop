@@ -1,8 +1,8 @@
 <header
-     class="bg-primary-light transition-transform duration-300 z-10 sticky top-0" 
+     class="bg-primary-light transition-transform duration-300 z-10 sticky top-0"
      x-data="{ isMobileNavOpen: false, sticky: true, oldScroll: 100 }"
      x-ref="navbar"
-     x-on:scroll.window="let result = (this.oldScroll > this.scrollY) || (this.scrollY < 1); this.oldScroll = this.scrollY;console.log(this.scrollY); sticky = result;"
+     x-on:scroll.window="let result = (this.oldScroll > this.scrollY) || (this.scrollY < 1); this.oldScroll = this.scrollY;sticky = result;"
      x-bind:class="{
           '-translate-y-full': !sticky
      }"
@@ -16,7 +16,7 @@
                 {{ svg(image)|attr({
                     class: 'w-16 h-8'
                 }) }}
-            {% endfor %} 
+            {% endfor %}
         {% endif %}
         </a>
     </div>
@@ -25,7 +25,7 @@
         {% for block in block.links_max_four.all() %}
                 {% if block.type == "regular" %}
                     {% apply spaceless %}
-                    <a href="{% for entry in block.contentPage %}{{ entry.url }}{% endfor %}" 
+                    <a href="{% for entry in block.contentPage %}{{ entry.url }}{% endfor %}"
                         class="type_xs text-primary-dark hover:text-secondary-dark
                         {% for entry in block.contentPage %}
                             {% if entry.slug == craft.app.request.url|trim('/', side='left') %}
@@ -44,6 +44,11 @@
     <div class="hidden lg:flex flex-1 items-center justify-end gap-x-6 text-sm">
           {% include "_components/_shortcuts/neo_button_double.twig" %}
     </div>
+    {% for block in block.children %}
+     {% if block.type == 'navigation_cart_icon' %}
+          {% include "_components/navigation_cart_icon.twig" %}
+     {% endif %}
+    {% endfor %}
     <div class="flex lg:hidden">
         <button type="button" @click="isMobileNavOpen = true" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700" >
         <span class="sr-only">Open main menu</span>
@@ -54,7 +59,7 @@
     </div>
     </nav>
     <!-- Mobile menu, show/hide based on menu open state. -->
-    <div 
+    <div
         x-show="isMobileNavOpen"
         class="lg:hidden"
         x-bind:aria-label="isMobileNavOpen ? 'Close main menu' : 'Main menu'"
@@ -71,10 +76,10 @@
                             {{ svg(image)|attr({
                                 class: 'w-16 h-8'
                             }) }}
-                        {% endfor %} 
+                        {% endfor %}
                     {% endif %}
                 </a>
-               <div class="ml-auto"> 
+               <div class="ml-auto">
                     {% include "_components/_shortcuts/neo_button_single.twig" %}
                </div>
 
@@ -97,7 +102,7 @@
                                    class="-mx-3 block rounded-lg px-3 py-2 type_sm text-primary-dark
                                    {% for entry in block.contentPage %}
                                         {% if entry.url == craft.app.request.url|trim('/', side='left') %}
-                                             active-page 
+                                             active-page
                                         {% endif %}
                                    {% endfor %}
                                    ">
