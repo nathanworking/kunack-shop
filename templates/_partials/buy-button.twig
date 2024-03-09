@@ -1,0 +1,10 @@
+<div x-data="shopify">
+    <button
+            data-default-variant-id=""
+            :disabled="$el.dataset.defaultVariantId === ''"
+            @click="addLine($event.target.dataset.defaultVariantId)"
+            class="{{ 'buy-button ' ~ class }}"
+    >
+        {{ text }}
+    </button>
+</div>
