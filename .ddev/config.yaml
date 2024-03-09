@@ -1,4 +1,4 @@
-name: chaos
+name: kunack-shop
 type: craftcms
 docroot: web
 php_version: "8.1"
