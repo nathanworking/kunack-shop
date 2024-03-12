@@ -1,4 +1,4 @@
-dateModified: 1709658036
+dateModified: 1710246813
 email:
   fromEmail: dev@vessul.co
   fromName: Chaos
@@ -251,6 +251,10 @@ plugins:
     enabled: true
     schemaVersion: 1.0.0
   eager-beaver:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  element-api:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
