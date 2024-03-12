@@ -47,7 +47,7 @@
                         <h2 id="cart-heading" class="sr-only">Items in your shopping cart</h2>
 
                         <ul role="list" class="divide-y divide-primary-light px-4 sm:px-6 lg:px-8">
-                            <template x-for="(line, index) in lineItems" :key="index">
+                            <template x-for="(line, index) in $store.cart.lineItems" :key="index">
                                 <li class="flex py-8 type_xs sm:items-center">
                                     {# TODO: Pull image from Craft CMS here, product id available on line.variant.product.id #}
                                     <img src="https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-03.jpg"
@@ -106,16 +106,16 @@
                                     <div class="flex items-center justify-between py-4">
                                         <dt class="text-secondary-dark">Subtotal</dt>
                                         <dd class="font-medium text-primary-dark"
-                                            x-text="Alpine.raw(subtotalPrice)"></dd>
+                                            x-text="$store.cart.subtotalPrice"></dd>
                                     </div>
                                     <div class="flex items-center justify-between py-4">
                                         <dt class="text-secondary-dark">Tax</dt>
-                                        <dd class="font-medium text-primary-dark" x-text="Alpine.raw(totalTax)"></dd>
+                                        <dd class="font-medium text-primary-dark" x-text="$store.cart.totalTax"></dd>
                                     </div>
                                     <div class="flex items-center justify-between py-4">
                                         <dt class="type_base font-medium text-primary-dark">Order total</dt>
                                         <dd class="type_base font-medium text-primary-dark"
-                                            x-text="Alpine.raw(totalPrice)"></dd>
+                                            x-text="$store.cart.totalPrice"></dd>
                                     </div>
                                 </dl>
                             </div>

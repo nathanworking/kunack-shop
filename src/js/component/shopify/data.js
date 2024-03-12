@@ -21,10 +21,13 @@ export default () => ({
   },
 
   _refreshStore() {
-    const checkout = Alpine.raw(this._checkout);
     const store = Alpine.store('cart');
 
     store.setQuantity(this.getCartQuantity());
+    store.setLineItems(this.getLineItems());
+    store.setSubtotalPrice(this.getSubtotalPrice());
+    store.setTotalPrice(this.getTotalPrice());
+    store.setTotalTax(this.getTotalTax());
   },
 
   async _fetchCheckout(storageKey = "checkoutId") {
@@ -60,7 +63,7 @@ export default () => ({
     return checkout.webUrl;
   },
 
-  get subtotalPrice() {
+  getSubtotalPrice() {
     if (!this._checkout) {
       return this.formatCurrency(0);
     }
@@ -68,7 +71,7 @@ export default () => ({
     return this.formatCurrency(checkout.subtotalPriceV2.amount, checkout.subtotalPriceV2.currencyCode);
   },
 
-  get totalPrice() {
+  getTotalPrice() {
     if (!this._checkout) {
       return this.formatCurrency(0);
     }
@@ -76,7 +79,7 @@ export default () => ({
     return this.formatCurrency(checkout.totalPriceV2.amount, checkout.totalPriceV2.currencyCode);
   },
 
-  get totalTax() {
+  getTotalTax() {
     if (!this._checkout) {
       return this.formatCurrency(0);
     }
@@ -100,16 +103,17 @@ export default () => ({
     return checkout.lineItems.reduce((acc, item) => acc + item.quantity, 0);
   },
 
+  getLineItems() {
+    if (!this._checkout) {
+      return [];
+    }
+    const checkout = Alpine.raw(this._checkout);
+    return checkout.lineItems;
+  },
+
   updateCheckout(checkout) {
     this._checkout = checkout;
     this._refreshStore();
-  },
-
-  formatCurrency(amount, currency = "USD") {
-    return new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: currency
-    }).format(amount);
   },
 
   addLine(variantId, quantity = 1) {
@@ -141,13 +145,40 @@ export default () => ({
     client.checkout.removeLineItems(checkout.id, [lineId])
       .then((checkout) => this.updateCheckout(checkout))
       .catch((err) => console.error("Failed to remove item from cart: " + err, lineId));
-  }
+  },
+
+  formatCurrency(amount, currency = "USD") {
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: currency
+    }).format(amount);
+  },
 });
 
 Alpine.store("cart", {
   quantity: 0,
+  lineItems: [],
+  subtotalPrice: '',
+  totalPrice: '',
+  totalTax: '',
 
   setQuantity(value) {
     this.quantity = value;
-  }
+  },
+
+  setLineItems(value) {
+    this.lineItems = value;
+  },
+
+  setSubtotalPrice(value) {
+    this.subtotalPrice = value;
+  },
+
+  setTotalPrice(value) {
+    this.totalPrice = value;
+  },
+
+  setTotalTax(value) {
+    this.totalTax = value;
+  },
 });
